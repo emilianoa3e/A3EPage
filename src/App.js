@@ -1,10 +1,9 @@
-
+import AppRouter from "./routers/AppRouter";
+import '../src/assets/css/General.css'
 
 function App() {
   return (
-    <div >
-        Página A3E 
-    </div>
+    <AppRouter/>
   );
 }
 
