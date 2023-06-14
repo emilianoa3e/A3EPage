@@ -1,35 +1,35 @@
-
-.boton-flotante {
+.contenedor{
   position: fixed;
-  right: 0px;
-  width: 35px;
+  writing-mode: vertical-rl;
+  right: 0;
+  width: auto;
   height: 150px;
   top: 40%;
-  text-align: center;
-  writing-mode: vertical-rl;
+}
+
+.boton-flotante{
+  position: relative;
+  height: 100%;
   background-color: #00743B;
   border: none;
+  border-radius: 1rem 0 0 1rem;
   color: white;
-  border-radius: 15px 0px 0px 15px;
+
 }
 
-.botones-adicionales {
-  position: absolute;
-  right: 0px;
-  bottom: 90px;
+.botones-adicionales{
+  position: relative;
+  writing-mode: horizontal-tb;
 }
 
-.boton-redondo {
+.boton-redondo{
   display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 0 0 15 15;
-  margin-bottom: 10px;
-  padding: 0;
-  margin: 2;
-  color: #00743B;
-  font-size: 30px;
   background-color: transparent;
-  border: none;
+  color: #00743B;
+  font-size: 2rem;
+  margin: 1rem;
+  width: 50%;
+  height: 50%;
+
 }
 

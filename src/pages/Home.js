@@ -1,8 +1,11 @@
 import React from 'react'
+import CustomCarousel from '../components/shared/CustomCarousel'
 
 function Home() {
   return (
-    <div>Home</div>
+    <>
+      <CustomCarousel/>
+    </>
   )
 }
 

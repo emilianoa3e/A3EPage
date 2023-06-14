@@ -9,19 +9,21 @@ function ContactButton() {
     const toggleBotones = () => {
         setMostrarBotones(!mostrarBotones);
     };
-    console.log(mostrarBotones)
     return (
-        <div className="container-fluid">
+        <div className='contenedor'>
             <button className="boton-flotante center" onClick={toggleBotones}>
-            <MdMessage />  Contactanos 
+                <MdMessage />  Contactanos
             </button>
             {mostrarBotones && (
-                <div className="botones-adicionales">
-                    <button className="boton-redondo"><MdWhatsapp width={'2rem'} /></button>
-                    <button className="boton-redondo"><MdCall width='2rem'/></button>
-                </div> 
+                <div className='botones-adicionales'>
+                    <a href='https://api.whatsapp.com/send?phone=5217772604715' className='boton-redondo'><MdWhatsapp width={'2rem'} /></a>
+                    <a className='boton-redondo'><MdCall width='2rem' /></a>
+                    
+                </div>
             )}
+
         </div>
+       
     );
 }
 
