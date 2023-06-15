@@ -1,16 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
   Container,
   Nav,
+  NavDropdown,
   Navbar as NavbarBt
 } from "react-bootstrap";
 import { MdAssignmentTurnedIn, MdContacts, MdHome, MdLabel, MdPeople } from "react-icons/md";
 import logo from "../../assets/img/Logo_Blanco.png";
 import "../../assets/css/components/Navbar.css";
+import DropdownItem from "react-bootstrap/esm/DropdownItem";
+import { getServices } from "../../utils/getServices";
 
 
 function CustomNavbar() {
+  const [servicesList, setServiceList] = useState([
+    {
+      _id: '',
+      title: ''
+    },
+  ])
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getServices();
+      setServiceList(data.services)
+    }
+    getData();
+  }, [])
+
+  console.log(servicesList);
+
   return (
     <NavbarBt variant="dark" className="custom-navbar" expand="lg" sticky="top">
       <Container>
@@ -28,10 +48,14 @@ function CustomNavbar() {
               <MdPeople className="me-1" size={25} />
               <span className="nav-link-text">Nosotros</span>
             </NavLink>
-            <NavLink to="/services" className="nav-link">
-              <MdLabel className="me-1" size={25} />
-              <span className="nav-link-text">Servicios</span>
-            </NavLink>
+            <NavDropdown title={<><MdLabel className="me-1" size={25} /> Servicios</>} id="nav-dropdown">
+              {/* Mapear */}
+              {servicesList.map((service) => (
+                  <DropdownItem key={service._id} >
+                      {service.title}
+                  </DropdownItem>
+              ))}
+            </NavDropdown>
             <NavLink to="/news" className="nav-link">
               <MdAssignmentTurnedIn className="me-1" size={25} />
               <span className="nav-link-text">Noticias</span>

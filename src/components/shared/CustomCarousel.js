@@ -25,7 +25,7 @@ function CustomCarousel() {
 
   return (
 
-    <Carousel style={{margin:0, padding:0, top:0}}>
+    <Carousel style={{margin:0, padding:0}}>
       {mediaList.map((media) => (
         <Carousel.Item key={media._id}>
           <img

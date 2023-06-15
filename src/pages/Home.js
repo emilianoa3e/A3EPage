@@ -3,9 +3,10 @@ import CustomCarousel from '../components/shared/CustomCarousel'
 
 function Home() {
   return (
-    <>
-      <CustomCarousel/>
-    </>
+    <div style={{margin:0, padding:0}}>
+      <CustomCarousel />
+    </div>
+
   )
 }
 
