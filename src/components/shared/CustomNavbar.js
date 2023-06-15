@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   Container,
   Nav,
@@ -11,6 +11,7 @@ import logo from "../../assets/img/Logo_Blanco.png";
 import "../../assets/css/components/Navbar.css";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import { getServices } from "../../utils/getServices";
+
 
 
 function CustomNavbar() {
@@ -29,7 +30,7 @@ function CustomNavbar() {
     getData();
   }, [])
 
-  console.log(servicesList);
+  const navigate = useNavigate();
 
   return (
     <NavbarBt variant="dark" className="custom-navbar" expand="lg" sticky="top">
@@ -51,8 +52,9 @@ function CustomNavbar() {
             <NavDropdown title={<><MdLabel className="me-1" size={25} /> Servicios</>} id="nav-dropdown">
               {/* Mapear */}
               {servicesList.map((service) => (
-                  <DropdownItem key={service._id} >
+                  <DropdownItem key={service._id} onClick={()=>{navigate(`/service/${service._id}`);}}>
                       {service.title}
+                      
                   </DropdownItem>
               ))}
             </NavDropdown>

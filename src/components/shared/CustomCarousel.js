@@ -21,8 +21,6 @@ function CustomCarousel() {
     getData();
   }, [])
 
-  console.log(mediaList)
-
   return (
 
     <Carousel style={{margin:0, padding:0}}>
