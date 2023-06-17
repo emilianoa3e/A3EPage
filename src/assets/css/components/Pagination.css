@@ -1,0 +1,27 @@
+.pagination {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 10%;
+    width: 100%;
+}
+
+.pagination a {
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+}
+
+.pagination .arrow {
+    font-size: 40px;
+    background-color: #007a3b;
+    color: #ffffff;
+}
+
+.pagination .active {
+    border-radius: 5rem;
+    background-color: yellow;
+    color: #fff;
+}
+

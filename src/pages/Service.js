@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { getService } from '../utils/getServices'
-import { Container } from 'react-bootstrap';
+import {Container}  from 'react-bootstrap';
 
 function Service() {
   const { id } = useParams();
@@ -23,7 +23,7 @@ function Service() {
   return (
     <>
       {service && (
-        <Container className='mt-1 p-1 container-fluid bg-danger' >
+        <Container className='mt-1 p-1 container-fluid ' >
           <div dangerouslySetInnerHTML={{ __html: service }}></div>
         </Container>
 

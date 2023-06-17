@@ -1,11 +1,14 @@
 /* Estilos para resaltar el Col seleccionado */
 .selected {
-    background-color: #ffcc00; 
-    color: #ffffff;  
+    background-color: #00743B;
+    color: #ffffff;
   }
 
-.col {
-    background-color: #01a154;
-    cursor: pointer;
+.noSelected {
+    background-color: #ffffff;
+    border-inline-end-style: solid;
 }
-  
+.col{
+    cursor: pointer;
+
+}
