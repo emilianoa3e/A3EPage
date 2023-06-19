@@ -20,8 +20,8 @@
 }
 
 .pagination .active {
-    border-radius: 5rem;
-    background-color: yellow;
+    border-radius: 100%;
+    background-color: gray;
     color: #fff;
 }
 

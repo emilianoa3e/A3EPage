@@ -25,7 +25,7 @@ const types = [
         <Row className='justify-content-center m-4'>
             {
                 types.map((type) => (
-                    <Col key={type._id} xs={6} md={3} lg={3}  className={`mt-1 justify-content-center text-center  p-3 ${filter === type.type ? 'selected' : 'noSelected'}`} onClick={() => handleFilterChange(`${type.type}`)}>
+                    <Col key={type._id} xs={6} md={3} lg={3} style={{cursor:'pointer'}} className={`mt-1 justify-content-center text-center  p-3 ${filter === type.type ? 'selected' : 'noSelected'}`} onClick={() => handleFilterChange(`${type.type}`)}>
                         {type.type}
                     </Col>
                 ))
