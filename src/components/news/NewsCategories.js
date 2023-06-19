@@ -19,8 +19,8 @@ const types = [
 
 
 ]
-
- function Categories ({ handleFilterChange, filter}){
+//Categories for News 
+ function NewsCategories ({ handleFilterChange, filter}){
     return(
         <Row className='justify-content-center m-4'>
             {
@@ -35,4 +35,4 @@ const types = [
     )
 }
 
-export default Categories
+export default NewsCategories

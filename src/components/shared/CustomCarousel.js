@@ -15,7 +15,7 @@ function CustomCarousel() {
   }, []);
 
   if (mediaList.length === 0) {
-    return <div>No hay banners disponibles.</div>;
+    return <div></div>;
   }
 
   const filteredMediaList = mediaList.filter((media) => media.status === true);

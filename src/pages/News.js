@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Items from '../components/news/Items'
 import { getNews } from "../utils/getNews";
-import Categories from "../components/news/Categories";
+import NewsCategories from "../components/news/NewsCategories";
 import Pagination from "../components/news/Pagination";
-import { MdCancel } from 'react-icons/md';
-import { Col, Row, Container } from 'react-bootstrap';
+
+import NotRegisters from '../components/shared/NotRegisters';
 function News() {
     const itemsPerPage = 1;
     const [itemOffset, setItemOffset] = useState(0);
@@ -57,7 +57,7 @@ function News() {
     return (
         <>
             <div className='container-fluid '>
-                <Categories newsList={newsList} handleFilterChange={handleFilterChange} filter={filter} />
+                <NewsCategories newsList={newsList} handleFilterChange={handleFilterChange} filter={filter} />
 
                 {currentNews.length > 0 ? (
                     <>
@@ -65,26 +65,7 @@ function News() {
                         <Pagination pageCount={pageCount} handlePageClick={handlePageClick} />
                     </>
                 ) : (
-                    <Container>
-                        <Row>
-                            <Col xs={12} className="d-flex justify-content-center">
-                                <Col>
-                                    <Row>
-                                        <MdCancel
-                                            className="no-services-icon"
-                                            size={150}
-                                            opacity={0.5}
-                                        />
-                                    </Row>
-                                    <Row>
-                                        <h3 className="text-center" style={{ opacity: 0.5 }}>
-                                            No hay registros 
-                                        </h3>
-                                    </Row>
-                                </Col>
-                            </Col>
-                        </Row>
-                    </Container>
+                    <NotRegisters icon={true} text={true}/>
                 )}
 
 

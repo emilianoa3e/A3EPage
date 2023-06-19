@@ -11,6 +11,7 @@ import logo from "../../assets/img/Logo_Blanco.png";
 import "../../assets/css/components/Navbar.css";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import { getServices } from "../../utils/getServices";
+import NotRegisters from "./NotRegisters";
 
 
 
@@ -50,13 +51,19 @@ function CustomNavbar() {
               <span className="nav-link-text">Nosotros</span>
             </NavLink>
             <NavDropdown title={<><MdLabel className="me-1" size={25} /> Servicios</>} id="nav-dropdown">
-              {/* Mapear */}
-              {servicesList.map((service) => (
+              {servicesList.length !== 0 ? (
+                <>
+                {servicesList.map((service) => (
                   <DropdownItem key={service._id} onClick={()=>{navigate(`/service/${service._id}`);}}>
-                      {service.title}
-                      
+                      {service.title}            
                   </DropdownItem>
               ))}
+                </>
+              ) : (
+                <DropdownItem>
+                  <NotRegisters icon={false} text={true}/>
+                </DropdownItem>
+              )}
             </NavDropdown>
             <NavLink to="/news" className="nav-link">
               <MdAssignmentTurnedIn className="me-1" size={25} />
