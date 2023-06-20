@@ -53,15 +53,15 @@ function CustomNavbar() {
             <NavDropdown title={<><MdLabel className="me-1" size={25} /> Servicios</>} id="nav-dropdown">
               {servicesList.length !== 0 ? (
                 <>
-                {servicesList.map((service) => (
-                  <DropdownItem key={service._id} onClick={()=>{navigate(`/service/${service._id}`);}}>
-                      {service.title}            
-                  </DropdownItem>
-              ))}
+                  {servicesList.map((service) => (
+                    <DropdownItem key={service._id} onClick={() => { navigate(`/service/${service._id}`); }}>
+                      {service.title}
+                    </DropdownItem>
+                  ))}
                 </>
               ) : (
                 <DropdownItem>
-                  <NotRegisters icon={false} text={true}/>
+                  <NotRegisters icon={false} text={true} />
                 </DropdownItem>
               )}
             </NavDropdown>
@@ -69,10 +69,18 @@ function CustomNavbar() {
               <MdAssignmentTurnedIn className="me-1" size={25} />
               <span className="nav-link-text">Noticias</span>
             </NavLink>
-            <NavLink to="/contacts" className="nav-link">
-              <MdContacts className="me-1" size={25} />
-              <span className="nav-link-text">Contactanos</span>
-            </NavLink>
+            <NavDropdown title={<><MdContacts className="me-1" size={25} /> Contactanos</>}>
+            <DropdownItem onClick={()=>navigate('/us')}>
+                Ventas
+              </DropdownItem>
+              <DropdownItem onClick={()=>navigate('/us')}>
+                Trabaja con nosotros
+              </DropdownItem>
+              <DropdownItem onClick={()=>navigate('/us')}>
+                Practica con nosotros
+              </DropdownItem>
+            </NavDropdown>
+            
           </Nav>
         </NavbarBt.Collapse>
       </Container>
