@@ -4,57 +4,67 @@ import {
   Container,
   Nav,
   NavDropdown,
-  Navbar as NavbarBt
+  Navbar as NavbarBt,
 } from "react-bootstrap";
-import { MdAssignmentTurnedIn, MdContacts, MdHome, MdLabel, MdPeople } from "react-icons/md";
+import {
+  MdHome,
+} from "react-icons/md";
 import logo from "../../assets/img/Logo_Blanco.png";
 import "../../assets/css/components/Navbar.css";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import { getServices } from "../../utils/getServices";
 import NotRegisters from "./NotRegisters";
 
-
-
 function CustomNavbar() {
   const [servicesList, setServiceList] = useState([
     {
-      _id: '',
-      title: ''
+      _id: "",
+      title: "",
     },
-  ])
+  ]);
 
   useEffect(() => {
     const getData = async () => {
       const data = await getServices();
-      setServiceList(data.services)
-    }
+      setServiceList(data.services);
+    };
     getData();
-  }, [])
+  }, []);
 
   const navigate = useNavigate();
 
   return (
-    <NavbarBt variant="dark" className="custom-navbar" expand="lg" sticky="top">
-      <Container>
-        <NavbarBt.Brand href="/" >
+    <NavbarBt className="custom-navbar p-0" variant="dark" expand="lg" sticky="top">
+      <Container className="m-0 p-0 " fluid>
+        <NavbarBt.Brand href="/">
           <img src={logo} alt="Logo" width={110} />
         </NavbarBt.Brand>
-        <NavbarBt.Toggle aria-controls="basic-navbar-nav" />
-        <NavbarBt.Collapse id="basic-navbar-nav " className="justify-content-center">
+        <NavbarBt.Toggle
+          aria-controls="basic-navbar-nav"
+          className="m-2 p-2 "
+        />
+        <NavbarBt.Collapse
+          id="basic-navbar-nav "
+          className="justify-content-center p-0 m-0 "
+        >
           <Nav className="me-auto justify-content-center">
             <NavLink to="/" className="nav-link">
               <MdHome className="me-1" size={25} />
-              <span className="nav-link-text">Inicio</span>
+              <span className="nav-link-text">INICIO</span>
             </NavLink>
             <NavLink to="/us" className="nav-link">
-              <MdPeople className="me-1" size={25} />
-              <span className="nav-link-text">Nosotros</span>
+              <span className="nav-link-text">NOSOTROS</span>
             </NavLink>
-            <NavDropdown title={<><MdLabel className="me-1" size={25} /> Servicios</>} id="nav-dropdown">
+            <NavDropdown title="SERVICIOS" id="nav-dropdown">
               {servicesList.length !== 0 ? (
                 <>
                   {servicesList.map((service) => (
-                    <DropdownItem key={service._id} onClick={() => { navigate(`/service/${service._id}`); }}>
+                    <DropdownItem
+                      key={service._id}
+                      onClick={() => {
+                        navigate(`/service/${service._id}`);
+                      }}
+                    >
                       {service.title}
                     </DropdownItem>
                   ))}
@@ -66,26 +76,21 @@ function CustomNavbar() {
               )}
             </NavDropdown>
             <NavLink to="/news" className="nav-link">
-              <MdAssignmentTurnedIn className="me-1" size={25} />
-              <span className="nav-link-text">Noticias</span>
+              <span className="nav-link-text">NOTICIAS</span>
             </NavLink>
-            <NavDropdown title={<><MdContacts className="me-1" size={25} /> Contactanos</>}>
-            <DropdownItem onClick={()=>navigate('/us')}>
+            <NavDropdown title={"CONTACTO"}>
+              <DropdownItem onClick={() => navigate("/us")}>
                 Ventas
               </DropdownItem>
-              <DropdownItem onClick={()=>navigate('/us')}>
-                Trabaja con nosotros
-              </DropdownItem>
-              <DropdownItem onClick={()=>navigate('/us')}>
-                Practica con nosotros
+              <DropdownItem onClick={() => navigate("/us")}>
+                Recursos Humanos
               </DropdownItem>
             </NavDropdown>
-            
           </Nav>
         </NavbarBt.Collapse>
       </Container>
     </NavbarBt>
-  )
+  );
 }
 
-export default CustomNavbar
+export default CustomNavbar;
