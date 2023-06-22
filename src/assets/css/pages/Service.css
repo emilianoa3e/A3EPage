@@ -1,17 +1,18 @@
-
-
-.cont image{
-    width: 100%!important;
+.service-content img {
+    max-width: 100% !important;
     height: auto;
-}
-
-.cont p img {
-    width: 100%!important;
+  }
+  
+  .service-content table {
+    width: 100% !important;
+  }
+  
+  .service-content table td {
+    width: 50% !important;
+  }
+  
+  .service-content video {
+    max-width: 100% !important;
     height: auto;
-}
-
-.cont video{
-    width: 100%!important;
-    height: auto;
-}
-
+  }
+  
