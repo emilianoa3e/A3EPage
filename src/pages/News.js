@@ -6,6 +6,7 @@ import Pagination from "../components/news/Pagination";
 import {MdNotificationsActive} from 'react-icons/md'
 import NotRegisters from '../components/shared/NotRegisters';
 import { Row,Col } from 'react-bootstrap';
+import Banner from '../components/shared/Banner';
 function News() {
     const itemsPerPage = 1;
     const [itemOffset, setItemOffset] = useState(0);
@@ -57,7 +58,8 @@ function News() {
 
     return (
         <>
-            <div className='container-fluid '>
+            <div className='container-fluid p-0 m-0'>
+                <Banner from={'NOTICIAS'}/>
                 <NewsCategories newsList={newsList} handleFilterChange={handleFilterChange} filter={filter} />
 
                 {currentNews.length > 0 ? (

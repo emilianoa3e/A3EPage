@@ -15,14 +15,12 @@ function Home() {
   const filteredMediaList = mediaList.filter((media) => media.status === true);
 
   return (
-    <div style={{ margin: 0, padding: 0, height: "500px" }}>
-      <CustomCarousel
-        msg={"HOME"}
-        indicators={true}
-        list={filteredMediaList}
-        controls={false}
-      />
-    </div>
+    <CustomCarousel
+      msg={"HOME"}
+      indicators={true}
+      list={filteredMediaList}
+      controls={false}
+    />
   );
 }
 

@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom";
 import { getService } from "../utils/getServices";
 import { Container } from "react-bootstrap";
 import "../assets/css/pages/Service.css";
-import CustomCarousel from "../components/shared/CustomCarousel";
-
+import Banner from "../components/shared/Banner";
 function Service() {
   const { id } = useParams();
   const [service, setService] = useState([
@@ -23,20 +22,11 @@ function Service() {
     getData();
   }, [id]);
 
-  console.log(service);
-
   return (
     <>
       {service && (
         <Container className="m-0 pt-0 p-0 " fluid>
-          <CustomCarousel
-            list={false}
-            indicators={false}
-            msg={service.title}
-            msgLost={false}
-            fluid
-            className="m-o p-0"
-          />
+         <Banner title={service.title} from={'SERVICIOS'}/>
           <div className="p-2">
             <h1
               className="text-start"
