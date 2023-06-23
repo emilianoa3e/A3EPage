@@ -26,7 +26,8 @@ function Banner({ from, title }) {
     <Carousel
       controls={false}
       indicators={false}
-      style={{ margin: 0, padding: 0, overflow: "hidden", maxHeight:'600px' }}
+      className="carousel"
+      style={{ margin: 0, padding: 0, overflow: "hidden"}}
     >
       <Carousel.Item>
         <div className="banner-overlay">
@@ -34,11 +35,10 @@ function Banner({ from, title }) {
             className="d-block w-100"
             src={banner ? banner : bannerDefault}
             alt={"Not Found Image"}
-            style={{ objectFit: "cover" }}
           />
         </div>
         <Carousel.Caption
-          style={{ top: '15%', left: 20 }}
+          style={{ top: '10%', left: 20 }}
           className="container-fluid  p-3 m-0"
         >
           <Row className="align-items-center">
@@ -46,11 +46,10 @@ function Banner({ from, title }) {
               lg={6}
               xs={4}
               md={4}
-              className="text-start align-items-center"
-              style={{ display: "flex" }}
+              className="text-start align-items-center titleService"
+              style={{color:'white'}}
             >
               <h3
-                style={{ color: "white", fontWeight: "bold" }}
                 className="p-0 m-0"
               >
                 {title}
@@ -63,11 +62,7 @@ function Banner({ from, title }) {
               <Row>
                 <h1
                   className={"text-center  pe-4"}
-                  style={{
-                    color: "transparent",
-                    fontWeight: 900,
-                    WebkitTextStroke: "3px #00743B",
-                  }}
+                  
                 >
                   {from}
                 </h1>

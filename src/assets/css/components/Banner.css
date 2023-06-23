@@ -1,3 +1,10 @@
+.carousel {
+  max-height: 600px;
+}
+
+.banner-overlay {
+  object-fit: cover;
+}
 
 .banner-overlay:after {
   content: "";
@@ -13,16 +20,28 @@
   );
 }
 
+
+.titleService {
+  display: flex;
+  
+}
+
+
+
+
 @media (min-width: 900px) {
   .carousel-caption img {
     width: 420px !important;
   }
-  h3 {
+  .carousel h3 {
     font-size: 40px !important;
   }
-  h1 {
+  .carousel h1 {
     margin-left: 15px;
+    color: transparent;
+    font-weight: 900;
     font-size: 60px !important;
+    -webkit-text-stroke: 3px #00743b;
   }
 }
 
@@ -30,38 +49,49 @@
   .carousel-caption img {
     width: 400px !important;
   }
-  h3 {
+  .carousel h3 {
     font-size: 35px !important;
   }
-  h1 {
-    font-size: 10px !important;
+  .carousel h1 {
+    font-size: 50px !important;
+    color: transparent;
+    font-weight: 900;
+    -webkit-text-stroke: 2.5px #00743b;
   }
 }
 
 @media (max-width: 700px) {
-  h3 {
+  .carousel h3 {
     font-size: 30px !important;
   }
-  h1 {
+  .carousel h1 {
     font-size: 40px !important;
+    color: transparent;
+    font-weight: 900;
+    -webkit-text-stroke: 2px #00743b;
   }
 }
 
 @media (max-width: 500px) {
-  h3 {
+  .carousel h3 {
     font-size: 20px !important;
   }
-  h1 {
+  .carousel h1 {
     font-size: 20px !important;
+    color: transparent;
+    font-weight: 900;
+    -webkit-text-stroke: 1px #00743b;
   }
 }
 
-@media (max-width: 300px) {
-  h3 {
-    font-size: 15px !important;
+@media (max-width: 350px) {
+  .carousel h3 {
+    font-size: 18px !important;
   }
-  h1 {
-    font-size: 10px !important;
-
+  .carousel h1 {
+    font-size: 15px !important;
+    color: transparent;
+    font-weight: 900;
+    -webkit-text-stroke: 1px #00743b;
   }
 }

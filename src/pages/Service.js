@@ -27,7 +27,7 @@ function Service() {
       {service && (
         <Container className="m-0 pt-0 p-0 " fluid>
          <Banner title={service.title} from={'SERVICIOS'}/>
-          <div className="p-2">
+          <div className="p-2 title">
             <h1
               className="text-start"
               style={{ color: "#00743B", fontWeight: "bold" }}
