@@ -10,11 +10,11 @@ function AppRouter() {
         <BrowserRouter>
             <Layout>
                 <Routes>
-                    <Route exact path='/' element={<Home />} />
-                    <Route exact path='/us' element={<Home />} />
+                    <Route exact path='/home' element={<Home />} />
+                    <Route exact path='/about' element={<Home />} />
                     <Route exact path='/service/:id' element={<Services/>} />
                     <Route exact path='/news' element={<News />} />
-                    <Route exact path='/contacts' element={<Home />} />
+                    <Route exact path='/contact' element={<Home />} />
                     <Route exact path='/*' element={<Navigate to='/' />} />
                 </Routes>
             </Layout>

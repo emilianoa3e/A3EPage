@@ -1,33 +1,33 @@
+.custom-navbar *{
+  font-weight: 550;
+}
+
 .custom-navbar {
   background-color: #00743b;
   color: #fff;
 }
 
 .custom-navbar .nav-link {
-  /* background-color: aqua; */
   height: 100px;
-  padding-top: 30px;
-  padding-left: 10px;
-  font-size: 20px;
+  padding-top: 35px;
+  font-size: 18px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.custom-navbar .nav-link:active {
-  background-color: aqua;
-  height: 100px;
-  padding-top: 30px;
-  padding-left: 10px;
-  font-size: 20px;
+.custom-navbar .nav-link.active {
+  background-color: white !important; 
+  color: #00743b !important; 
 }
 
-.active {
-  background-color: white;
-  color: #00743b;
+.custom-navbar .nav-item.active{
+  background-color: white!important; 
 }
 
-.dropdown-menu .show{
-  border-radius: 0;
-  background-color: grey;
+.custom-navbar .nav-item.active a{
+  color: #00743b !important; 
 }
+
 
 .dropdown-menu .dropdown-item{
   color: #00743b;

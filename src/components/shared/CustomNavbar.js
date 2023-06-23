@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useNavigate, useLocation} from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import {
   Container,
   Nav,
@@ -14,6 +14,9 @@ import { getServices } from "../../utils/getServices";
 import NotRegisters from "./NotRegisters";
 
 function CustomNavbar() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [servicesList, setServiceList] = useState([
     {
       _id: "",
@@ -29,9 +32,12 @@ function CustomNavbar() {
     getData();
   }, []);
 
-  const navigate = useNavigate();
-  const location = useLocation();
+  const pathParts = location.pathname.split("/");
+  const rutaExtraida = pathParts[1];
 
+  const isActive = (id) => {
+    return (id === rutaExtraida);
+  };
 
   return (
     <NavbarBt
@@ -40,44 +46,45 @@ function CustomNavbar() {
       expand="lg"
       sticky="top"
     >
-      <Container className="m-0 p-0" fluid>
-        <NavbarBt.Brand href="/">
+      <Container className="m-0 p-0 " fluid>
+        <NavbarBt.Brand href="/home">
           <img src={logo} alt="Logo" width={110} />
         </NavbarBt.Brand>
         <NavbarBt.Toggle
           aria-controls="basic-navbar-nav"
-          className="m-2 p-2"
+          className="m-2 p-2 "
         />
         <NavbarBt.Collapse
-          id="basic-navbar-nav"
-          className="justify-content-center p-0 m-0"
+          id="basic-navbar-nav "
+          className=" p-0 m-0 "
           style={{ width: "100%" }}
         >
           <Nav className="me-auto justify-content-center">
-            <NavLink
-              exact
-              to="/"
-              className="nav-link"
-              activeStyle={{ color: "white", backgroundColor: "blue" }}
-            >
+            <NavLink to="/home" className="nav-link" id="home">
               <MdHome className="me-1" size={25} />
               <span className="nav-link-text">INICIO</span>
             </NavLink>
-            <NavLink to="/us" className="nav-link" activeClassName="active">
+            <NavLink to="/about" className="nav-link" id="about">
               <span className="nav-link-text">NOSOTROS</span>
             </NavLink>
-            <NavDropdown title="SERVICIOS" id="nav-dropdown">
-              {servicesList.length !== 0 ? (
+            <NavDropdown
+              title="SERVICIOS"
+              id="service"
+              className={`${isActive("service") ? "active" : ""}`}
+            >
+              {servicesList.length !== 0? (
                 <>
                   {servicesList.map((service) => (
-                    <DropdownItem
-                      key={service._id}
-                      onClick={() => {
-                        navigate(`/service/${service._id}`);
-                      }}
-                    >
-                      {service.title}
-                    </DropdownItem>
+                    <>
+                      <DropdownItem
+                        key={service._id}
+                        onClick={() => {
+                          navigate(`/service/${service._id}`);
+                        }}
+                      >
+                        {service.title}
+                      </DropdownItem>
+                    </>
                   ))}
                 </>
               ) : (
@@ -86,14 +93,18 @@ function CustomNavbar() {
                 </DropdownItem>
               )}
             </NavDropdown>
-            <NavLink to="/news" className="nav-link" activeClassName="active">
+            <NavLink to="/news" className="nav-link" id="news">
               <span className="nav-link-text">NOTICIAS</span>
             </NavLink>
-            <NavDropdown title={"CONTACTO"}>
-              <DropdownItem onClick={() => navigate("/us")}>
+            <NavDropdown
+              title={"CONTACTO"}
+              id="contact"
+              className={`${isActive("contact") ? "active" : ""}`}
+            >
+              <DropdownItem onClick={() => navigate("/contact")}>
                 Ventas
               </DropdownItem>
-              <DropdownItem onClick={() => navigate("/us")}>
+              <DropdownItem onClick={() => navigate("/contact")}>
                 Recursos Humanos
               </DropdownItem>
             </NavDropdown>

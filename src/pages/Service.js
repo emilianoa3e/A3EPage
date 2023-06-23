@@ -6,13 +6,13 @@ import "../assets/css/pages/Service.css";
 import Banner from "../components/shared/Banner";
 function Service() {
   const { id } = useParams();
-  const [service, setService] = useState([
+  const [service, setService] = useState(
     {
       _id:'',
       title:'',
       content:''
     }
-  ]);
+  );
 
   useEffect(() => {
     const getData = async () => {
