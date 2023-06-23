@@ -3,7 +3,7 @@ import logo from "../../assets/img/Logo_Verde.png";
 import bannerDefault from "../../assets/img/banner11.jpg";
 import bannerService from "../../assets/img/banner2.jpg";
 import bannerContacts from "../../assets/img/banner12.jpg"
-import bannerNews from '../../assets/img/banner1.jpg'
+import bannerNews from '../../assets/img/banner2.jpg'
 import { Row, Col, Carousel } from "react-bootstrap"; 
 import "../../assets/css/components/Banner.css";
 function Banner({ from, title }) {

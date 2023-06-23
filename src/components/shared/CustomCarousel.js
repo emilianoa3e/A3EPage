@@ -43,8 +43,8 @@ function CustomCarousel({ list, controls, indicators }) {
             alt={media.title}
             style={{ objectFit: "cover" }}
           />
-          <Carousel.Caption className="bg-success ">
-            <Container fluid className="bg-danger h-100 h-100">
+          <Carousel.Caption>
+            <Container fluid className=" h-100">
               <h3>{media.title}</h3>
               <p>{media.description}</p>
               <a
