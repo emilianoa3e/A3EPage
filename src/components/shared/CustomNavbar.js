@@ -36,7 +36,7 @@ function CustomNavbar() {
   const rutaExtraida = pathParts[1];
 
   const isActive = (id) => {
-    return (id === rutaExtraida);
+    return id === rutaExtraida;
   };
 
   return (
@@ -72,7 +72,7 @@ function CustomNavbar() {
               id="service"
               className={`${isActive("service") ? "active" : ""}`}
             >
-              {servicesList.length !== 0? (
+              {servicesList.length !== 0 ? (
                 <>
                   {servicesList.map((service) => (
                     <>
@@ -101,7 +101,7 @@ function CustomNavbar() {
               id="contact"
               className={`${isActive("contact") ? "active" : ""}`}
             >
-              <DropdownItem onClick={() => navigate("/contact")}>
+              <DropdownItem onClick={() => navigate("/contact/sale")}>
                 Ventas
               </DropdownItem>
               <DropdownItem onClick={() => navigate("/contact")}>

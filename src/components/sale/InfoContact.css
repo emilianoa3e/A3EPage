@@ -1,0 +1,5 @@
+.container-card {
+    height: auto;
+    background-color: rgba(51, 219, 73, 0.185);
+    border-radius: 0 60px 60px 60px;
+}
