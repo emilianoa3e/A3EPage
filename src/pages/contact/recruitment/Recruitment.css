@@ -27,9 +27,11 @@
 .vacancie.active {
   background-color: #00743b;
   color: #ffffff;
+  transition: 0.3s;
 }
 
 .intern.active {
   background-color: #00743b;
   color: #ffffff;
+  transition: 0.3s;
 }

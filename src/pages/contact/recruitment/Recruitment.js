@@ -126,11 +126,11 @@ function Recruitment() {
                   email: "",
                   phone: "",
                   age: "",
-                  residence: "",
-                  education: "",
-                  position: "",
-                  source: "",
-                  curriculum: "",
+                  institution: "",
+                  typePractice: "",
+                  degree: "",
+                  period: "",
+                  info: "",
                 }}
                 validationSchema={objectSchemaInstance}
                 onSubmit={(values, { resetForm }) =>
