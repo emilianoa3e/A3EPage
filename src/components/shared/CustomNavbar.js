@@ -104,7 +104,7 @@ function CustomNavbar() {
               <DropdownItem onClick={() => navigate("/contact/sale")}>
                 Ventas
               </DropdownItem>
-              <DropdownItem onClick={() => navigate("/contact")}>
+              <DropdownItem onClick={() => navigate("/contact/recruitment")}>
                 Recursos Humanos
               </DropdownItem>
             </NavDropdown>

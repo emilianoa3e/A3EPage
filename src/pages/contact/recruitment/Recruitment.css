@@ -1,0 +1,35 @@
+.vacancie {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px 0px 0px 10px;
+  padding: 15px;
+  font-size: 25px;
+  font-weight: bold;
+  border-top: 1px solid #00743b;
+  border-bottom: 1px solid #00743b;
+  border-left: 1px solid #00743b;
+  text-decoration: none;
+}
+
+.intern {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 0px 10px 10px 0px;
+  padding: 15px;
+  font-size: 25px;
+  font-weight: bold;
+  border-top: 1px solid #00743b;
+  border-bottom: 1px solid #00743b;
+  border-right: 1px solid #00743b;
+  text-decoration: none;
+}
+
+.vacancie.active {
+  background-color: #00743b;
+  color: #ffffff;
+}
+
+.intern.active {
+  background-color: #00743b;
+  color: #ffffff;
+}
