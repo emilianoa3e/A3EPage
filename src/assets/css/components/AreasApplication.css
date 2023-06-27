@@ -1,0 +1,41 @@
+.areasApplication .col {
+  perspective: 1000px;
+}
+
+.areasApplication .image-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.areasApplication .image-container img {
+  width: auto;
+  height: 100%;
+}
+
+.areasApplication .image-container:hover {
+  transform: rotateY(180deg);
+}
+
+.areasApplication .front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.areasApplication .back {
+  transform: rotateY(180deg);
+}
+
+.areasApplication .text {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  color: black;
+}
