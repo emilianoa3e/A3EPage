@@ -31,9 +31,7 @@
 
 .dropdown-menu .dropdown-item{
   color: #00743b;
-  margin-left: 4%;
-  padding-left: 0;
-  width: 92% !important;
+  width: 100% !important;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
@@ -44,9 +42,9 @@
   color: #00743b;
   margin-left: 4%;
   padding-left: 0;
-  width: 92% !important;
-	overflow: hidden;
-	text-overflow: ellipsis;
+  width: 100% !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 990px) {
@@ -58,4 +56,19 @@
 }
 
 @media (max-width: 600px) {
+}
+
+.custom-navbar a {
+  color: inherit; /* Heredar el color del texto del elemento padre */
+  text-decoration: none; /* Eliminar la subrayado por defecto */
+}
+
+.custom-navbar :focus,
+.custom-navbar a:active {
+  background-color: transparent;
+  outline: none; /* Eliminar el contorno al hacer clic o enfocar */
+}
+
+.custom-navbar .dropdown-menu a:hover{
+  background-color: #ffffff;
 }

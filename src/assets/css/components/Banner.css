@@ -27,10 +27,8 @@
 }
 
 
-
-
 @media (min-width: 900px) {
-  .carousel-caption img {
+  .banner carousel-caption img {
     width: 420px !important;
   }
   .banner h3 {

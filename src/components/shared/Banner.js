@@ -4,7 +4,7 @@ import bannerDefault from "../../assets/img/banner11.jpg";
 import bannerService from "../../assets/img/banner2.jpg";
 import bannerContacts from "../../assets/img/banner12.jpg"
 import bannerNews from '../../assets/img/banner2.jpg'
-import { Row, Col, Carousel } from "react-bootstrap"; 
+import {Row, Col, Carousel, Container} from "react-bootstrap";
 import "../../assets/css/components/Banner.css";
 function Banner({ from, title }) {
   let banner;
@@ -38,37 +38,38 @@ function Banner({ from, title }) {
           />
         </div>
         <Carousel.Caption
-          style={{ top: '10%', left: 20 }}
-          className="container-fluid  p-3 m-0"
+          className="h-100 "
         >
-          <Row className="align-items-center">
-            <Col
-              lg={6}
-              xs={4}
-              md={4}
-              className="text-start align-items-center titleService"
-              style={{color:'white'}}
-            >
-              <h3
-                className="p-0 m-0"
+          <Container >
+            <Row className="align-items-center">
+              <Col
+                  lg={6}
+                  xs={4}
+                  md={4}
+                  className="text-start align-items-center titleService"
+                  style={{color:'white'}}
               >
-                {title}
-              </h3>
-            </Col>
-            <Col lg={6} xs={6} md={6} className="container-fluid">
-              <Row className="justify-content-center">
-                <img className="d-block " src={logo} alt={"Not Found"} />
-              </Row>
-              <Row>
-                <h1
-                  className={"text-center  pe-4"}
-                  
+                <h3
+                    className="p-0 m-0"
                 >
-                  {from}
-                </h1>
-              </Row>
-            </Col>
-          </Row>
+                  {title}
+                </h3>
+              </Col>
+              <Col lg={6} xs={6} md={6} >
+                <Row >
+                  <Col lg={12} xs={12} md={12} className={' justify-content-end d-flex'}>
+                    <img src={logo} alt={"Not Found"} width={"100%"}/>
+                  </Col>
+                  <Col>
+                    <h1 className={"text-end p-4"}>
+                      {from}
+                    </h1>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Container>
+
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
