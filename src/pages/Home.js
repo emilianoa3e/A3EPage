@@ -3,6 +3,7 @@ import CustomCarousel from "../components/shared/CustomCarousel";
 import { useEffect, useState } from "react";
 import { getBanners } from "../utils/getBanners";
 import InfoResume from "../components/home/InfoResume";
+import Clients from "../components/clients/Clients";
 function Home() {
   const [mediaList, setMediaList] = useState([]);
 
@@ -24,6 +25,7 @@ function Home() {
         controls={false}
       />
       <InfoResume/>
+      <Clients/>
     </>
   );
 }

@@ -1,0 +1,12 @@
+.client-big {
+  color: transparent;
+  font-weight: 900;
+  font-size: 80px;
+  -webkit-text-stroke: 1px #00743b;
+}
+
+.client-big span {
+    color: #00743b;
+    font-weight: 500;
+    font-size: 25px;
+}
