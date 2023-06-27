@@ -5,6 +5,8 @@ import bannerDefault from "../../assets/img/banner1.jpg";
 import logo from "../../assets/img/Logo_Blanco.png";
 import { Container, Row } from "react-bootstrap";
 function CustomCarousel({ list, controls, indicators }) {
+
+  //
   if (list.length === 0 || !list) {
     return (
       <Carousel
@@ -34,6 +36,7 @@ function CustomCarousel({ list, controls, indicators }) {
       controls={controls}
       indicators={indicators}
       style={{ margin: 0, padding: 0}}
+      className="carousel"
     >
       {list.map((media) => (
         <Carousel.Item key={media._id}>
@@ -43,7 +46,7 @@ function CustomCarousel({ list, controls, indicators }) {
             alt={media.title}
             style={{ objectFit: "cover" }}
           />
-          <Carousel.Caption>
+          <Carousel.Caption className="bg-danger h-100 ">
             <Container fluid className=" h-100">
               <h3>{media.title}</h3>
               <p>{media.description}</p>

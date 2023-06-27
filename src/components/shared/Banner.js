@@ -26,7 +26,7 @@ function Banner({ from, title }) {
     <Carousel
       controls={false}
       indicators={false}
-      className="carousel"
+      className="banner"
       style={{ margin: 0, padding: 0, overflow: "hidden"}}
     >
       <Carousel.Item>

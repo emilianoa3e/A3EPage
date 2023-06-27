@@ -1,4 +1,4 @@
-.carousel {
+.banner {
   max-height: 600px;
 }
 
@@ -33,10 +33,10 @@
   .carousel-caption img {
     width: 420px !important;
   }
-  .carousel h3 {
+  .banner h3 {
     font-size: 40px !important;
   }
-  .carousel h1 {
+  .banner h1 {
     margin-left: 15px;
     color: transparent;
     font-weight: 900;
@@ -49,10 +49,10 @@
   .carousel-caption img {
     width: 400px !important;
   }
-  .carousel h3 {
+  .banner h3 {
     font-size: 35px !important;
   }
-  .carousel h1 {
+  .banner h1 {
     font-size: 50px !important;
     color: transparent;
     font-weight: 900;
@@ -61,10 +61,10 @@
 }
 
 @media (max-width: 700px) {
-  .carousel h3 {
+  .banner h3 {
     font-size: 30px !important;
   }
-  .carousel h1 {
+  .banner h1 {
     font-size: 40px !important;
     color: transparent;
     font-weight: 900;
@@ -73,10 +73,10 @@
 }
 
 @media (max-width: 500px) {
-  .carousel h3 {
+  .banner h3 {
     font-size: 20px !important;
   }
-  .carousel h1 {
+  .banner h1 {
     font-size: 20px !important;
     color: transparent;
     font-weight: 900;
@@ -85,10 +85,10 @@
 }
 
 @media (max-width: 350px) {
-  .carousel h3 {
+  .banner h3 {
     font-size: 18px !important;
   }
-  .carousel h1 {
+  .banner h1 {
     font-size: 15px !important;
     color: transparent;
     font-weight: 900;

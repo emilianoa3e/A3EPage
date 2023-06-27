@@ -2,6 +2,7 @@ import React from "react";
 import CustomCarousel from "../components/shared/CustomCarousel";
 import { useEffect, useState } from "react";
 import { getBanners } from "../utils/getBanners";
+import InfoResume from "../components/home/InfoResume";
 function Home() {
   const [mediaList, setMediaList] = useState([]);
 
@@ -15,12 +16,15 @@ function Home() {
   const filteredMediaList = mediaList.filter((media) => media.status === true);
 
   return (
-    <CustomCarousel
-      msg={"HOME"}
-      indicators={true}
-      list={filteredMediaList}
-      controls={false}
-    />
+    <>
+      <CustomCarousel
+        msg={"HOME"}
+        indicators={true}
+        list={filteredMediaList}
+        controls={false}
+      />
+      <InfoResume/>
+    </>
   );
 }
 
