@@ -37,7 +37,7 @@ function CustomCarousel({ list, controls, indicators }) {
       controls={controls}
       indicators={indicators}
       style={{ margin: 0, padding: 0}}
-      className="carousel"
+      className="carousel "
     >
       {list.map((media) => (
         <Carousel.Item key={media._id}>
@@ -48,13 +48,13 @@ function CustomCarousel({ list, controls, indicators }) {
             style={{ objectFit: "cover" }}
           />
           <Carousel.Caption className=" h-100 ">
-            <Container fluid className=" h-100 align-items-center - d-flex">
+            <Container fluid className=" h-100 align-items-center d-flex justify-content-start ">
               <Row className={'w-75  text-start'} >
                 <Col lg={12} md={12} xs={12} className={' m-0 p-0 '} style={{flexWrap: 'wrap', }}>
                   <Image src={sismedia} style={{ WebkitFlexShrink: 0, maxWidth: '100%', height:"auto"}}/>
                 </Col>
-                <Col className={' m-0 p-0'}>
-                  <p>{media.description}</p>
+                <Col className={' m-0 p-0'} >
+                  <h3>{media.description}</h3>
                   <a
                       href={media.link}
                       target="_blank"

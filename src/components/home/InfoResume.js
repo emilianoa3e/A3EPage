@@ -19,7 +19,7 @@ function InfoResume() {
               }}
               className="mt-0 mb-0 p-5 justify-content-center"
             >
-              <Col>
+              <Col lg={8} md={8} xs={12}>
                 <h3 style={{ color: "#00743b", fontSize: "18px" }}>
                   Especialistas en Energía Electrica
                 </h3>
@@ -44,7 +44,7 @@ function InfoResume() {
 
               <Col>
                 <Row className="align-items-center justify-content-center h-100 ">
-                  <Col className="col-6 d-flex justify-content-center p-0 m-0">
+                  <Col className="col-6 d-flex  justify-content-center ">
                     <img src={logo} width={100}  />
                   </Col>
                   <Col className="col-6 d-flex justify-content-center">

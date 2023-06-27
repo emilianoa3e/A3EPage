@@ -19,7 +19,7 @@ function AppRouter() {
           <Route exact path="/contact" element={<Home />} />
           <Route exact path="/contact/sale" element={<Sale />} />
           <Route exact path="/contact/recruitment" element={<Recruitment />} />
-          <Route exact path="/*" element={<Navigate to="/" />} />
+          <Route exact path="/*" element={<Navigate to="/home" />} />
         </Routes>
       </Layout>
     </BrowserRouter>
