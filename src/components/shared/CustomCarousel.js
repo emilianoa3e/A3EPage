@@ -4,9 +4,8 @@ import "../../assets/css/components/Carousel.css";
 import bannerDefault from "../../assets/img/banner1.jpg";
 import logo from "../../assets/img/Logo_Blanco.png";
 import sismedia from "../../assets/img/sismedia.png";
-import {Col, Container, Image, Row} from "react-bootstrap";
+import { Col, Container, Image, Row } from "react-bootstrap";
 function CustomCarousel({ list, controls, indicators }) {
-
   //
   if (list.length === 0 || !list) {
     return (
@@ -36,7 +35,7 @@ function CustomCarousel({ list, controls, indicators }) {
     <Carousel
       controls={controls}
       indicators={indicators}
-      style={{ margin: 0, padding: 0}}
+      style={{ margin: 0, padding: 0 }}
       className="carousel "
     >
       {list.map((media) => (
@@ -48,22 +47,35 @@ function CustomCarousel({ list, controls, indicators }) {
             style={{ objectFit: "cover" }}
           />
           <Carousel.Caption className=" h-100 ">
-            <Container fluid className=" h-100 align-items-center d-flex justify-content-start ">
-              <Row className={'w-75  text-start'} >
-                <Col lg={12} md={12} xs={12} className={' m-0 p-0 '} style={{flexWrap: 'wrap', }}>
-                  <Image src={sismedia} style={{ WebkitFlexShrink: 0, maxWidth: '100%', height:"auto"}}/>
+            <Container
+              fluid
+              className=" h-100 align-items-center d-flex justify-content-start "
+            >
+              <Row className={"w-75  text-start"}>
+                <Col
+                  lg={12}
+                  md={12}
+                  xs={12}
+                  className="m-0 p-0 d-flex flex-wrap"
+                >
+                  <Image
+                    src={sismedia}
+                    className="img-fluid"
+                    style={{ flexShrink: 0, maxWidth: "100%", height: "auto" }}
+                  />
                 </Col>
-                <Col className={' m-0 p-0'} >
+
+                <Col className={" m-0 p-0"}>
                   <h3>{media.description}</h3>
                   <a
-                      href={media.link}
-                      target="_blank"
-                      className="btn ps-4 pe-4"
-                      style={{
-                        backgroundColor: "#00743B",
-                        color: "white",
-                        borderRadius: "0px 20px 20px 20px",
-                      }}
+                    href={media.link}
+                    target="_blank"
+                    className="btn ps-4 pe-4"
+                    style={{
+                      backgroundColor: "#00743B",
+                      color: "white",
+                      borderRadius: "0px 20px 20px 20px",
+                    }}
                   >
                     VER MÁS
                   </a>

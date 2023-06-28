@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/img/Logo_Verde.png";
 import bannerDefault from "../../assets/img/banner11.jpg";
-import bannerService from "../../assets/img/banner2.jpg";
+import bannerService from "../../assets/img/download.png";
 import bannerContacts from "../../assets/img/banner12.jpg"
 import bannerNews from '../../assets/img/banner2.jpg'
 import {Row, Col, Carousel, Container} from "react-bootstrap";
