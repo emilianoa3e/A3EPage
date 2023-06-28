@@ -30,7 +30,7 @@ function Clients() {
             <span>CLIENTES</span> CLIENTES
           </p>
         </Row>
-        <Row className="p-5">
+        <Row className="p-3">
           <SliderComponent images={clientsList} />
         </Row>
       </Col>
