@@ -6,6 +6,7 @@ import MiniMap from "../../../components/shared/MiniMap";
 import SaleForm from "./SaleForm";
 import CustomButton from "../../../components/shared/CustomButton";
 import InfoContact from "../../../components/sale/InfoContact";
+import Banner from "../../../components/shared/Banner";
 
 function Sale() {
   const objectSchema = Yup.object().shape({
@@ -20,6 +21,9 @@ function Sale() {
 
   return (
     <>
+      <Container fluid className="m-0 p-0">
+        <Banner from={"VENTAS"} />
+      </Container>
       <Container className="mt-4">
         <Row>
           <Col md={4} lg={4}>

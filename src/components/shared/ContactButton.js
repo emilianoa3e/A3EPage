@@ -1,69 +1,37 @@
-import React, {useState} from 'react'
-import {MdCall, MdMessage, MdWhatsapp} from 'react-icons/md';
+import React, { useState } from "react";
+import { MdCall, MdMessage, MdWhatsapp } from "react-icons/md";
+import "../../assets/css/components/ContactButton.css";
 
 function ContactButton() {
-    const [mostrarBotones, setMostrarBotones] = useState(false);
+  const [mostrarBotones, setMostrarBotones] = useState(false);
+    const [active, setActive] = useState(false)
+  const toggleBotones = () => {
+    setMostrarBotones(!mostrarBotones);
+    setActive(!active)
+  };
 
-    const toggleBotones = () => {
-        setMostrarBotones(!mostrarBotones);
-    };
-    return (
-        <>
-                {mostrarBotones && (
-                    <div >
-                        <a
-                            style={{
-                                cursor: 'pointer',
-                                display: 'flex',
-                                borderRadius: '10px',
-                                backgroundColor: 'red',
-                                backgroundSize: '50%',
-                                position: 'fixed',
-                                bottom: '130px',
-                                right: '30px',
-                                boxShadow: '0px 3px 12px rgba(0,0,0,0.25)'
-                            }}
-                            href="https://api.whatsapp.com/send?phone=123456789"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <MdWhatsapp style={{color: 'white', fontSize: '30px', margin: '5px'}}/>
-                        </a>
-                        <a
-                            style={{
-                                cursor: 'pointer',
-                                display: 'flex',
-                                borderRadius: '10px',
-                                backgroundColor: 'red',
-                                backgroundSize: '50%',
-                                position: 'fixed',
-                                bottom: '80px',
-                                right: '30px',
-                                boxShadow: '0px 3px 12px rgba(0,0,0,0.25)'
-                            }}
-                            href="tel:123456789"
-                        >
-                            <MdCall style={{color: 'white', fontSize: '30px', margin: '5px'}}/>
-                        </a>
-                    </div>
-                )}
-                <a onClick={toggleBotones} style={{
-                    cursor: 'pointer',
-                    display: 'flex',
-                    borderRadius: '10px',
-                    backgroundColor: 'red',
-                    backgroundSize: '50%',
-                    position: 'fixed',
-                    bottom: '30px',
-                    right: '30px',
-                    boxShadow: '0px 3px 12px rgba(0,0,0,0.25)'
-                }}
-                >
-                    <MdMessage style={{color: 'white', fontSize: '30px', margin: '5px'}}/>
-                </a>
+  return (
+    <div className="floatContainer">
+      {mostrarBotones && (
+        <div>
+          <a
+            className="wppButton"
+            href="https://api.whatsapp.com/send?phone=123456789"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MdWhatsapp />
+          </a>
+          <a className="telButton" href="tel:123456789">
+            <MdCall />
+          </a>
+        </div>
+      )}
+      <a onClick={toggleBotones} className={active?'active':'contactButton'}>
+        <MdMessage />
+      </a>
+    </div>
+  );
+}
 
-            </>
-            );
-            }
-
-            export default ContactButton
+export default ContactButton;

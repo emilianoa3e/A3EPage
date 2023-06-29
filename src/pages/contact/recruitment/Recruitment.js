@@ -8,7 +8,7 @@ import InfoContact from "../../../components/sale/InfoContact";
 import InstanceForm from "./intern/InternForm";
 import VacancieForm from "./vacancie/VacancieForm";
 import "./Recruitment.css";
-
+import Banner from "../../../components/shared/Banner";
 function Recruitment() {
   const [showForm, setShowForm] = useState("vacancie");
   const [uploadedFile, setUploadedFile] = useState(null);
@@ -47,6 +47,9 @@ function Recruitment() {
 
   return (
     <>
+      <Container fluid className="m-0 p-0">
+        <Banner from={"VENTAS"} />
+      </Container>
       <Container className="mt-4">
         <Row>
           <Col md={4} lg={4}>

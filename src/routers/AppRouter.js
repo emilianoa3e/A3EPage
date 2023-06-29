@@ -6,6 +6,7 @@ import Services from "../pages/Service";
 import News from "../pages/News";
 import Sale from "../pages/contact/sale/Sale";
 import Recruitment from "../pages/contact/recruitment/Recruitment";
+import Us from "../pages/Us";
 
 function AppRouter() {
   return (
@@ -13,7 +14,7 @@ function AppRouter() {
       <Layout>
         <Routes>
           <Route exact path="/home" element={<Home />} />
-          <Route exact path="/about" element={<Home />} />
+          <Route exact path="/about" element={<Us />} />
           <Route exact path="/service/:id" element={<Services />} />
           <Route exact path="/news" element={<News />} />
           <Route exact path="/contact" element={<Home />} />

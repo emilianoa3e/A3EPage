@@ -1,10 +1,7 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "../../assets/css/components/Carousel.css";
-import bannerDefault from "../../assets/img/banner1.jpg";
-import logo from "../../assets/img/Logo_Blanco.png";
-import sismedia from "../../assets/img/sismedia.png";
-import {Col, Container, Image, Row} from "react-bootstrap";
+import bannerDefault from "../../assets/img/NOSOTROS.jpg";
 
 function CustomCarousel({ list, controls, indicators }) {
   //
@@ -22,11 +19,7 @@ function CustomCarousel({ list, controls, indicators }) {
             alt={"Not Found Image"}
             style={{ objectFit: "cover" }}
           />
-          <Carousel.Caption>
-            <Row className="justify-content-end ">
-              <img className="d-block w-50" src={logo} alt={"Not Found"} />
-            </Row>
-          </Carousel.Caption>
+          <Carousel.Caption></Carousel.Caption>
         </Carousel.Item>
       </Carousel>
     );
@@ -47,42 +40,19 @@ function CustomCarousel({ list, controls, indicators }) {
             alt={media.title}
             style={{ objectFit: "cover" }}
           />
-          <Carousel.Caption className=" h-100 ">
-            <Container
-              fluid
-              className=" h-100 align-items-center d-flex justify-content-start "
+          <Carousel.Caption>
+            <a
+              href={media.link}
+              target="_blank"
+              className="btn "
+              style={{
+                backgroundColor: "#00743B",
+                color: "white",
+                borderRadius: "0px 20px 20px 20px",
+              }}
             >
-              <Row className={"w-75  text-start"}>
-                <Col
-                  lg={12}
-                  md={12}
-                  xs={12}
-                  className="m-0 p-0 d-flex flex-wrap"
-                >
-                  <Image
-                    src={sismedia}
-                    className="img-fluid"
-                    style={{ flexShrink: 0, maxWidth: "100%", height: "auto" }}
-                  />
-                </Col>
-
-                <Col className={" m-0 p-0"}>
-                  <h3>{media.description}</h3>
-                  <a
-                    href={media.link}
-                    target="_blank"
-                    className="btn ps-4 pe-4"
-                    style={{
-                      backgroundColor: "#00743B",
-                      color: "white",
-                      borderRadius: "0px 20px 20px 20px",
-                    }}
-                  >
-                    VER MÁS
-                  </a>
-                </Col>
-              </Row>
-            </Container>
+              VER MÁS
+            </a>
           </Carousel.Caption>
         </Carousel.Item>
       ))}
