@@ -11,7 +11,7 @@ function Layout({children}) {
           {children}
           {/* <ContactButton/> */}
         </Container>
-       
+       <ContactButton/>
         <Footer/>
     </>
   )

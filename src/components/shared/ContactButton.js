@@ -1,7 +1,5 @@
-import React from 'react'
-import { useState } from 'react';
-import '../../assets/css/components/ContactButton.css'
-import { MdWhatsapp, MdCall, MdMessage } from 'react-icons/md';
+import React, {useState} from 'react'
+import {MdCall, MdMessage, MdWhatsapp} from 'react-icons/md';
 
 function ContactButton() {
     const [mostrarBotones, setMostrarBotones] = useState(false);
@@ -10,21 +8,62 @@ function ContactButton() {
         setMostrarBotones(!mostrarBotones);
     };
     return (
-        <div className='contenedor'>
-            <button className="boton-flotante center" onClick={toggleBotones}>
-                <MdMessage />  Contactanos
-            </button>
-            {mostrarBotones && (
-                <div className='botones-adicionales'>
-                    <a href='https://api.whatsapp.com/send?phone=5217772604715' className='boton-redondo'><MdWhatsapp width={'2rem'} /></a>
-                    <a className='boton-redondo'><MdCall width='2rem' /></a>
-                    
-                </div>
-            )}
+        <>
+                {mostrarBotones && (
+                    <div >
+                        <a
+                            style={{
+                                cursor: 'pointer',
+                                display: 'flex',
+                                borderRadius: '10px',
+                                backgroundColor: 'red',
+                                backgroundSize: '50%',
+                                position: 'fixed',
+                                bottom: '130px',
+                                right: '30px',
+                                boxShadow: '0px 3px 12px rgba(0,0,0,0.25)'
+                            }}
+                            href="https://api.whatsapp.com/send?phone=123456789"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <MdWhatsapp style={{color: 'white', fontSize: '30px', margin: '5px'}}/>
+                        </a>
+                        <a
+                            style={{
+                                cursor: 'pointer',
+                                display: 'flex',
+                                borderRadius: '10px',
+                                backgroundColor: 'red',
+                                backgroundSize: '50%',
+                                position: 'fixed',
+                                bottom: '80px',
+                                right: '30px',
+                                boxShadow: '0px 3px 12px rgba(0,0,0,0.25)'
+                            }}
+                            href="tel:123456789"
+                        >
+                            <MdCall style={{color: 'white', fontSize: '30px', margin: '5px'}}/>
+                        </a>
+                    </div>
+                )}
+                <a onClick={toggleBotones} style={{
+                    cursor: 'pointer',
+                    display: 'flex',
+                    borderRadius: '10px',
+                    backgroundColor: 'red',
+                    backgroundSize: '50%',
+                    position: 'fixed',
+                    bottom: '30px',
+                    right: '30px',
+                    boxShadow: '0px 3px 12px rgba(0,0,0,0.25)'
+                }}
+                >
+                    <MdMessage style={{color: 'white', fontSize: '30px', margin: '5px'}}/>
+                </a>
 
-        </div>
-       
-    );
-}
+            </>
+            );
+            }
 
-export default ContactButton
+            export default ContactButton

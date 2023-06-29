@@ -4,7 +4,8 @@ import "../../assets/css/components/Carousel.css";
 import bannerDefault from "../../assets/img/banner1.jpg";
 import logo from "../../assets/img/Logo_Blanco.png";
 import sismedia from "../../assets/img/sismedia.png";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import {Col, Container, Image, Row} from "react-bootstrap";
+
 function CustomCarousel({ list, controls, indicators }) {
   //
   if (list.length === 0 || !list) {
