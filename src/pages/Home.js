@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { getBanners } from "../utils/getBanners";
 import InfoResume from "../components/home/InfoResume";
 import Clients from "../components/clients/Clients";
+import AreasApplication from "../components/home/AreasApplication";
+
 function Home() {
   const [mediaList, setMediaList] = useState([]);
 
@@ -24,8 +26,9 @@ function Home() {
         list={filteredMediaList}
         controls={false}
       />
-      <InfoResume/>
-      <Clients/>
+      <InfoResume />
+      <AreasApplication />
+      <Clients />
     </>
   );
 }

@@ -7,10 +7,19 @@ function InfoResume() {
     <>
       <Container className=" justify-content-center p-5" fluid>
         <Row className="justify-content-center">
-          <Col lg={4} md={8} sm={8} xs={8} className="top-10">
-            <img src={logo} className={'img-fluid'} style={{ flexShrink: 0, maxWidth: "100%", height: "auto" }}/>
+          <Col
+            lg={4}
+            md={5}
+            xs={7}
+            className="d-flex justify-content-center align-items-center"
+          >
+            <img
+              src={logo}
+              className="img-fluid"
+              style={{ flexShrink: 0, maxWidth: "100%", height: "auto" }}
+            />
           </Col>
-          <Col lg={8} xs={12} md={12} >
+          <Col lg={8} xs={12} md={12}>
             <Row
               style={{
                 backgroundColor: "#D4E6F1",
@@ -43,10 +52,22 @@ function InfoResume() {
 
               <Col>
                 <Row className="align-items-center justify-content-center h-100 ">
-                  <Col lg={6} md={6} sm={6} xs={12} className=" d-flex  justify-content-center ">
-                    <img src={logo} width={100}  />
+                  <Col
+                    lg={6}
+                    md={6}
+                    sm={6}
+                    xs={12}
+                    className=" d-flex  justify-content-center "
+                  >
+                    <img src={logo} width={100} />
                   </Col>
-                  <Col lg={6} md={6} sm={6} xs={12} className=" d-flex justify-content-center">
+                  <Col
+                    lg={6}
+                    md={6}
+                    sm={6}
+                    xs={12}
+                    className=" d-flex justify-content-center"
+                  >
                     <img src={logo} width={100} />
                   </Col>
                 </Row>

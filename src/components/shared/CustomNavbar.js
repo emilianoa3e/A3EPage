@@ -47,7 +47,7 @@ function CustomNavbar() {
       sticky="top"
     >
       <Container className="m-0 p-0 " fluid>
-        <NavbarBt.Brand href="/home">
+        <NavbarBt.Brand href="/home" className="ps-4">
           <img src={logo} alt="Logo" width={110} />
         </NavbarBt.Brand>
         <NavbarBt.Toggle
@@ -61,7 +61,7 @@ function CustomNavbar() {
         >
           <Nav className="me-auto justify-content-center">
             <NavLink to="/home" className="nav-link" id="home">
-              <MdHome className="me-1" size={25} />
+              <MdHome className="me-1" size={22} />
               <span className="nav-link-text">INICIO</span>
             </NavLink>
             <NavLink to="/about" className="nav-link" id="about">
