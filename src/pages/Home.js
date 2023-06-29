@@ -3,7 +3,7 @@ import CustomCarousel from "../components/shared/CustomCarousel";
 import { useEffect, useState } from "react";
 import { getBanners } from "../utils/getBanners";
 import InfoResume from "../components/home/InfoResume";
-import Clients from "../components/clients/Clients";
+import Clients from "../components/home/Clients";
 import AreasApplication from "../components/home/AreasApplication";
 
 function Home() {
@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     const getData = async () => {
       const data = await getBanners();
-      setMediaList(data.banners);
+      setMediaList(data);
     };
     getData();
   }, []);

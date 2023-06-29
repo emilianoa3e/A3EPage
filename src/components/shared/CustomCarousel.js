@@ -4,13 +4,14 @@ import "../../assets/css/components/Carousel.css";
 import bannerDefault from "../../assets/img/NOSOTROS.jpg";
 
 function CustomCarousel({ list, controls, indicators }) {
-  //
+  
+  //Default Carousel
   if (list.length === 0 || !list) {
     return (
       <Carousel
         slide
         controls={false}
-        style={{ margin: 0, padding: 0, overflow: "hidden", height: "300px" }}
+        style={{ margin: 0, padding: 0, overflow: "hidden" }}
       >
         <Carousel.Item>
           <img
@@ -19,7 +20,6 @@ function CustomCarousel({ list, controls, indicators }) {
             alt={"Not Found Image"}
             style={{ objectFit: "cover" }}
           />
-          <Carousel.Caption></Carousel.Caption>
         </Carousel.Item>
       </Carousel>
     );
