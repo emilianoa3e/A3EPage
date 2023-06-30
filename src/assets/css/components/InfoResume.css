@@ -1,0 +1,27 @@
+.infoResume .imgContainer img{
+    flex-shrink: 0;
+    max-width: 100%;
+    height: auto;
+
+}
+
+.infoResume .infoContainer {
+    background-color: #d4E6f1;
+    border-radius: 0px 30px 30px 30px;
+
+}
+
+.infoResume .infoSubtitle{
+    color: #00743b;
+    font-size: 18px;
+}
+.infoResume .infoTitle{
+    color: #00743b;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.infoResume .infoDesc{
+    color: gray;
+    font-size: 15px;
+}

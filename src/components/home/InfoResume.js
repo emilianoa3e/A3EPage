@@ -1,46 +1,30 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import logo from "../../assets/img/Logo_Verde_V1.png";
-
+import "../../assets/css/components/InfoResume.css";
 function InfoResume() {
   return (
     <>
-      <Container className=" justify-content-center p-5" fluid>
-        <Row className="justify-content-center">
+      <Container className="infoResume justify-content-center p-5" fluid>
+        <Row className="justify-content-center align-items-center">
           <Col
+            xl={4}
+            xxl={4}
             lg={4}
             md={5}
             xs={7}
-            className="d-flex justify-content-center align-items-center"
+            className="imgContainer d-flex justify-content-center align-items-center"
           >
-            <img
-              src={logo}
-              className="img-fluid"
-              style={{ flexShrink: 0, maxWidth: "100%", height: "auto" }}
-            />
+            <img src={logo} className="img-fluid" />
           </Col>
-          <Col lg={8} xs={12} md={12}>
-            <Row
-              style={{
-                backgroundColor: "#D4E6F1",
-                borderRadius: "0px 30px 30px 30px",
-              }}
-              className="mt-0 mb-0 p-5 justify-content-center"
-            >
-              <Col lg={8} md={8} xs={12}>
-                <h3 style={{ color: "#00743b", fontSize: "18px" }}>
+          <Col lg={8} xs={12} md={12} className="h-100">
+            <Row className="infoContainer mt-0 mb-0 p-5 justify-content-center h-100">
+              <Col lg={8} md={8} xs={12} className="h-100">
+                <h3 className="infoSubtitle">
                   Especialistas en Energía Electrica
                 </h3>
-                <h2
-                  style={{
-                    color: "#00743b",
-                    fontSize: "22px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  A3E INGENIEROS
-                </h2>
-                <p style={{ fontSize: "15px", color: "gray" }}>
+                <h2 className="infoTitle">A3E INGENIEROS</h2>
+                <p className="infoDesc" >
                   Somos una empresa 100% mexicana que tiene la visión de brindar
                   soluciones integrales en sistemas eléctricos y proyectos de
                   ahorro de energía, mediante la implementación de tecnologías
