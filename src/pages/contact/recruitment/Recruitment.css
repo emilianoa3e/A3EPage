@@ -35,3 +35,51 @@
   color: #ffffff;
   transition: 0.3s;
 }
+
+@media (max-width: 1000px) {
+  .vacancie {
+    padding: 12px;
+    font-size: 20px;
+  }
+  .intern {
+    padding: 12px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 750px) {
+  .vacancie {
+    margin-top: 10px;
+    font-size: 17px;
+  }
+  .intern {
+    margin-top: 10px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 500px) {
+  .vacancie {
+    margin-top: 10px;
+    padding: 7px;
+    border-radius: 5px 0px 0px 5px;
+    font-size: 15px;
+    font-weight: normal;
+  }
+  .intern {
+    margin-top: 10px;
+    padding: 7px;
+    border-radius: 0px 5px 5px 0px;
+    font-size: 15px;
+    font-weight: normal;
+  }
+}
+
+@media (max-width: 350px) {
+  .vacancie {
+    font-size: 13px;
+  }
+  .intern {
+    font-size: 13px;
+  }
+}

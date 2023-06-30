@@ -6,13 +6,11 @@ import "../assets/css/pages/Service.css";
 import Banner from "../components/shared/Banner";
 function Service() {
   const { id } = useParams();
-  const [service, setService] = useState(
-    {
-      _id:'',
-      title:'',
-      content:''
-    }
-  );
+  const [service, setService] = useState({
+    _id: "",
+    title: "",
+    content: "",
+  });
 
   useEffect(() => {
     const getData = async () => {
@@ -26,7 +24,7 @@ function Service() {
     <>
       {service && (
         <Container className="m-0 pt-0 p-0 " fluid>
-         <Banner title={service.title} from={'SERVICIOS'}/>
+          <Banner title={service.title} from={"SERVICIOS"} />
           <div className="p-2 title">
             <h1
               className="text-start"

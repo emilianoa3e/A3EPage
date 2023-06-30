@@ -17,28 +17,25 @@
   height: auto;
 }
 
+.service-content h1{
+  font-size: 30px !important;
+}
 
-@media (min-width:900px) {
+@media (max-width:1000px) {
   .service-content h1{
-    font-size: 4px !important;
+    font-size: 26px !important;
   }
 }
 
 @media (max-width:700px) {
   .service-content h1{
-    font-size: 54px !important;
-  }
-}
-
-@media (max-width:500px) {
-  .service-content h1{
-    font-size: 54px !important;
+    font-size: 22px !important;
   }
 }
 
 @media (max-width:300px) {
   .title h1{
-    font-size: 20px !important;
+    font-size: 15px !important;
   }
   .title h3{
     font-size: 18px !important;
