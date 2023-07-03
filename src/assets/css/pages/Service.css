@@ -1,3 +1,35 @@
+/* Styles for Service resume */
+.service .img-resume {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.service .text-resume {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  padding: 20px;
+  margin: 20px;
+  color: white;
+}
+
+.service .text-resume p {
+  text-align: center;
+  font-size: 20px;
+}
+
+.service .button {
+  position: relative;
+  width: 250px;
+  height: 0px;
+  border-left: 20px solid #00743B;
+  border-bottom: 50px solid #00743B;
+  border-radius: 0px 30px 0px 0px;
+}
+
+/* Styles for Service content  */
 .service-content img {
   max-width: 100% !important;
   height: auto;
@@ -11,41 +43,36 @@
   width: 50% !important;
 }
 
-
 .service-content video {
   max-width: 100% !important;
   height: auto;
 }
 
-.service-content h1{
+.service-content h1 {
   font-size: 30px !important;
 }
 
-@media (max-width:1000px) {
-  .service-content h1{
+@media (max-width: 1000px) {
+  .service-content h1 {
     font-size: 26px !important;
   }
 }
 
-@media (max-width:700px) {
-  .service-content h1{
+@media (max-width: 700px) {
+  .service-content h1 {
     font-size: 22px !important;
   }
 }
 
-@media (max-width:300px) {
-  .title h1{
+@media (max-width: 300px) {
+  .title h1 {
     font-size: 15px !important;
   }
-  .title h3{
+  .title h3 {
     font-size: 18px !important;
   }
 
-  .service-content h1{
+  .service-content h1 {
     font-size: 20px !important;
   }
 }
-
-
-
-

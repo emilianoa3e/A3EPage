@@ -15,7 +15,7 @@ function InfoResume() {
             xs={7}
             className="imgContainer d-flex justify-content-center align-items-center"
           >
-            <img src={logo} className="img-fluid" />
+            <img src={logo} className="img-fluid" alt="Not Found"/>
           </Col>
           <Col lg={8} xs={12} md={12} className="h-100">
             <Row className="infoContainer mt-0 mb-0 p-5 justify-content-center h-100">

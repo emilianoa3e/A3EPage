@@ -48,7 +48,7 @@ function Banner({ from}) {
           <img
             className="d-block w-100"
             src={banner ? banner : bannerDefault}
-            alt={"Not Found Image"}
+            alt={"Not Found"}
           />
         </div>
       </Carousel.Item>
