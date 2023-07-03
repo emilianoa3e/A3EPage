@@ -10,7 +10,7 @@ import InstanceForm from "./intern/InternForm";
 import VacancieForm from "./vacancie/VacancieForm";
 import "./Recruitment.css";
 import Banner from "../../../components/shared/Banner";
-import { saveInstance, saveVacancie } from "../../../utils/formsFunctions";
+import { saveIntern, saveVacancie } from "../../../utils/formsFunctions";
 import { showConfirmDialog } from "../../../plugins/alert";
 
 function Recruitment() {
@@ -72,7 +72,7 @@ function Recruitment() {
     period: Yup.string().required("El periodo es requerido"),
   });
 
-  const handleSubmit = (values, uploadedFile, resetForm) => {
+  const handleSubmit = (values, resetForm, uploadedFile) => {
     showConfirmDialog(
       "¿Está seguro de enviar la información?",
       "Una vez enviada no podrá ser modificada.",
@@ -87,7 +87,11 @@ function Recruitment() {
             setUploadedFile(null);
           });
         } else if (showForm === "intern") {
-          console.log(values);
+          saveIntern(values).then(() => {
+            resetForm();
+            captcha.current.reset();
+            setCaptchaValidate(false);
+          });
         }
       }
     );
@@ -143,7 +147,7 @@ function Recruitment() {
                 }}
                 validationSchema={objectSchemaVacancie}
                 onSubmit={(values, { resetForm }) =>
-                  handleSubmit(values, uploadedFile, resetForm)
+                  handleSubmit(values, resetForm, uploadedFile)
                 }
               >
                 {({ errors, values, touched, isValid, dirty }) => (
@@ -191,8 +195,8 @@ function Recruitment() {
               <Formik
                 initialValues={{
                   fullName: "",
-                  email: "",
                   phone: "",
+                  email: "",
                   age: "",
                   institution: "",
                   typePractice: "",
@@ -202,7 +206,7 @@ function Recruitment() {
                 }}
                 validationSchema={objectSchemaInstance}
                 onSubmit={(values, { resetForm }) =>
-                  handleSubmit(values, resetForm())
+                  handleSubmit(values, resetForm)
                 }
               >
                 {({ errors, values, touched, isValid, dirty }) => (

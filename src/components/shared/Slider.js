@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const SliderComponent = ({ images }) => {
-  console.log(typeof images.length);
   const settings = {
     dots: true,
     infinite: true,

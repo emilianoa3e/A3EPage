@@ -93,10 +93,13 @@ function VacancieForm({
               name="education"
               defaultText="Seleccione un nivel..."
               options={[
-                { value: "1", label: "Primaria" },
-                { value: "2", label: "Secundaria" },
-                { value: "3", label: "Preparatoria" },
-                { value: "4", label: "Universidad" },
+                { value: "Educación básica", label: "Educación básica" },
+                {
+                  value: "Educación media superior",
+                  label: "Educación media superior",
+                },
+                { value: "Educación superior", label: "Educación superior" },
+                { value: "Posgrado", label: "Posgrado" },
               ]}
               isInvalid={!!errors.education && touched.education}
             />
@@ -123,13 +126,17 @@ function VacancieForm({
               name="source"
               defaultText="Seleccione una opción..."
               options={[
-                { value: "1", label: "Facebook" },
-                { value: "2", label: "Instagram" },
-                { value: "3", label: "LinkedIn" },
-                { value: "4", label: "Twitter" },
-                { value: "5", label: "Bolsa de trabajo" },
-                { value: "6", label: "Recomendación" },
-                { value: "7", label: "Otro..." },
+                {
+                  value: "Feria de reclutamiento",
+                  label: "Feria de reclutamiento",
+                },
+                {
+                  value: "Publicación en redes sociales",
+                  label: "Publicación en redes sociales",
+                },
+                { value: "Bolsa de trabajo", label: "Bolsa de trabajo" },
+                { value: "Portal del empleo", label: "Portal del empleo" },
+                { value: "Recomendación", label: "Recomendación" },
               ]}
               isInvalid={!!errors.source && touched.source}
             />

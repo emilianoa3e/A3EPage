@@ -96,10 +96,10 @@ export const saveIntern = async (values) => {
       instance.defaults.baseURL + "/intern/create-intern",
       {
         fullName: values.fullName,
-        email: values.email,
         phone: values.phone,
+        email: values.email,
         age: values.age,
-        instution: values.instution,
+        institution: values.institution,
         typePractice: values.typePractice,
         degree: values.degree,
         period: values.period,
@@ -117,10 +117,18 @@ export const saveIntern = async (values) => {
   } catch (error) {
     console.log("error", error);
 
-    showSimpleAlert(
-      "Error del servidor",
-      "Por favor, inténtelo de nuevo más tarde.",
-      "error"
-    );
+    if (error.response.data.msg === "Your request is already registered") {
+      showSimpleAlert(
+        "Tu solicitud ya está registrada",
+        "Pronto nos pondremos en contacto contigo, gracias por tu interés.",
+        "info"
+      );
+    } else {
+      showSimpleAlert(
+        "Error del servidor",
+        "Por favor, inténtelo de nuevo más tarde.",
+        "error"
+      );
+    }
   }
 };

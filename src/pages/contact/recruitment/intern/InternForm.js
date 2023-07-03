@@ -83,17 +83,16 @@ function InstanceForm({ errors, values, touched }) {
         <Col className="col-4">
           <FormBt.Group>
             <SelectInput
-              label="Tipo de instancia"
+              label="Tipo de Estancia"
               name="typePractice"
               defaultText="Seleccione una opción..."
               options={[
+                { value: "Estadías", label: "Estadías" },
+                { value: "Estancias", label: "Estancias" },
+                { value: "Servicio Social", label: "Servicio Social" },
                 {
-                  value: "Práctica profesional",
-                  label: "Práctica profesional",
-                },
-                {
-                  value: "Práctica pre-profesional",
-                  label: "Práctica pre-profesional",
+                  value: "Prácticas Profesionales",
+                  label: "Prácticas Profesionales",
                 },
               ]}
               isInvalid={!!errors.typePractice && touched.typePractice}
@@ -121,11 +120,10 @@ function InstanceForm({ errors, values, touched }) {
               name="period"
               defaultText="Seleccione un periodo..."
               options={[
-                { value: "1", label: "Periodo 1" },
-                { value: "2", label: "Periodo 2" },
-                { value: "3", label: "Periodo 3" },
-                { value: "4", label: "Periodo 4" },
-                { value: "5", label: "Periodo 5" },
+                { value: "Bimestral", label: "Bimestral" },
+                { value: "Trimestral", label: "Trimestral" },
+                { value: "Cuatrimestral", label: "Cuatrimestral" },
+                { value: "Semestral", label: "Semestral" },
               ]}
               isInvalid={!!errors.period && touched.period}
             />

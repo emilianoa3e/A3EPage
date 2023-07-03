@@ -19,11 +19,19 @@ function Sale() {
     if (captcha.current.getValue()) {
       console.log("El usuario ha pasado el captcha");
       setCaptchaValidate(true);
+    } else {
+      console.log("La validación de ReCAPTCHA ha expirado");
+      setCaptchaValidate(false);
     }
   };
 
   const objectSchema = Yup.object().shape({
-    fullName: Yup.string().required("El nombre es requerido"),
+    fullName: Yup.string()
+    .matches(
+      /^[a-zA-ZáéíóúÁÉÍÓÚüïüëöñÑ ]+$/,
+      "No puede contener caracteres especiales"
+    )
+    .required("El nombre es requerido"),
     email: Yup.string()
       .email("Ingrese un email válido")
       .required("El email es requerido"),
