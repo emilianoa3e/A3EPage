@@ -49,7 +49,7 @@ const SliderComponent = ({ images }) => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="p-4 col d-flex justify-content-center align-items-center"
+            className="p-4 pt-0 col d-flex justify-content-center align-items-center"
           >
             <img
               src={image.image}

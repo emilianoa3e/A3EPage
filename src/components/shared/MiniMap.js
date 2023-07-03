@@ -12,7 +12,8 @@ function MiniMap() {
       title="Ver en Google Maps https://goo.gl/maps/Hh5Cmz5FVFH96C9n7"
     >
       <Image
-        style={{ borderRadius: "50%", width: "100%", height: "100%" }}
+        roundedCircle
+        style={{ width: "100%", height: "100%" }}
         src={image}
         alt="../../assets/img/mapa.png"
         onClick={() => window.open("https://goo.gl/maps/Hh5Cmz5FVFH96C9n7")}

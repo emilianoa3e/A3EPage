@@ -27,7 +27,7 @@ function Clients() {
     <Container fluid className="mt-5">
       <Col>
         <CustomTitle title={"CLIENTES"} subtitle={"CLIENTES"}/>
-        <Row className="p-3">
+        <Row>
           <SliderComponent images={clientsList} />
         </Row>
       </Col>
