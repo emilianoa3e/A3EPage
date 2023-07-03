@@ -56,13 +56,12 @@ function Service() {
               style={{
                 textDecoration: "none",
                 color: "white",
-                backgroundColor: "red",
-                fontSize: "20px",
+                fontSize:'20px'
               }}
-              className="mt-2"
+              className="mt-2 pe-2"
             >
               Ver <strong className="pe-2">PDF</strong>
-              <MdArrowCircleDown style={{ fontSize: "40px" }} />
+              <MdArrowCircleDown style={{ fontSize: "35px" }} />
             </a>
           </div>
           <div className="img-resume">

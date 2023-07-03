@@ -17,12 +17,12 @@
 
 .service .text-resume p {
   text-align: center;
-  font-size: 20px;
 }
 
 .service .button {
   position: relative;
-  width: 250px;
+  width: 20%;
+  min-width: 150px;
   height: 0px;
   border-left: 20px solid #00743B;
   border-bottom: 50px solid #00743B;
@@ -52,15 +52,23 @@
   font-size: 30px !important;
 }
 
-@media (max-width: 1000px) {
+/* Media queries for screen-control */
+@media (min-width: 1000px) {
   .service-content h1 {
     font-size: 26px !important;
+  }
+  .service .text-resume{
+    font-size: 22px;
   }
 }
 
 @media (max-width: 700px) {
   .service-content h1 {
     font-size: 22px !important;
+  }
+  .service .text-resume{
+    width: 90%;
+    font-size: 20px;
   }
 }
 
@@ -74,5 +82,9 @@
 
   .service-content h1 {
     font-size: 20px !important;
+  }
+  .service .text-resume{
+    width: 90%;
+    font-size: 16px;
   }
 }
