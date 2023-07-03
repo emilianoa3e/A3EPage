@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { Col, Row, Container } from "react-bootstrap";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
@@ -9,16 +10,37 @@ import InstanceForm from "./intern/InternForm";
 import VacancieForm from "./vacancie/VacancieForm";
 import "./Recruitment.css";
 import Banner from "../../../components/shared/Banner";
+import { saveInstance, saveVacancie } from "../../../utils/formsFunctions";
+import { showConfirmDialog } from "../../../plugins/alert";
+
 function Recruitment() {
   const [showForm, setShowForm] = useState("vacancie");
   const [uploadedFile, setUploadedFile] = useState(null);
+  const [captchaValidate, setCaptchaValidate] = useState(false);
+  const captcha = useRef(null);
+
+  const onChange = () => {
+    if (captcha.current.getValue()) {
+      console.log("El usuario ha pasado el captcha");
+      setCaptchaValidate(true);
+    } else {
+      console.log("La validación de ReCAPTCHA ha expirado");
+      setCaptchaValidate(false);
+    }
+  };
+  
 
   const handleButtonShowForm = (formName) => {
     setShowForm(formName);
   };
 
   const objectSchemaVacancie = Yup.object().shape({
-    fullName: Yup.string().required("El nombre es requerido"),
+    fullName: Yup.string()
+      .matches(
+        /^[a-zA-ZáéíóúÁÉÍÓÚüïüëöñÑ ]+$/,
+        "No puede contener caracteres especiales"
+      )
+      .required("El nombre es requerido"),
     email: Yup.string()
       .email("Ingrese un email válido")
       .required("El email es requerido"),
@@ -32,7 +54,12 @@ function Recruitment() {
   });
 
   const objectSchemaInstance = Yup.object().shape({
-    fullName: Yup.string().required("El nombre es requerido"),
+    fullName: Yup.string()
+      .matches(
+        /^[a-zA-ZáéíóúÁÉÍÓÚüïüëöñÑ ]+$/,
+        "No puede contener caracteres especiales"
+      )
+      .required("El nombre es requerido"),
     email: Yup.string()
       .email("Ingrese un email válido")
       .required("El email es requerido"),
@@ -44,6 +71,27 @@ function Recruitment() {
     degree: Yup.string().required("El grado es requerido"),
     period: Yup.string().required("El periodo es requerido"),
   });
+
+  const handleSubmit = (values, uploadedFile, resetForm) => {
+    showConfirmDialog(
+      "¿Está seguro de enviar la información?",
+      "Una vez enviada no podrá ser modificada.",
+      "Sí, enviar",
+      "Cancelar",
+      () => {
+        if (showForm === "vacancie") {
+          saveVacancie(values, uploadedFile).then(() => {
+            resetForm();
+            captcha.current.reset();
+            setCaptchaValidate(false);
+            setUploadedFile(null);
+          });
+        } else if (showForm === "intern") {
+          console.log(values);
+        }
+      }
+    );
+  };
 
   return (
     <>
@@ -95,7 +143,7 @@ function Recruitment() {
                 }}
                 validationSchema={objectSchemaVacancie}
                 onSubmit={(values, { resetForm }) =>
-                  console.log(values, uploadedFile, resetForm())
+                  handleSubmit(values, uploadedFile, resetForm)
                 }
               >
                 {({ errors, values, touched, isValid, dirty }) => (
@@ -111,13 +159,30 @@ function Recruitment() {
                         />
                       </Col>
                     </Row>
-                    <Col className="text-end">
-                      <CustomButton
-                        type="submit"
-                        disabled={!(isValid && dirty) || !uploadedFile}
-                        text="Enviar"
-                      />
-                    </Col>
+                    <Row className="mb-2">
+                      <Col>
+                        <ReCAPTCHA
+                          ref={captcha}
+                          sitekey="6LfjmfAmAAAAAObNPAk5UKAbuUgOwTw1Sl_3SsI3"
+                          onChange={onChange}
+                        />
+                      </Col>
+                      <Col className="text-end">
+                        <CustomButton
+                          type="submit"
+                          text="Enviar"
+                          color="primary"
+                          size="medium"
+                          disabled={
+                            !isValid ||
+                            !dirty ||
+                            !uploadedFile ||
+                            !captchaValidate
+                          }
+                          className="mt-3"
+                        />
+                      </Col>
+                    </Row>
                   </Form>
                 )}
               </Formik>
@@ -137,7 +202,7 @@ function Recruitment() {
                 }}
                 validationSchema={objectSchemaInstance}
                 onSubmit={(values, { resetForm }) =>
-                  console.log(values, resetForm())
+                  handleSubmit(values, resetForm())
                 }
               >
                 {({ errors, values, touched, isValid, dirty }) => (
@@ -151,13 +216,25 @@ function Recruitment() {
                         />
                       </Col>
                     </Row>
-                    <Col className="text-end">
-                      <CustomButton
-                        type="submit"
-                        disabled={!(isValid && dirty)}
-                        text="Enviar"
-                      />
-                    </Col>
+                    <Row className="mb-2">
+                      <Col>
+                        <ReCAPTCHA
+                          ref={captcha}
+                          sitekey="6LfjmfAmAAAAAObNPAk5UKAbuUgOwTw1Sl_3SsI3"
+                          onChange={onChange}
+                        />
+                      </Col>
+                      <Col className="text-end">
+                        <CustomButton
+                          type="submit"
+                          text="Enviar"
+                          color="primary"
+                          size="medium"
+                          disabled={!isValid || !dirty || !captchaValidate}
+                          className="mt-3"
+                        />
+                      </Col>
+                    </Row>
                   </Form>
                 )}
               </Formik>

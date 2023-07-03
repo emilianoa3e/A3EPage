@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { Col, Row, Container } from "react-bootstrap";
 import { Form, Formik } from "formik";
+import { showConfirmDialog } from "../../../plugins/alert";
 import * as Yup from "yup";
 import MiniMap from "../../../components/shared/MiniMap";
 import SaleForm from "./SaleForm";
 import CustomButton from "../../../components/shared/CustomButton";
 import InfoContact from "../../../components/sale/InfoContact";
 import Banner from "../../../components/shared/Banner";
+import { saveSale } from "../../../utils/formsFunctions";
 
 function Sale() {
+  const [captchaValidate, setCaptchaValidate] = useState(false);
+  const captcha = useRef(null);
+
+  const onChange = () => {
+    if (captcha.current.getValue()) {
+      console.log("El usuario ha pasado el captcha");
+      setCaptchaValidate(true);
+    }
+  };
+
   const objectSchema = Yup.object().shape({
     fullName: Yup.string().required("El nombre es requerido"),
     email: Yup.string()
@@ -18,6 +31,21 @@ function Sale() {
     enterprise: Yup.string().required("La empresa es requerida"),
     address: Yup.string().required("La dirección es requerida"),
   });
+
+  const handleSubmit = (values) => {
+    showConfirmDialog(
+      "¿Está seguro de enviar la información?",
+      "Una vez enviada no podrá ser modificada.",
+      "Sí, enviar",
+      "Cancelar",
+      () => {
+        saveSale(values).then(() => {
+          captcha.current.reset();
+          setCaptchaValidate(false);
+        });
+      }
+    );
+  };
 
   return (
     <>
@@ -47,7 +75,7 @@ function Sale() {
               }}
               validationSchema={objectSchema}
               onSubmit={(values, { resetForm }) =>
-                console.log(values, resetForm())
+                handleSubmit(values, resetForm())
               }
             >
               {({ errors, values, touched, isValid, dirty }) => (
@@ -61,15 +89,25 @@ function Sale() {
                       />
                     </Col>
                   </Row>
-                  <Col className="text-end">
-                    <CustomButton
-                      type="submit"
-                      text="Enviar"
-                      color="primary"
-                      size="medium"
-                      disabled={!isValid || !dirty}
-                    />
-                  </Col>
+                  <Row className="mb-2">
+                    <Col>
+                      <ReCAPTCHA
+                        ref={captcha}
+                        sitekey="6LfjmfAmAAAAAObNPAk5UKAbuUgOwTw1Sl_3SsI3"
+                        onChange={onChange}
+                      />
+                    </Col>
+                    <Col className="text-end">
+                      <CustomButton
+                        type="submit"
+                        text="Enviar"
+                        color="primary"
+                        size="medium"
+                        disabled={!isValid || !dirty || !captchaValidate}
+                        className="mt-3"
+                      />
+                    </Col>
+                  </Row>
                 </Form>
               )}
             </Formik>
