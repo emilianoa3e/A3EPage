@@ -86,9 +86,9 @@ function Filosofy() {
     },
   ];
   return (
-    <Container className="filosofy mb-4 m-1" fluid>
+    <Container className="filosofy mb-4" fluid>
       <CustomTitle title={"FILOSOFÍA"} subtitle={"VALORES"} />
-      <Row className="collage-row ps-3 w-100 ">
+      <Row className="collage-row ps-1">
         {ethicsValues.map((values, index) => (
           <Col key={index} className="collage-col p-0 m-0">
             <div className="image-container">

@@ -2,40 +2,42 @@
 .filosofy .collage-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 2px;
+  grid-gap: 1px;
   justify-items: center;
-  align-items: center;
+  align-items: center; 
+}
+
+@media (max-width: 1500px) {
+  .filosofy .collage-row {
+    grid-gap: 8px;
+  }
 }
 
 @media (max-width: 900px) {
   .filosofy .collage-row {
-    grid-gap: 18px;
+    grid-gap: 22px;
   }
 }
 
 @media (max-width: 415px) {
   .filosofy .collage-row {
-    grid-gap: 15px !important;
-  }
-  .filosofy .image-container{
-    width: calc(95vw);
+    grid-gap: 50px !important;
   }
 }
 
 @media (max-width: 340px) {
-    .filosofy .image-container{
-      width: calc(75vw - 40px);
-      height: auto;
-    }
+  .filosofy .image-container {
+    width: 70%;
   }
-  
+ 
+}
 
 .filosofy .collage-col {
   perspective: 1000px;
 }
 .filosofy .image-container {
-  min-width: 95%;
-  max-width: 315px;
+  width: 99%;
+  max-height: 99%;
   height: 201px;
   transform-style: preserve-3d;
   transition: transform 1.5s;
