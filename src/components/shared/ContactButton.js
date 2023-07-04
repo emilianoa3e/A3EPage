@@ -4,10 +4,10 @@ import "../../assets/css/components/ContactButton.css";
 
 function ContactButton() {
   const [mostrarBotones, setMostrarBotones] = useState(false);
-    const [active, setActive] = useState(false)
+  const [active, setActive] = useState(false);
   const toggleBotones = () => {
     setMostrarBotones(!mostrarBotones);
-    setActive(!active)
+    setActive(!active);
   };
 
   return (
@@ -27,7 +27,10 @@ function ContactButton() {
           </a>
         </div>
       )}
-      <a onClick={toggleBotones} className={active?'active':'contactButton'}>
+      <a
+        onClick={toggleBotones}
+        className={active ? "active" : "contactButton"}
+      >
         <MdMessage />
       </a>
     </div>
