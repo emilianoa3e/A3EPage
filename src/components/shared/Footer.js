@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { getServices } from "../../utils/getServices";
 import logo from "../../assets/img/Logo_Blanco.png";
+import "../../assets/css/components/Footer.css";
 function Footer() {
   const [servicesList, setServiceList] = useState([
     {
@@ -20,22 +21,33 @@ function Footer() {
     getData();
   }, []);
   return (
-    <Container
-      fluid
-      className="m-0 p-0 "
-      style={{ height: "100%", backgroundColor: "#00743B", color: "#F2F4F4" }}
-    >
+    <Container fluid className="footer">
       <Row className="p-5">
         <Col>
-          <div style={{}}>
+          <div>
             <strong>Sobre A3E INGENIEROS</strong>
             <div className="ps-3 mb-5 mt-1">
-              <a>SISMEDIA-RT</a>
+              <a href="https://a3e-sismedia.mx/" target="_blank">
+                SISMEDIA-RT
+              </a>
               <br />
-              <a>MONITOR i3</a>
+              <a
+                style={{
+                  fontStyle: "italic",
+                  color: "#EAEBEB",
+                  opacity: "50%",
+                }}
+              >
+                MONITOR i3
+              </a>
             </div>
-            <a>AVISO DE PRIVACIDAD</a>
-            <p>A3E Ingenieros Especialistas en Energía Eléctrica S.A. DE C.V</p>
+            <a target="_blank" href="https://htmlcolorcodes.com/es/">
+              AVISO DE PRIVACIDAD
+            </a>
+
+            <p className="mt-3">
+              A3E Ingenieros Especialistas en Energía Eléctrica S.A. DE C.V
+            </p>
             <p>
               Calle Primavera no. 31, 3 de mayo, Emiliano Zapata, Morelos. C.P.
               62760.
@@ -51,14 +63,10 @@ function Footer() {
 
               {servicesList.map((service, index) => (
                 <div key={index} className="mt-1">
-                  <a>{service.title} </a>
+                  <a href={`/service/${service._id}`}>{service.title} </a>
                 </div>
               ))}
             </div>
-            <p style={{textAlign:'center', fontWeight:'bold', fontStyle:'italic'}}>
-              Logramos contigo Sistemas Eléctricos seguros, confiable y
-              eficientes
-            </p>
           </div>
         </Col>
 
@@ -85,7 +93,7 @@ function Footer() {
               <img src={logo} height={100} />
             </div>
             {/* icons */}
-            <div className="p-2 d-flex mt-5 justify-content-center">
+            <div className="p-2 d-flex mt-5 justify-content-center icons">
               <MdWhatsapp
                 className="p-1 me-3"
                 style={{
@@ -116,6 +124,16 @@ function Footer() {
             </div>
           </div>
         </Col>
+        <p
+          style={{
+            textAlign: "center",
+            fontWeight: "bold",
+            fontStyle: "italic",
+            bottom: 0,
+          }}
+        >
+          Logramos contigo Sistemas Eléctricos seguros, confiable y eficientes
+        </p>
       </Row>
     </Container>
   );
