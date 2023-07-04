@@ -1,0 +1,26 @@
+.footer {
+    height: 100%;
+    background-color: #00743b;
+
+}
+
+.footer svg:hover{
+    box-shadow: 0px 3px 12px rgb(245, 247, 245);
+}
+
+.footer a:hover{
+    text-shadow: 0px 3px 12px rgb(245, 247, 245);
+}
+
+.footer a{
+    text-decoration: none;
+    color: #fff;
+}
+.footer p{
+    text-decoration: none;
+    color: #fff;
+}
+.footer strong{
+    text-decoration: none;
+    color: #fff;
+}
