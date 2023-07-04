@@ -7,12 +7,15 @@ import Banner from "../components/shared/Banner";
 import Loader from "../components/shared/Loader";
 import imagen from "../assets/img/banner1.jpg";
 import { MdArrowCircleDown } from "react-icons/md";
+
 function Service() {
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
   const [service, setService] = useState({
     _id: "",
     title: "",
+    subtitle: "",
+    summary: "",
     content: "",
   });
 
@@ -35,9 +38,7 @@ function Service() {
       {service && (
         <Container className="m-0 pt-0 p-0 service" fluid>
           <Banner title={service.title} from={"SERVICIOS"} />
-
           {/* Title */}
-
           <div className="p-2 title">
             <h1
               className="text-start ms-4 mt-5"
@@ -45,9 +46,8 @@ function Service() {
             >
               {service.title}
             </h1>
-            <h3 className="text-center mt-2 mb-4">Aquí va a ir un subtitulo</h3>
+            <h3 className="text-center mt-2 mb-4">{service.subtitle}</h3>
           </div>
-
           {/* resume */}
           <div className="button d-flex justify-content-center ">
             <a
@@ -56,7 +56,7 @@ function Service() {
               style={{
                 textDecoration: "none",
                 color: "white",
-                fontSize:'20px'
+                fontSize: "20px",
               }}
               className="mt-2 pe-2"
             >
@@ -70,11 +70,7 @@ function Service() {
               style={{ width: "100%", height: "250px", objectFit: "cover" }}
             />
             <div className="text-resume">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut
-                enim ad minim veniam, quis nostrud exercitation.
-              </p>
+              <p>{service.summary}</p>
             </div>
           </div>
           {/* Service Content */}

@@ -9,9 +9,10 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 45%;
+  width: 60%;
   padding: 20px;
   margin: 20px;
+  font-size: 24px;
   color: white;
 }
 
@@ -24,8 +25,8 @@
   width: 20%;
   min-width: 150px;
   height: 0px;
-  border-left: 20px solid #00743B;
-  border-bottom: 50px solid #00743B;
+  border-left: 20px solid #00743b;
+  border-bottom: 50px solid #00743b;
   border-radius: 0px 30px 0px 0px;
 }
 
@@ -48,31 +49,38 @@
   height: auto;
 }
 
-.service-content h1 {
-  font-size: 30px !important;
-}
-
 /* Media queries for screen-control */
-@media (min-width: 1000px) {
+@media (max-width: 1000px) {
   .service-content h1 {
     font-size: 26px !important;
   }
-  .service .text-resume{
-    font-size: 22px;
+  .service .text-resume {
+    padding: 35px;
+    margin: 35px;
+    width: 90%;
+    font-size: 21px;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .service-content h1 {
     font-size: 22px !important;
   }
-  .service .text-resume{
-    width: 90%;
+  .service .text-resume {
     font-size: 20px;
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 500px) {
+  .service .text-resume {
+    padding: 20px;
+    margin: 10px;
+    width: 95%;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 350px) {
   .title h1 {
     font-size: 15px !important;
   }
@@ -83,8 +91,7 @@
   .service-content h1 {
     font-size: 20px !important;
   }
-  .service .text-resume{
-    width: 90%;
+  .service .text-resume {
     font-size: 16px;
   }
 }
