@@ -4,7 +4,6 @@ import "../../assets/css/components/Carousel.css";
 import bannerDefault from "../../assets/img/NOSOTROS.jpg";
 
 function CustomCarousel({ list, controls, indicators }) {
-  
   //Default Carousel
   if (list.length === 0 || !list) {
     return (
@@ -37,17 +36,21 @@ function CustomCarousel({ list, controls, indicators }) {
           <img
             className="d-block w-100 "
             src={media.image}
-            alt={'Not Found'}
+            alt={"Not Found"}
             style={{ objectFit: "cover" }}
           />
-          <Carousel.Caption>
+          <Carousel.Caption className=" text-start w-100 h-50 " style={{position:'absolute', left:0}}>
             <a
               href={media.link}
               target="_blank"
-              className="btn "
+              className="carousel-btn btn"
               style={{
+                position:'relative',
+                top:10,
+                left:50,
                 backgroundColor: "#00743B",
                 color: "white",
+                padding:'0.6% 4% 0.6% 4%',
                 borderRadius: "0px 20px 20px 20px",
               }}
             >
