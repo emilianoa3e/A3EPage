@@ -1,0 +1,90 @@
+/*Styles for animation cards init */
+.filosofy .collage-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2px;
+  justify-items: center;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .filosofy .collage-row {
+    grid-gap: 18px;
+  }
+}
+
+@media (max-width: 415px) {
+  .filosofy .collage-row {
+    grid-gap: 15px !important;
+  }
+  .filosofy .image-container{
+    width: calc(95vw);
+  }
+}
+
+@media (max-width: 340px) {
+    .filosofy .image-container{
+      width: calc(75vw - 40px);
+      height: auto;
+    }
+  }
+  
+
+.filosofy .collage-col {
+  perspective: 1000px;
+}
+.filosofy .image-container {
+  min-width: 95%;
+  max-width: 315px;
+  height: 201px;
+  transform-style: preserve-3d;
+  transition: transform 1.5s;
+}
+
+.filosofy .image-container img {
+  width: auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.filosofy .image-container:hover {
+  transform: rotateY(180deg);
+  transition: transform 1.3s;
+}
+
+.filosofy .front,
+.back {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  backface-visibility: hidden;
+}
+
+.filosofy .back {
+  transform: rotateY(180deg);
+}
+
+.filosofy .text {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  height: 100%;
+}
+
+.filosofy .area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+}
+/*Styles for animation cards end */

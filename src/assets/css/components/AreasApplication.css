@@ -38,8 +38,9 @@
 }
 
 .areasApplication .text {
-  display: block;
-  text-align: center ;
+  display: flex;
+  align-items: center;
+  text-align: center;
   font-size: 18px;
   color: black;
   height: 100%;

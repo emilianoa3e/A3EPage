@@ -1,7 +1,10 @@
 import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import "../../assets/css/components/AreasApplication.css";
-import cuadrado3 from "../../assets/img/cuatro-tres.jpg";
+import mineria from "../../assets/img/Minería.jpg";
+import refineria from "../../assets/img/Refinería.jpg";
+import industria from "../../assets/img/Industria.jpg";
+import comercial from "../../assets/img/Comercial.jpg";
 import CustomTitle from "../shared/CustomTitle";
 
 function AreasApplication() {
@@ -10,21 +13,25 @@ function AreasApplication() {
       _id: 1,
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation.",
       area: "MINERIA",
+      img:mineria
     },
     {
       _id: 2,
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation.",
       area: "INDUSTRIA",
+      img:industria
     },
     {
       _id: 3,
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation.",
       area: "REFINERIA",
+      img:refineria
     },
     {
       _id: 4,
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation.",
       area: "COMERCIAL",
+      img:comercial
     },
   ];
 
@@ -43,14 +50,14 @@ function AreasApplication() {
           >
             <div className="image-container ">
               <div className="front">
-                <Image src={cuadrado3} alt="Image" className="p-0 m-0 " fluid />
+                <Image src={areas.img} alt="Image" className="p-0 m-0 " fluid />
                 <div
                  className="area"
                 >
                   {areas.area}
                 </div>
               </div>
-              <div className="back">
+              <div className="back h-100">
                 <span className="text">{areas.text}</span>
               </div>
             </div>
