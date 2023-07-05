@@ -5,7 +5,7 @@ import bannerDefault from "../../assets/img/NOSOTROS.jpg";
 
 function CustomCarousel({ list, controls, indicators }) {
   //Default Carousel
-  if (list.length === 0 || !list) {
+  if (!list) {
     return (
       <Carousel
         slide
@@ -40,7 +40,7 @@ function CustomCarousel({ list, controls, indicators }) {
             style={{ objectFit: "cover" }}
           />
           <Carousel.Caption className=" text-start w-100 h-50 " style={{position:'absolute', left:0}}>
-            <a
+            {/* <a
               href={media.link}
               target="_blank"
               className="carousel-btn btn"
@@ -55,7 +55,7 @@ function CustomCarousel({ list, controls, indicators }) {
               }}
             >
               VER MÁS
-            </a>
+            </a> */}
           </Carousel.Caption>
         </Carousel.Item>
       ))}
