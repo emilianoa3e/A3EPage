@@ -3,6 +3,7 @@ import CustomNavbar from './CustomNavbar'
 import { Container } from 'react-bootstrap'
 import ContactButton from './ContactButton'
 import Footer from './Footer'
+import UpButton from './UpButton'
 function Layout({children}) {
   return (
     <>
@@ -12,6 +13,7 @@ function Layout({children}) {
           {/* <ContactButton/> */}
         </Container>
        <ContactButton/>
+       <UpButton/>
         <Footer/>
     </>
   )

@@ -4,9 +4,9 @@ import CustomTitle from "../shared/CustomTitle";
 function VisionMision({ mision, vision }) {
   return (
     <Container fluid className="mt-5">
-      <Row className="pb-3">
+      <Row>
         <Col style={{backgroundColor:'#D6EAF8', borderRadius:'0px 20px 0px 0px'}} 
-        className="me-1 pt-3 mb-2" lg={6} md={6}>
+        className="me-1 pt-3 mb-2 pb-3" lg={6} md={6}>
           <CustomTitle title={"MISIÓN"} subtitle={"MISIÓN"} />
           <p className="ms-4 ps-3" style={{color:'black'}}>
             Realizar servicios de ingeniería eléctrica que le garanticen a
@@ -16,7 +16,7 @@ function VisionMision({ mision, vision }) {
           </p>
         </Col>
         <Col style={{backgroundColor:'#D6EAF8',borderRadius:'20px 0px 0px 0px'}} 
-        className="ms-1 pt-3 mb-2" >
+        className="ms-1 pt-3 mb-2 pb-3" >
           <CustomTitle title={"VISIÓN"} subtitle={"VISIÓN"} />
           <p  className="ms-4 ps-3" style={{color:'black'}}>
             Ser líder en el mercado nacional en la implementación de Sistemas de
