@@ -29,11 +29,19 @@ export const saveSale = async (values) => {
   } catch (error) {
     console.log("error", error);
 
-    showSimpleAlert(
-      "Error del servidor",
-      "Por favor, inténtelo de nuevo más tarde.",
-      "error"
-    );
+    if (error.response.data.msg === "Your request is already registered") {
+      showSimpleAlert(
+        "Tu solicitud ya está registrada",
+        "Pronto nos pondremos en contacto contigo, gracias por tu interés.",
+        "info"
+      );
+    } else {
+      showSimpleAlert(
+        "Error del servidor",
+        "Por favor, inténtelo de nuevo más tarde.",
+        "error"
+      );
+    }
   }
 };
 
