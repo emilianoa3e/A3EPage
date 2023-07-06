@@ -7,7 +7,7 @@ import Loader from "../components/shared/Loader";
 import InfoResume from "../components/home/InfoResume";
 import Clients from "../components/home/Clients";
 import AreasApplication from "../components/home/AreasApplication";
-
+import Prueba from "../components/Prueba";
 function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [bannersList, setBannersList] = useState([
@@ -68,7 +68,7 @@ function Home() {
   }, []);
 
   const filteredBannersList = bannersList.filter(
-    (banner) => banner.status === true
+    (banner) => banner.status === false
   );
 
   if (isLoading) {
@@ -86,6 +86,7 @@ function Home() {
       <InfoResume />
       <AreasApplication />
       <Clients clientsList={clientsList} />
+      <Prueba/>
     </>
   );
 }
