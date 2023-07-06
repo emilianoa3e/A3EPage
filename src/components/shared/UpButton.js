@@ -2,6 +2,8 @@ import React from "react";
 import "../../assets/css/components/upButton.css";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { useState, useEffect } from "react";
+import { animated, useSpring } from "@react-spring/web";
+
 function UpButton() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -27,12 +29,23 @@ function UpButton() {
       behavior: "smooth",
     });
   };
+
+  const buttonAnimation = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? "translateY(0px)" : "translateY(200px)",
+    config: { tension: 300, friction: 20 },
+  });
+
   return (
     <>
       {isVisible && (
-        <a onClick={scrollToTop} className={"upButton"}>
+        <animated.a
+          onClick={scrollToTop}
+          style={buttonAnimation}
+          className={"upButton"}
+        >
           <MdKeyboardArrowUp />
-        </a>
+        </animated.a>
       )}
     </>
   );

@@ -1,15 +1,37 @@
-html{
-    height: 100vh !important;
-    margin: 0 !important;
-    padding: 0 !important;
+html {
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-#root{
-    height: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
+#root {
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-*{
-    font-family: 'Montserrat', sans-serif;
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+::-webkit-scrollbar {
+  
+  width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilo del fondo de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Estilo del pulgar de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background-color: #327960;
+  border-radius: 4px;
+}
+
+/* Estilo del pulgar de la barra de desplazamiento al pasar el mouse sobre él */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #79e9c2;
+
 }
