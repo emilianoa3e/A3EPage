@@ -4,8 +4,10 @@ import "../../assets/css/components/Carousel.css";
 import bannerDefault from "../../assets/img/NOSOTROS.jpg";
 
 function CustomCarousel({ list, controls, indicators }) {
+
+
   //Default Carousel
-  if (!list) {
+  if (!list || list.lenght===0) {
     return (
       <Carousel
         slide
