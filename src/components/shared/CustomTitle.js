@@ -38,7 +38,7 @@ function CustomTitle({title, subtitle}) {
   }, []);
 
   const textAnimation = useSpring({
-    transform: isIntersecting ? 'translateX(0%)' : 'translateX(-100%)',
+    transform: isIntersecting ? 'translateX(0%)' : 'translateX(-10%)',
     config: { tension: 300, friction: 20 },
   });
 

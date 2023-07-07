@@ -68,7 +68,7 @@ function Home() {
   }, []);
 
   const filteredBannersList = bannersList.filter(
-    (banner) => banner.status === true
+    (banner) => banner.status === false
   );
 
   if (isLoading) {

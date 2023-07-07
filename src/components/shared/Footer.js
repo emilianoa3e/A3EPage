@@ -63,7 +63,7 @@ function Footer() {
 
               {servicesList.map((service, index) => (
                 <div key={index} className="mt-1">
-                  <a href={`/service/${service._id}`}>{service.title} </a>
+                  <a className="btn text-start" href={`/service/${service._id}`}>{service.title} </a>
                 </div>
               ))}
             </div>
