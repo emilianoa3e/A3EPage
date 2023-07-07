@@ -27,11 +27,12 @@ function Sale() {
 
   const objectSchema = Yup.object().shape({
     fullName: Yup.string()
-    .matches(
-      /^[a-zA-ZáéíóúÁÉÍÓÚüïüëöñÑ ]+$/,
-      "No puede contener caracteres especiales"
-    )
-    .required("El nombre es requerido"),
+      .matches(
+        /^[a-zA-ZáéíóúÁÉÍÓÚüïüëöñÑ ]+$/,
+        "No puede contener caracteres especiales"
+      )
+      .required("El nombre es requerido"),
+    phone: Yup.string().matches(/^[0-9]+$/, "Solo se permiten números"),
     email: Yup.string()
       .email("Ingrese un email válido")
       .required("El email es requerido"),

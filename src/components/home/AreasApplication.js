@@ -118,7 +118,7 @@ function AreasApplication() {
               alignItems: "center",
               justifyContent: "center",
               backgroundColor: "lightgreen",
-              opacity: opacity.interpolate((o) => 1 - o),
+              opacity: opacity.to((o) => 1 - o),
               transform: 'rotateY(180deg)'
             }}
           >

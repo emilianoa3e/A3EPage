@@ -28,7 +28,6 @@ function Recruitment() {
       setCaptchaValidate(false);
     }
   };
-  
 
   const handleButtonShowForm = (formName) => {
     setShowForm(formName);
@@ -41,6 +40,7 @@ function Recruitment() {
         "No puede contener caracteres especiales"
       )
       .required("El nombre es requerido"),
+    phone: Yup.string().matches(/^[0-9]+$/, "Solo se permiten números"),
     email: Yup.string()
       .email("Ingrese un email válido")
       .required("El email es requerido"),
@@ -60,6 +60,7 @@ function Recruitment() {
         "No puede contener caracteres especiales"
       )
       .required("El nombre es requerido"),
+    phone: Yup.string().matches(/^[0-9]+$/, "Solo se permiten números"),
     email: Yup.string()
       .email("Ingrese un email válido")
       .required("El email es requerido"),
