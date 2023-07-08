@@ -7,6 +7,74 @@ import industria from "../../assets/img/Industria.jpg";
 import comercial from "../../assets/img/Comercial.jpg";
 import CustomTitle from "../shared/CustomTitle";
 import { animated, useSpring } from "@react-spring/web";
+
+const RotatingText = ({ areas, imageUrl }) => {
+  console.log(areas)
+  const [hovered, setHovered] = useState(false);
+
+  const { opacity, transform } = useSpring({
+    opacity: hovered ? 0 : 1,
+    transform: `rotateY(${hovered ? 180 : 0}deg)`,
+    config: { mass: 10, tension: 500, friction: 100 },
+  });
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{ width: '335px', height: '300px', position: 'relative', cursor: 'pointer' }}
+    >
+      <animated.div
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          transformOrigin: 'center',
+          transform,
+        }}
+      >
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'lightblue',
+          }}
+        >
+          <animated.img
+            src={imageUrl}
+            alt="Image"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              opacity,
+            }}
+          />
+          <animated.div
+            style={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'lightgreen',
+              opacity: opacity.to(o => 1 - o),
+              transform: 'rotateY(180deg)',
+            }}
+          >
+            {areas}
+          </animated.div>
+        </div>
+      </animated.div>
+    </div>
+  );
+};
+
+
 function AreasApplication() {
   const applications = [
     {
@@ -34,15 +102,20 @@ function AreasApplication() {
       img: comercial,
     },
   ];
-  const [hovered, setHovered] = useState(false);
-
-  const { opacity, transform } = useSpring({
-    opacity: hovered ? 0 : 1,
-    transform: `rotateY(${hovered ? 180 : 0}deg)`,
-    config: { mass: 5, tension: 500, friction: 80 },
-  });
+  
 
   return (
+    <Container className="mg-4" fluid>
+      <CustomTitle title={"CAMPOS DE APLICACIÓN"} subtitle={"APLICACIÓN"} />
+      <Row>
+        {applications.map((area, index) => (
+          <Col key={index} md={6} lg={3}>
+            <RotatingText areas={area.text} imageUrl={area.img} />
+          </Col>
+        ))}
+      </Row>
+    </Container>
+    //primero
     // <Container className="areasApplication mb-4" fluid>
     //   <CustomTitle title={"CAMPOS DE APLICACIÓN"} subtitle={"APLICACIÓN"} />
     //   <Row>
@@ -70,63 +143,133 @@ function AreasApplication() {
     //     ))}
     //   </Row>
     // </Container>
-    <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        width: "200px",
-        height: "200px",
-        position: "relative",
-        cursor: "pointer",
-      }}
-    >
-      <animated.div
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          transformOrigin: "center",
-          transform,
-        }}
-      >
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "lightblue",
-          }}
-        >
-          <animated.img
-            src={refineria}
-            alt="Image"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              opacity,
-            }}
-          />
-          <animated.div
-            style={{
-              position: "absolute",
-              width: "100%",
-              height: "100%",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              backgroundColor: "lightgreen",
-              opacity: opacity.to((o) => 1 - o),
-              transform: 'rotateY(180deg)'
-            }}
-          >
-            texto
-          </animated.div>
-        </div>
-      </animated.div>
-    </div>
+
+    //funcional
+    // <Container className="mg-4" fluid>
+    //   <CustomTitle title={"CAMPOS DE APLICACIÓN"} subtitle={"APLICACIÓN"} />
+    //   <Row>
+    //     {applications.map((areas, index) => (
+    //       <Col key={index} md={6} lg={3}>
+    //         <div
+    //           onMouseEnter={() => setHovered(true)}
+    //           onMouseLeave={() => setHovered(false)}
+    //           style={{
+    //             width: "335px",
+    //             height: "300px",
+    //             position: "relative",
+    //             cursor: "pointer",
+    //           }}
+    //         >
+    //           <animated.div
+    //             style={{
+    //               position: "absolute",
+    //               width: "100%",
+    //               height: "100%",
+    //               transformOrigin: "center",
+    //               transform,
+    //             }}
+    //           >
+    //             <div
+    //               style={{
+    //                 width: "100%",
+    //                 height: "100%",
+    //                 display: "flex",
+    //                 alignItems: "center",
+    //                 justifyContent: "center",
+    //                 backgroundColor: "lightblue",
+    //               }}
+    //             >
+    //               <animated.img
+    //                 src={refineria}
+    //                 alt="Image"
+    //                 style={{
+    //                   width: "100%",
+    //                   height: "100%",
+    //                   objectFit: "cover",
+    //                   opacity,
+    //                 }}
+    //               />
+    //               <animated.div
+    //                 style={{
+    //                   position: "absolute",
+    //                   width: "100%",
+    //                   height: "100%",
+    //                   display: "flex",
+    //                   alignItems: "center",
+    //                   justifyContent: "center",
+    //                   backgroundColor: "lightgreen",
+    //                   opacity: opacity.to((o) => 1 - o),
+    //                   transform: "rotateY(180deg)",
+    //                 }}
+    //               >
+    //                 texto
+    //               </animated.div>
+    //             </div>
+    //           </animated.div>
+    //         </div>
+    //       </Col>
+    //     ))}
+    //   </Row>
+    // </Container>
+
+    //chat
+    // <div
+    //   onMouseEnter={() => setHovered(true)}
+    //   onMouseLeave={() => setHovered(false)}
+    // style={{
+    //   width: "200px",
+    //   height: "200px",
+    //   position: "relative",
+    //   cursor: "pointer",
+    // }}
+    // >
+    //   <animated.div
+    //     style={{
+    //       position: "absolute",
+    //       width: "100%",
+    //       height: "100%",
+    //       transformOrigin: "center",
+    //       transform,
+    //     }}
+    //   >
+    //     <div
+    //       style={{
+    //         width: "100%",
+    //         height: "100%",
+    //         display: "flex",
+    //         alignItems: "center",
+    //         justifyContent: "center",
+    //         backgroundColor: "lightblue",
+    //       }}
+    //     >
+    //       <animated.img
+    //         src={refineria}
+    //         alt="Image"
+    //         style={{
+    //           width: "100%",
+    //           height: "100%",
+    //           objectFit: "cover",
+    //           opacity,
+    //         }}
+    //       />
+    //       <animated.div
+    //         style={{
+    //           position: "absolute",
+    //           width: "100%",
+    //           height: "100%",
+    //           display: "flex",
+    //           alignItems: "center",
+    //           justifyContent: "center",
+    //           backgroundColor: "lightgreen",
+    //           opacity: opacity.to((o) => 1 - o),
+    //           transform: 'rotateY(180deg)'
+    //         }}
+    //       >
+    //         texto
+    //       </animated.div>
+    //     </div>
+    //   </animated.div>
+    // </div>
   );
 }
 
