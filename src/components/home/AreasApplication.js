@@ -20,53 +20,34 @@ const RotatingText = ({ areas, imageUrl }) => {
 
   return (
     <div
+    className="areasApplication"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{ width: '335px', height: '300px', position: 'relative', cursor: 'pointer' }}
     >
       <animated.div
+      className={"animatedDiv"}
         style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          transformOrigin: 'center',
           transform,
         }}
       >
         <div
-          style={{
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'lightblue',
-          }}
+        className="containerAnimation"
         >
           <animated.img
+          className={"animatedImg"}
             src={imageUrl}
             alt="Image"
             style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
               opacity,
             }}
           />
           <animated.div
+          className={"animatedText"}
             style={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: 'lightgreen',
               opacity: opacity.to(o => 1 - o),
-              transform: 'rotateY(180deg)',
             }}
           >
-            {areas}
+            <p className="text">{areas}</p>
           </animated.div>
         </div>
       </animated.div>
@@ -105,11 +86,11 @@ function AreasApplication() {
   
 
   return (
-    <Container className="mg-4" fluid>
-      <CustomTitle title={"CAMPOS DE APLICACIÓN"} subtitle={"APLICACIÓN"} />
-      <Row>
+    <Container className="mg-4 p-0 m-0" fluid>
+      <CustomTitle title={"ÁREAS DE APLICACIÓN"} subtitle={"APLICACIÓN"}/>
+      <Row className="p-0 m-0" >
         {applications.map((area, index) => (
-          <Col key={index} md={6} lg={3}>
+          <Col key={index} md={6} lg={3} xs={12} className="justify-content-center">
             <RotatingText areas={area.text} imageUrl={area.img} />
           </Col>
         ))}

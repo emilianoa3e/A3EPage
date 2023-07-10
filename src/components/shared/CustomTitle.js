@@ -44,13 +44,13 @@ function CustomTitle({title, subtitle}) {
 
 
   return (
-    <Row className="ms-4 mb-3  align-items-end">
+    <Row className="mb-3 align-items-end w-100">
         <Col
           lg={12}
-          className="d-flex justify-content-start align-items-end flex-wrap"
+          className="d-flex justify-content-start align-items-end flex-wrap ps-5"
         >
-          <h3 className={"title mb-2 text-start me-2"} >{title}</h3>
-          <animated.h1 className="title-green mb-0 pb-0 text-start" style={textAnimation} ref={textRef}>{subtitle}</animated.h1>
+          <h3 className={"title mb-2 text-start"} >{title}</h3>
+          <animated.h1 className="title-green mb-0 ms-2 pb-0 text-start" style={textAnimation} ref={textRef}>{subtitle}</animated.h1>
         </Col>
       </Row>
   )

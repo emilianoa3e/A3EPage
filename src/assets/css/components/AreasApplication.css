@@ -1,62 +1,52 @@
-
-/*Styles for animation cards init */
-.areasApplication .col {
-  perspective: 1000px;
-}
-
-.areasApplication .image-container {
-  position: relative;
-  width: 335px;
-  height: 300px;
-  transform-style: preserve-3d;
-  transition: transform 1.5s;
-}
-
-.areasApplication .image-container img {
-  width: auto;
+.areasApplication {
+  width: 100%;
+  min-height: 300px;
   height: 100%;
+  position: relative;
+  cursor: pointer;
+  background-color: aqua;
 }
 
-.areasApplication .image-container:hover {
-  transform: rotateY(180deg);
-  transition: transform 1.3s;
-}
+/* @media(max-width:900) {
+  .areasApplication{
+    padding-left: 10px ;
+    max-width: 335px;
+  }
+} */
 
-.areasApplication .front,
-.back {
-  margin: 0;
-  padding: 0;
+.areasApplication .animatedDiv{
   position: absolute;
-  top: 0;
-  left: 0;
-  height: auto;
-  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  
 }
-
-.areasApplication .back {
-  transform: rotateY(180deg);
-}
-
-.areasApplication .text {
+.areasApplication .containerAnimation{
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
-  text-align: center;
-  font-size: 18px;
-  color: black;
-  height: 100%;
+  justify-content: center;
+
 }
 
-.areasApplication .area{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  background-color: #00743b;
-  opacity: 0.7;
-  border-radius: 20px;
-  padding: 5px 40px;
-  color: white;
-  font-weight: bold;
+.areasApplication .animatedImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-/*Styles for animation cards end */
+
+.areasApplication .animatedText{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+
+.areasApplication .text{
+  padding: 10px;
+  text-align: justify;
+}
