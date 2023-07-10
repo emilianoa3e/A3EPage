@@ -1,5 +1,29 @@
+.notice .button {
+  position: relative;
+  width: 20%;
+  min-width: 150px;
+  height: 0px;
+  border-left: 20px solid #00743b;
+  border-bottom: 50px solid #00743b;
+  border-radius: 0px 30px 0px 0px;
+}
 
+.notice .img-resume {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
   
+.notice .text-resume {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  padding: 20px;
+  margin: 20px;
+  font-size: 24px;
+  color: white;
+}
   /* Styles for notice content  */
   .notice-content img {
     max-width: 100% !important;
