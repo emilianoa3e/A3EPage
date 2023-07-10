@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Items from "../components/news/Items";
-import { getNews } from "../utils/getNews";
-import NewsCategories from "../components/news/NewsCategories";
 import Pagination from "../components/news/Pagination";
-import { MdNotificationsActive } from "react-icons/md";
+import NewsCategories from "../components/news/NewsCategories";
 import NotRegisters from "../components/shared/NotRegisters";
-import { Row, Col } from "react-bootstrap";
 import Banner from "../components/shared/Banner";
-import CustomCarousel from "../components/shared/CustomCarousel";
+import { getNews } from "../utils/getNews";
+import { MdNotificationsActive } from "react-icons/md";
+import { Row, Col } from "react-bootstrap";
+import "../assets/css/pages/News.css";
+
 function News() {
   const itemsPerPage = 1;
   const [itemOffset, setItemOffset] = useState(0);

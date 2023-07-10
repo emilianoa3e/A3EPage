@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import logo from "../../assets/img/Logo_Verde_V1.png";
-import "../../assets/css/components/InfoResume.css";
+import "../../assets/css/components/Home/InfoResume.css";
 function InfoResume() {
   return (
     <>
@@ -15,7 +15,7 @@ function InfoResume() {
             xs={7}
             className="imgContainer d-flex justify-content-center align-items-center"
           >
-            <img src={logo} className="img-fluid" alt="Not Found"/>
+            <img src={logo} className="img-fluid" alt="Logo A3E"/>
           </Col>
           <Col lg={8} xs={12} md={12} className="h-100">
             <Row className="infoContainer mt-0 mb-0 p-5 justify-content-center h-100">
@@ -43,7 +43,7 @@ function InfoResume() {
                     xs={12}
                     className=" d-flex  justify-content-center "
                   >
-                    <img src={logo} width={100} />
+                    <img src={logo} width={100} alt="Certificado"/>
                   </Col>
                   <Col
                     lg={6}
@@ -52,7 +52,7 @@ function InfoResume() {
                     xs={12}
                     className=" d-flex justify-content-center"
                   >
-                    <img src={logo} width={100} />
+                    <img src={logo} width={100} alt="Certificado"/>
                   </Col>
                 </Row>
               </Col>

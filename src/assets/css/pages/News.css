@@ -1,0 +1,68 @@
+
+  
+  /* Styles for notice content  */
+  .notice-content img {
+    max-width: 100% !important;
+    height: auto;
+  }
+  
+  .notice-content table {
+    width: 100% !important;
+  }
+  
+  .notice-content table td {
+    width: 50% !important;
+  }
+  
+  .notice-content video {
+    max-width: 100% !important;
+    height: auto;
+  }
+  
+  /* Media queries for screen-control */
+  @media (max-width: 1000px) {
+    .notice-content h1 {
+      font-size: 26px !important;
+    }
+    .notice .text-resume {
+      padding: 35px;
+      margin: 35px;
+      width: 90%;
+      font-size: 21px;
+    }
+  }
+  
+  @media (max-width: 750px) {
+    .notice-content h1 {
+      font-size: 22px !important;
+    }
+    .notice .text-resume {
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .notice .text-resume {
+      padding: 20px;
+      margin: 10px;
+      width: 95%;
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 350px) {
+    .title h1 {
+      font-size: 15px !important;
+    }
+    .title h3 {
+      font-size: 18px !important;
+    }
+  
+    .notice-content h1 {
+      font-size: 20px !important;
+    }
+    .notice .text-resume {
+      font-size: 16px;
+    }
+  }
+  

@@ -9,12 +9,12 @@ const types = [
     },
     {
         _id: '2',
-        type: 'Eventos'
+        type: 'Cursos'
     },
 
     {
         _id: '3',
-        type: 'Cursos'
+        type: 'Convocatorias'
     },
 
 

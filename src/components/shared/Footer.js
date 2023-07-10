@@ -27,7 +27,7 @@ function Footer() {
           <div>
             <strong>Sobre A3E INGENIEROS</strong>
             <div className="ps-3 mb-5 mt-1">
-              <a href="https://a3e-sismedia.mx/" target="_blank">
+              <a className="btn text-start" href="https://a3e-sismedia.mx/" target="_blank">
                 SISMEDIA-RT
               </a>
               <br />

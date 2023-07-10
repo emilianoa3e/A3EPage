@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import CustomTitle from "../shared/CustomTitle";
 import image from '../../assets/img/cinco-tres.jpg'
-import '../../assets/css/components/Filosofy.css'
+import '../../assets/css/components/Us/Filosofy.css'
 function Filosofy() {
   const ethicsValues = [
     {
