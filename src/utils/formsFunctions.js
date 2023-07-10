@@ -2,7 +2,7 @@ import axios from "axios";
 import instance from "./axios";
 import { showLoadingAlert, showSimpleAlert } from "../plugins/alert";
 
-export const saveSale = async (values) => {
+export const saveSale = async (values, tokenRecaptcha) => {
   showLoadingAlert("Cargando...", "Espere un momento por favor.");
 
   try {
@@ -16,6 +16,7 @@ export const saveSale = async (values) => {
         enterprise: values.enterprise,
         address: values.address,
         info: values.info,
+        tokenRecaptcha,
       }
     );
 
@@ -45,7 +46,7 @@ export const saveSale = async (values) => {
   }
 };
 
-export const saveVacancie = async (values, uploadedFile) => {
+export const saveVacancie = async (values, uploadedFile, tokenRecaptcha) => {
   const formData = new FormData();
   formData.append("fullName", values.fullName);
   formData.append("email", values.email);
@@ -56,6 +57,7 @@ export const saveVacancie = async (values, uploadedFile) => {
   formData.append("position", values.position);
   formData.append("source", values.source);
   formData.append("curriculum", uploadedFile);
+  formData.append("tokenRecaptcha", tokenRecaptcha);
 
   showLoadingAlert("Cargando...", "Espere un momento por favor.");
 
@@ -96,7 +98,7 @@ export const saveVacancie = async (values, uploadedFile) => {
   }
 };
 
-export const saveIntern = async (values) => {
+export const saveIntern = async (values, tokenRecaptcha) => {
   showLoadingAlert("Cargando...", "Espere un momento por favor.");
 
   try {
@@ -112,6 +114,7 @@ export const saveIntern = async (values) => {
         degree: values.degree,
         period: values.period,
         info: values.info,
+        tokenRecaptcha,
       }
     );
 

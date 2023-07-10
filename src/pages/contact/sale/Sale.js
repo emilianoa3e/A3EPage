@@ -13,14 +13,17 @@ import { saveSale } from "../../../utils/formsFunctions";
 
 function Sale() {
   const [captchaValidate, setCaptchaValidate] = useState(false);
+  const [tokenRecaptcha, setTokenRecaptcha] = useState("");
   const captcha = useRef(null);
 
   const onChange = () => {
     if (captcha.current.getValue()) {
       console.log("El usuario ha pasado el captcha");
+      setTokenRecaptcha(captcha.current.getValue());
       setCaptchaValidate(true);
     } else {
       console.log("La validación de ReCAPTCHA ha expirado");
+      setTokenRecaptcha("");
       setCaptchaValidate(false);
     }
   };
@@ -41,15 +44,16 @@ function Sale() {
     address: Yup.string().required("La dirección es requerida"),
   });
 
-  const handleSubmit = (values) => {
+  const handleSubmit = (values, tokenRecaptcha) => {
     showConfirmDialog(
       "¿Está seguro de enviar la información?",
       "Una vez enviada no podrá ser modificada.",
       "Sí, enviar",
       "Cancelar",
       () => {
-        saveSale(values).then(() => {
+        saveSale(values, tokenRecaptcha).then(() => {
           captcha.current.reset();
+          setTokenRecaptcha("");
           setCaptchaValidate(false);
         });
       }
@@ -84,7 +88,7 @@ function Sale() {
               }}
               validationSchema={objectSchema}
               onSubmit={(values, { resetForm }) =>
-                handleSubmit(values, resetForm())
+                handleSubmit(values, tokenRecaptcha, resetForm())
               }
             >
               {({ errors, values, touched, isValid, dirty }) => (
