@@ -67,7 +67,7 @@ const SliderComponent = ({ images }) => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="p-4 col d-flex justify-content-center align-items-center"
+            className="p-4 col-lg-6 col-md-6 col-sm-6 col-12 d-flex justify-content-center align-items-center"
           >
             <img
               src={image.image}
@@ -86,7 +86,7 @@ const SliderComponent = ({ images }) => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="p-4 col d-flex justify-content-center align-items-center"
+            className="p-4 col-lg-4 col-md-4 col-sm-4 col-12 d-flex justify-content-center align-items-center"
           >
             <img
               src={image.image}
@@ -105,7 +105,7 @@ const SliderComponent = ({ images }) => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="p-4 col d-flex justify-content-center align-items-center"
+            className="p-4 col-lg-3 col-md-3 col-sm-3 col-6 d-flex justify-content-center align-items-center"
           >
             <img
               src={image.image}

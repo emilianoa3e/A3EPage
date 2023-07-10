@@ -16,15 +16,18 @@ import { showConfirmDialog } from "../../../plugins/alert";
 function Recruitment() {
   const [showForm, setShowForm] = useState("vacancie");
   const [uploadedFile, setUploadedFile] = useState(null);
+  const [tokenRecaptcha, setTokenRecaptcha] = useState("");
   const [captchaValidate, setCaptchaValidate] = useState(false);
   const captcha = useRef(null);
 
   const onChange = () => {
     if (captcha.current.getValue()) {
       console.log("El usuario ha pasado el captcha");
+      setTokenRecaptcha(captcha.current.getValue());
       setCaptchaValidate(true);
     } else {
       console.log("La validación de ReCAPTCHA ha expirado");
+      setTokenRecaptcha("");
       setCaptchaValidate(false);
     }
   };
@@ -73,7 +76,7 @@ function Recruitment() {
     period: Yup.string().required("El periodo es requerido"),
   });
 
-  const handleSubmit = (values, resetForm, uploadedFile) => {
+  const handleSubmit = (values, tokenRecaptcha, resetForm, uploadedFile) => {
     showConfirmDialog(
       "¿Está seguro de enviar la información?",
       "Una vez enviada no podrá ser modificada.",
@@ -81,16 +84,18 @@ function Recruitment() {
       "Cancelar",
       () => {
         if (showForm === "vacancie") {
-          saveVacancie(values, uploadedFile).then(() => {
+          saveVacancie(values, uploadedFile, tokenRecaptcha).then(() => {
             resetForm();
             captcha.current.reset();
+            setTokenRecaptcha("");
             setCaptchaValidate(false);
             setUploadedFile(null);
           });
         } else if (showForm === "intern") {
-          saveIntern(values).then(() => {
+          saveIntern(values, tokenRecaptcha).then(() => {
             resetForm();
             captcha.current.reset();
+            setTokenRecaptcha("");
             setCaptchaValidate(false);
           });
         }
@@ -149,7 +154,7 @@ function Recruitment() {
                 }}
                 validationSchema={objectSchemaVacancie}
                 onSubmit={(values, { resetForm }) =>
-                  handleSubmit(values, resetForm, uploadedFile)
+                  handleSubmit(values, tokenRecaptcha, resetForm, uploadedFile)
                 }
               >
                 {({ errors, values, touched, isValid, dirty }) => (
@@ -208,7 +213,7 @@ function Recruitment() {
                 }}
                 validationSchema={objectSchemaInstance}
                 onSubmit={(values, { resetForm }) =>
-                  handleSubmit(values, resetForm)
+                  handleSubmit(values, tokenRecaptcha, resetForm)
                 }
               >
                 {({ errors, values, touched, isValid, dirty }) => (
