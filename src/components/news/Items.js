@@ -51,7 +51,7 @@ function Items({ currentNews, pageCount, handlePageClick }) {
                 style={{ borderRadius: "0px 30px 30px 30px" }}
                 onClick={changeState}
               >
-                {see ? "Retraer noticia" : "Continuar leyendo"}
+                {see ? "Mostrar menos" : "Mostrar más"}
               </Button>
             </div>
           </div>

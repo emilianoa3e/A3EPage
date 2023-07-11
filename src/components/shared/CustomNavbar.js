@@ -38,8 +38,6 @@ function CustomNavbar() {
     return id === rutaExtraida;
   };
 
-  console.log(servicesList);
-
   return (
     <NavbarBt
       className="custom-navbar p-0"
@@ -90,7 +88,7 @@ function CustomNavbar() {
                 </>
               ) : (
                 <DropdownItem>
-                  <NotRegisters icon={false} text={true} />
+                  No se encontraron registros
                 </DropdownItem>
               )}
             </NavDropdown>
