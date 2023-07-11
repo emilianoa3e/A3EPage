@@ -44,7 +44,7 @@ function Sale() {
     address: Yup.string().required("La dirección es requerida"),
   });
 
-  const handleSubmit = (values, tokenRecaptcha) => {
+  const handleSubmit = (values, tokenRecaptcha, resetForm) => {
     showConfirmDialog(
       "¿Está seguro de enviar la información?",
       "Una vez enviada no podrá ser modificada.",
@@ -52,6 +52,7 @@ function Sale() {
       "Cancelar",
       () => {
         saveSale(values, tokenRecaptcha).then(() => {
+          resetForm();
           captcha.current.reset();
           setTokenRecaptcha("");
           setCaptchaValidate(false);
@@ -88,7 +89,7 @@ function Sale() {
               }}
               validationSchema={objectSchema}
               onSubmit={(values, { resetForm }) =>
-                handleSubmit(values, tokenRecaptcha, resetForm())
+                handleSubmit(values, tokenRecaptcha, resetForm)
               }
             >
               {({ errors, values, touched, isValid, dirty }) => (
