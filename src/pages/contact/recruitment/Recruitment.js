@@ -8,7 +8,7 @@ import CustomButton from "../../../components/shared/CustomButton";
 import InfoContact from "../../../components/sale/InfoContact";
 import InstanceForm from "./intern/InternForm";
 import VacancieForm from "./vacancie/VacancieForm";
-import "./Recruitment.css";
+import "../../../assets/css/components/contact/Recruitment.css";
 import Banner from "../../../components/shared/Banner";
 import { saveIntern, saveVacancie } from "../../../utils/formsFunctions";
 import { showConfirmDialog } from "../../../plugins/alert";
@@ -127,6 +127,7 @@ function Recruitment() {
                   }`}
                   type="button"
                   onClick={() => handleButtonShowForm("vacancie")}
+                  // esling-disable-next-line
                 >
                   Trabaja con nosotros
                 </a>

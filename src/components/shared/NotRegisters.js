@@ -18,7 +18,7 @@ function NotRegisters({ icon, text }) {
                         {text &&
                             <Row>
                                 <h3 className={styles.text} >
-                                    No hay registros
+                                    No se encontraron registros
                                 </h3>
                             </Row>
 

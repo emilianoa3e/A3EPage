@@ -16,7 +16,6 @@ function UpButton() {
 
   const handleScroll = () => {
     if (window.scrollY > 300) {
-      console.log("scroll");
       setIsVisible(true);
     } else {
       setIsVisible(false);

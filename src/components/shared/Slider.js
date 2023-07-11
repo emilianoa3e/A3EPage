@@ -39,7 +39,6 @@ const SliderComponent = ({ images }) => {
       },
     ],
   };
-
   if (images.length === 0) return <></>;
 
   if (images.length === 1) {

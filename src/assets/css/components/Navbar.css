@@ -28,15 +28,15 @@
   color: #00743b !important; 
 }
 
-
 .dropdown-menu .dropdown-item{
+  position: relative;
   color: #00743b;
   width: 100% !important;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-
-.dropdown-menu .dropdown-item:hover{
+/* workspce 11-07 */
+/* .dropdown-menu .dropdown-item:hover{
   font-weight: bold; 
   border-bottom: 2px solid #00743b;
   color: #00743b;
@@ -45,6 +45,25 @@
   width: 92% !important;
   overflow: hidden;
   text-overflow: ellipsis;
+} */
+
+.dropdown-menu .dropdown-item::before{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #00743b, #01a154, #02e276);
+  z-index: 1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.dropdown-menu .dropdown-item:hover::before{
+  transform: scaleX(1);
+  
 }
 
 @media (max-width: 990px) {

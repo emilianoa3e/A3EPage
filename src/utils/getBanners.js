@@ -6,7 +6,8 @@ export const getBanners = async () =>{
         return response.data;
         
     }catch(error){
-        console.log('entro')
-        console.log(error)
+        console.log(error.response.data)
+        return error.response.data;
+
     }
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
-import "../../assets/css/components/AreasApplication.css";
+import { Container, Row, Col } from "react-bootstrap";
+import "../../assets/css/components/Home/AreasApplication.css";
 import mineria from "../../assets/img/Minería.jpg";
 import refineria from "../../assets/img/Refinería.jpg";
 import industria from "../../assets/img/Industria.jpg";
@@ -9,7 +9,6 @@ import CustomTitle from "../shared/CustomTitle";
 import { animated, useSpring } from "@react-spring/web";
 
 const RotatingText = ({ areas, imageUrl }) => {
-  console.log(areas)
   const [hovered, setHovered] = useState(false);
 
   const { opacity, transform } = useSpring({
