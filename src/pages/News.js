@@ -28,8 +28,12 @@ function News() {
   useEffect(() => {
     const getData = async () => {
       setIsLoading(true);
-      const data = await getNews();
-      setNewsList(data.dataNew);
+      try{
+        const data = await getNews();
+        setNewsList(data.dataNew);
+      }catch(error){
+        console.log("Error getting news", error)
+      }
       setIsLoading(false);
     };
     getData();

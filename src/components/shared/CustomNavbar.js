@@ -1,28 +1,32 @@
-import React, {useEffect, useState} from "react";
-import {NavLink, useLocation, useNavigate} from "react-router-dom";
-import {Container, Nav, Navbar as NavbarBt, NavDropdown,} from "react-bootstrap";
-import {MdHome} from "react-icons/md";
+import React, { useEffect, useState } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import {
+  Container,
+  Nav,
+  Navbar as NavbarBt,
+  NavDropdown,
+} from "react-bootstrap";
+import { MdHome } from "react-icons/md";
 import logo from "../../assets/img/Logo_Blanco.png";
 import "../../assets/css/components/Navbar.css";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
-import {getServices} from "../../utils/getServices";
+import { getServices } from "../../utils/getServices";
 import NotRegisters from "./NotRegisters";
 
 function CustomNavbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [servicesList, setServiceList] = useState([
-    {
-      _id: "",
-      title: "",
-    },
-  ]);
+  const [servicesList, setServiceList] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
-      const data = await getServices();
-      setServiceList(data.services);
+      try {
+        const data = await getServices();
+        setServiceList(data.services);
+      } catch (error) {
+        console.log("error getting services");
+      }
     };
     getData();
   }, []);
@@ -33,6 +37,8 @@ function CustomNavbar() {
   const isActive = (id) => {
     return id === rutaExtraida;
   };
+
+  console.log(servicesList);
 
   return (
     <NavbarBt
@@ -67,12 +73,12 @@ function CustomNavbar() {
               id="service"
               className={`${isActive("service") ? "active" : ""}`}
             >
-              {servicesList.length !== 0 ? (
+              {!servicesList || servicesList.length !== 0 ? (
                 <>
-                  {servicesList.map((service) => (
+                  {servicesList.map((service, index) => (
                     <>
                       <DropdownItem
-                        key={service._id}
+                        key={index}
                         onClick={() => {
                           navigate(`/service/${service._id}`);
                         }}

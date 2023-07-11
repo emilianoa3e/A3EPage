@@ -35,8 +35,8 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-
-.dropdown-menu .dropdown-item:hover{
+/* workspce 11-07 */
+/* .dropdown-menu .dropdown-item:hover{
   font-weight: bold; 
   border-bottom: 2px solid #00743b;
   color: #00743b;
@@ -45,7 +45,8 @@
   width: 92% !important;
   overflow: hidden;
   text-overflow: ellipsis;
-}
+} */
+
 
 @media (max-width: 990px) {
   .custom-navbar .nav-link {

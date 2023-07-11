@@ -5,29 +5,35 @@ import { useEffect, useState } from "react";
 import { getServices } from "../../utils/getServices";
 import logo from "../../assets/img/Logo_Blanco.png";
 import "../../assets/css/components/Footer.css";
+import NotRegisters from "./NotRegisters";
 function Footer() {
-  const [servicesList, setServiceList] = useState([
-    {
-      _id: "",
-      title: "",
-    },
-  ]);
+  const [servicesList, setServiceList] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
-      const data = await getServices();
-      setServiceList(data.services);
+      try {
+        const data = await getServices();
+        setServiceList(data.services);
+      } catch (error) {
+        console.log("Error getting services-footer");
+      }
     };
     getData();
   }, []);
+
+  console.log(servicesList);
   return (
-    <Container fluid className="footer">
+    <Container fluid className="footer" style={{cursor:'default'}}>
       <Row className="p-5">
         <Col>
           <div>
-            <strong>Sobre A3E INGENIEROS</strong>
+            <strong style={{cursor:'default'}}>Sobre A3E INGENIEROS</strong>
             <div className="ps-3 mb-5 mt-1">
-              <a className="btn text-start" href="https://a3e-sismedia.mx/" target="_blank">
+              <a
+                className="btn text-start"
+                href="https://a3e-sismedia.mx/"
+                target="_blank"
+              >
                 SISMEDIA-RT
               </a>
               <br />
@@ -56,16 +62,26 @@ function Footer() {
         </Col>
 
         <Col>
-          <div style={{}}>
-            <strong>SERVICIOS</strong>
+          <div >
+            <strong style={{cursor:'default'}}>SERVICIOS</strong>
             <div className="ps-3 mb-5">
               {/* añadir mapeo de servicios */}
-
-              {servicesList.map((service, index) => (
-                <div key={index} className="mt-1">
-                  <a className="btn text-start" href={`/service/${service._id}`}>{service.title} </a>
-                </div>
-              ))}
+              {!servicesList || servicesList.length !== 0 ? (
+                <>
+                  {servicesList.map((service, index) => (
+                    <div key={index} className="mt-1">
+                      <a
+                        className="btn text-start"
+                        href={`/service/${service._id}`}
+                      >
+                        {service.title}{" "}
+                      </a>
+                    </div>
+                  ))}
+                </>
+              ) : (
+                <p >No se encontraron registros</p>
+              )}
             </div>
           </div>
         </Col>

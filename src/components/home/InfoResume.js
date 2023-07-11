@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import logo from "../../assets/img/Logo_Verde_V1.png";
+import platino from "../../assets/img/DistintivoPlatino.png"
+import enlace from "../../assets/img/logo_Enlace.png"
 import "../../assets/css/components/Home/InfoResume.css";
 function InfoResume() {
   return (
@@ -43,7 +45,7 @@ function InfoResume() {
                     xs={12}
                     className=" d-flex  justify-content-center "
                   >
-                    <img src={logo} width={100} alt="Certificado"/>
+                    <img src={platino} width={100} alt="Certificado"/>
                   </Col>
                   <Col
                     lg={6}
@@ -52,7 +54,7 @@ function InfoResume() {
                     xs={12}
                     className=" d-flex justify-content-center"
                   >
-                    <img src={logo} width={100} alt="Certificado"/>
+                    <img src={enlace} width={100} alt="Certificado"/>
                   </Col>
                 </Row>
               </Col>

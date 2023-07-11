@@ -20,21 +20,20 @@ function Home() {
       status: false,
     },
   ]);
-  const [clientsList, setClientsList] = useState([
-    {
-      _id: "",
-      name: "",
-      image: "",
-    },
-  ]);
+  const [clientsList, setClientsList] = useState([]);
 
   const getData = async () => {
     setIsLoading(true);
-    const banners = await getBanners();
-    const clients = await getAllClients();
-    setBannersList(banners.banners);
-    setClientsList(clients.clients);
-    setIsLoading(false);
+    try {
+      const banners = await getBanners();
+      const clients = await getAllClients();
+      setBannersList(banners.banners);
+      setClientsList(clients.clients);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   // const getData = async () => {
@@ -67,9 +66,14 @@ function Home() {
     getData();
   }, []);
 
-  const filteredBannersList = bannersList.filter(
-    (banner) => banner.status === false
-  );
+  const filteredBannersList = null;
+  try {
+    filteredBannersList = bannersList.filter(
+      (banner) => banner.status === false
+    );
+  } catch (error) {
+    console.log("Error filtering banners");
+  }
 
   if (isLoading) {
     return <Loader />;

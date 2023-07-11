@@ -9,7 +9,6 @@ import CustomTitle from "../shared/CustomTitle";
 import { animated, useSpring } from "@react-spring/web";
 
 const RotatingText = ({ areas, imageUrl }) => {
-  console.log(areas)
   const [hovered, setHovered] = useState(false);
 
   const { opacity, transform } = useSpring({
