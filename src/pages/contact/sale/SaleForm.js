@@ -14,8 +14,8 @@ import { SelectInput } from "../../../components/shared/SelectInput";
 function SaleForm({ errors, values, touched }) {
   return (
     <>
-      <Row className="mb-3">
-        <Col className="col-8">
+      <Row className="mb-2">
+        <Col md={8} lg={8} className="mb-2">
           <FormBt.Group>
             <TextInput
               maxLength="50"
@@ -27,7 +27,7 @@ function SaleForm({ errors, values, touched }) {
             />
           </FormBt.Group>
         </Col>
-        <Col className="col-4">
+        <Col md={4} lg={4} className="mb-2">
           <FormBt.Group>
             <TextInput
               maxLength="10"
@@ -40,8 +40,8 @@ function SaleForm({ errors, values, touched }) {
           </FormBt.Group>
         </Col>
       </Row>
-      <Row className="mb-3">
-        <Col className="col-8">
+      <Row className="mb-2">
+        <Col md={8} lg={8} className="mb-2">
           <FormBt.Group>
             <TextInput
               maxLength="50"
@@ -53,7 +53,7 @@ function SaleForm({ errors, values, touched }) {
             />
           </FormBt.Group>
         </Col>
-        <Col className="col-4">
+        <Col md={4} lg={4} className="mb-2">
           <FormBt.Group>
             <SelectInput
               label="Tipo de servicio"
@@ -69,8 +69,8 @@ function SaleForm({ errors, values, touched }) {
           </FormBt.Group>
         </Col>
       </Row>
-      <Row className="mb-3">
-        <Col className="col-12">
+      <Row className="mb-2">
+        <Col className="mb-2">
           <FormBt.Group>
             <TextInput
             maxLength="70"
@@ -84,7 +84,7 @@ function SaleForm({ errors, values, touched }) {
         </Col>
       </Row>
       <Row className="mb-3">
-        <Col className="col-12">
+        <Col className="mb-2">
           <FormBt.Group>
             <TextInput
               maxLength="80"
@@ -97,8 +97,8 @@ function SaleForm({ errors, values, touched }) {
           </FormBt.Group>
         </Col>
       </Row>
-      <Row className="mb-3">
-        <Col className="col-12">
+      <Row className="mb-2">
+        <Col className="mb-2">
           <FormBt.Group>
             <TextInput
               maxLength="200"
