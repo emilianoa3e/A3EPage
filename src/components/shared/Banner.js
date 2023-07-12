@@ -8,7 +8,7 @@ import bannerUs from "../../assets/img/NOSOTROS.jpg";
 import {Carousel} from "react-bootstrap";
 import "../../assets/css/components/Banner.css";
 
-function Banner({ from}) {
+function Banner({ from, title}) {
   let banner;
   switch (from) {
     case "SERVICIOS": {

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getService } from "../utils/getServices";
-import { Container, Image } from "react-bootstrap";
-import "../assets/css/pages/Service.css";
+import { Container } from "react-bootstrap";
+import imagen from "../assets/img/banner1.jpg";
 import Banner from "../components/shared/Banner";
 import Loader from "../components/shared/Loader";
-import imagen from "../assets/img/banner1.jpg";
-import { MdArrowCircleDown } from "react-icons/md";
+import Summary from "../components/New-Service/Summary";
+import '../assets/css/components/EditorContent.css' 
 
 function Service() {
   const [isLoading, setIsLoading] = useState(false);
@@ -18,6 +18,10 @@ function Service() {
     summary: "",
     content: "",
   });
+  const [see, setSee] = useState(false);
+  const changeState = () => {
+    setSee(!see);
+  };
 
   useEffect(() => {
     const getData = async () => {
@@ -34,53 +38,33 @@ function Service() {
   }
 
   return (
-    <>
-      {service && (
-        <Container className="m-0 pt-0 p-0 service" fluid>
-          <Banner title={service.title} from={"SERVICIOS"} />
-          {/* Title */}
-          <div className="p-2 title">
-            <h1
-              className="text-start ms-4 mt-5"
-              style={{ color: "#00743B", fontWeight: "bold" }}
-            >
-              {service.title}
-            </h1>
-            <h3 className="text-center mt-2 mb-4">{service.subtitle}</h3>
-          </div>
-          {/* resume */}
-          <div className="button d-flex justify-content-center ">
-            <a
-              href="https://www.google.com"
-              target="_blank"
-              style={{
-                textDecoration: "none",
-                color: "white",
-                fontSize: "20px",
-              }}
-              className="mt-2 pe-2"
-            >
-              Ver <strong className="pe-2">PDF</strong>
-              <MdArrowCircleDown style={{ fontSize: "35px" }} />
-            </a>
-          </div>
-          <div className="img-resume">
-            <Image
-              src={imagen}
-              style={{ width: "100%", height: "250px", objectFit: "cover" }}
-            />
-            <div className="text-resume">
-              <p>{service.summary}</p>
-            </div>
-          </div>
-          {/* Service Content */}
-          <div
-            className="p-3 mt-5 service-content"
-            dangerouslySetInnerHTML={{ __html: service.content }}
-          ></div>
-        </Container>
+    <Container className="m-0 p-0 pt-0" fluid>
+      <Banner title={service.title} from={"SERVICIOS"} />
+      {/* Title */}
+      <div className="p-2">
+        <h1
+          className="text-start ms-4 mt-5"
+          style={{ color: "#00743B", fontWeight: "bold" }}
+        >
+          {service.title}
+        </h1>
+        <h3 style={{ color: "#00743B"}} className="text-center mt-2 mb-4">{service.subtitle}</h3>
+      </div>
+      <Summary
+        service={true}
+        image={imagen}
+        see={see}
+        changeState={changeState}
+        data={service.summary}
+      />
+      {/* Content */}
+      {see && (
+        <div
+          className="p-3 pe-5 ps-5 mt-5 content"
+          dangerouslySetInnerHTML={{ __html: service.content }}
+        ></div>
       )}
-    </>
+    </Container>
   );
 }
 
