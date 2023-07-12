@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Col, Row, Container } from "react-bootstrap";
 import { Form, Formik } from "formik";
-import { showConfirmDialog } from "../../../plugins/alert";
+import { showConfirmDialog, showAcceptDialog } from "../../../plugins/alert";
 import * as Yup from "yup";
 import MiniMap from "../../../components/shared/MiniMap";
 import SaleForm from "./SaleForm";
@@ -45,18 +45,27 @@ function Sale() {
   });
 
   const handleSubmit = (values, tokenRecaptcha, resetForm) => {
-    showConfirmDialog(
-      "¿Está seguro de enviar la información?",
-      "Una vez enviada no podrá ser modificada.",
-      "Sí, enviar",
-      "Cancelar",
+    showAcceptDialog(
+      "Aviso de privacidad",
+      "https://youtu.be/mN6-S7gCOkY",
+      "He leído y acepto el aviso de privacidad",
+      "Continuar",
+      "Debe aceptar el aviso de privacidad para continuar",
       () => {
-        saveSale(values, tokenRecaptcha).then(() => {
-          resetForm();
-          captcha.current.reset();
-          setTokenRecaptcha("");
-          setCaptchaValidate(false);
-        });
+        showConfirmDialog(
+          "¿Está seguro de enviar la información?",
+          "Una vez enviada no podrá ser modificada.",
+          "Sí, enviar",
+          "Cancelar",
+          () => {
+            saveSale(values, tokenRecaptcha).then(() => {
+              resetForm();
+              captcha.current.reset();
+              setTokenRecaptcha("");
+              setCaptchaValidate(false);
+            });
+          }
+        );
       }
     );
   };

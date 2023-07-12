@@ -11,7 +11,7 @@ import VacancieForm from "./vacancie/VacancieForm";
 import "../../../assets/css/components/contact/Recruitment.css";
 import Banner from "../../../components/shared/Banner";
 import { saveIntern, saveVacancie } from "../../../utils/formsFunctions";
-import { showConfirmDialog } from "../../../plugins/alert";
+import { showConfirmDialog, showAcceptDialog } from "../../../plugins/alert";
 
 function Recruitment() {
   const [showForm, setShowForm] = useState("vacancie");
@@ -77,28 +77,37 @@ function Recruitment() {
   });
 
   const handleSubmit = (values, tokenRecaptcha, resetForm, uploadedFile) => {
-    showConfirmDialog(
-      "¿Está seguro de enviar la información?",
-      "Una vez enviada no podrá ser modificada.",
-      "Sí, enviar",
-      "Cancelar",
+    showAcceptDialog(
+      "Aviso de privacidad",
+      "https://youtu.be/mN6-S7gCOkY",
+      "He leído y acepto el aviso de privacidad",
+      "Continuar",
+      "Debe aceptar el aviso de privacidad para continuar",
       () => {
-        if (showForm === "vacancie") {
-          saveVacancie(values, uploadedFile, tokenRecaptcha).then(() => {
-            resetForm();
-            captcha.current.reset();
-            setTokenRecaptcha("");
-            setCaptchaValidate(false);
-            setUploadedFile(null);
-          });
-        } else if (showForm === "intern") {
-          saveIntern(values, tokenRecaptcha).then(() => {
-            resetForm();
-            captcha.current.reset();
-            setTokenRecaptcha("");
-            setCaptchaValidate(false);
-          });
-        }
+        showConfirmDialog(
+          "¿Está seguro de enviar la información?",
+          "Una vez enviada no podrá ser modificada.",
+          "Sí, enviar",
+          "Cancelar",
+          () => {
+            if (showForm === "vacancie") {
+              saveVacancie(values, uploadedFile, tokenRecaptcha).then(() => {
+                resetForm();
+                captcha.current.reset();
+                setTokenRecaptcha("");
+                setCaptchaValidate(false);
+                setUploadedFile(null);
+              });
+            } else if (showForm === "intern") {
+              saveIntern(values, tokenRecaptcha).then(() => {
+                resetForm();
+                captcha.current.reset();
+                setTokenRecaptcha("");
+                setCaptchaValidate(false);
+              });
+            }
+          }
+        );
       }
     );
   };

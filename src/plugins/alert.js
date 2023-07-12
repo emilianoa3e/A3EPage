@@ -23,6 +23,31 @@ export const showConfirmDialog = (
   });
 };
 
+export const showAcceptDialog = (
+  title,
+  link,
+  placeholder,
+  confirmButtonText,
+  notConfirmCheckboxText,
+  confirmCallback
+) => {
+  Swal.fire({
+    title: `<a href="${link}" target="_blank">${title}</a>`,
+    input: "checkbox",
+    inputValue: 0,
+    inputPlaceholder: placeholder,
+    confirmButtonColor: "#002e60",
+    confirmButtonText: confirmButtonText,
+    inputValidator: (result) => {
+      return !result && notConfirmCheckboxText;
+    },
+  }).then((result) => {
+    if (result.isConfirmed) {
+      confirmCallback();
+    }
+  });
+};
+
 export const showLoadingAlert = (title, text) => {
   Swal.fire({
     title: title,
@@ -42,10 +67,10 @@ export const closeLoadingAlert = () => {
 };
 
 export const showSimpleAlert = (title, text, icon) => {
-	Swal.fire({
-		title,
-		text,
-		icon,
-		confirmButtonText: 'Ok',
-	});
+  Swal.fire({
+    title,
+    text,
+    icon,
+    confirmButtonText: "Ok",
+  });
 };
