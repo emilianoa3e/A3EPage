@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { getServices } from "../../utils/getServices";
 import logo from "../../assets/img/Logo_Blanco.png";
 import "../../assets/css/components/Footer.css";
-import NotRegisters from "./NotRegisters";
 function Footer() {
   const [servicesList, setServiceList] = useState([]);
 
@@ -21,7 +20,6 @@ function Footer() {
     getData();
   }, []);
 
-  console.log(servicesList);
   return (
     <Container fluid className="footer" style={{cursor:'default'}}>
       <Row className="p-5">

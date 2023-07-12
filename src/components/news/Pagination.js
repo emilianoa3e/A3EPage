@@ -1,6 +1,6 @@
 import ReactPaginate from "react-paginate";
 import "../../assets/css/components/Pagination.css"
-import {MdArrowLeft, MdArrowRight, MdMoreHoriz} from "react-icons/md";
+import {MdArrowLeft, MdArrowRight} from "react-icons/md";
 function Pagination({handlePageClick, pageCount}){
     return(
         <>

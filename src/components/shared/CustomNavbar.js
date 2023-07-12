@@ -11,7 +11,6 @@ import logo from "../../assets/img/Logo_Blanco.png";
 import "../../assets/css/components/Navbar.css";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import { getServices } from "../../utils/getServices";
-import NotRegisters from "./NotRegisters";
 
 function CustomNavbar() {
   const navigate = useNavigate();
@@ -53,11 +52,7 @@ function CustomNavbar() {
           aria-controls="basic-navbar-nav"
           className="m-2 p-2 "
         />
-        <NavbarBt.Collapse
-          id="basic-navbar-nav "
-          className=" p-0 m-0 "
-          style={{ width: "100%" }}
-        >
+        <NavbarBt.Collapse id="basic-navbar-nav " className=" p-0 m-0 ">
           <Nav className="me-auto justify-content-center">
             <NavLink to="/home" className="nav-link" id="home">
               <MdHome className="me-1" size={22} />
@@ -73,23 +68,19 @@ function CustomNavbar() {
             >
               {!servicesList || servicesList.length !== 0 ? (
                 <>
-                  {servicesList.map((service, index) => (
-                    <>
-                      <DropdownItem
-                        key={index}
-                        onClick={() => {
-                          navigate(`/service/${service._id}`);
-                        }}
-                      >
-                        {service.title}
-                      </DropdownItem>
-                    </>
+                  {servicesList.map((service) => (
+                    <DropdownItem
+                      key={service._id}
+                      onClick={() => {
+                        navigate(`/service/${service._id}`);
+                      }}
+                    >
+                      {service.title}
+                    </DropdownItem>
                   ))}
                 </>
               ) : (
-                <DropdownItem>
-                  No se encontraron registros
-                </DropdownItem>
+                <DropdownItem>No se encontraron registros</DropdownItem>
               )}
             </NavDropdown>
             <NavLink to="/news" className="nav-link" id="news">
