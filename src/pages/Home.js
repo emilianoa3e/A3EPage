@@ -66,7 +66,7 @@ function Home() {
     getData();
   }, []);
 
-  const filteredBannersList = null;
+  let filteredBannersList;
   try {
     filteredBannersList = bannersList.filter(
       (banner) => banner.status === false
