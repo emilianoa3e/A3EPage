@@ -6,7 +6,7 @@ import imagen from "../assets/img/banner1.jpg";
 import Banner from "../components/shared/Banner";
 import Loader from "../components/shared/Loader";
 import Summary from "../components/New-Service/Summary";
-import '../assets/css/components/EditorContent.css'
+import '../assets/css/components/EditorContent.css' 
 
 function Service() {
   const [isLoading, setIsLoading] = useState(false);
@@ -38,7 +38,7 @@ function Service() {
   }
 
   return (
-    <Container className="m-0 pt-0 p-0" fluid>
+    <Container className="m-0 p-0 pt-0" fluid>
       <Banner title={service.title} from={"SERVICIOS"} />
       {/* Title */}
       <div className="p-2">
@@ -60,7 +60,7 @@ function Service() {
       {/* Content */}
       {see && (
         <div
-          className="p-3 mt-5 content"
+          className="p-3 pe-5 ps-5 mt-5 content"
           dangerouslySetInnerHTML={{ __html: service.content }}
         ></div>
       )}

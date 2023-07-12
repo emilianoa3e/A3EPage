@@ -37,7 +37,7 @@ function Items({ currentNews, pageCount, handlePageClick }) {
           {/* Content */}
           {see && (
             <div
-              className="p-3 mt-5 content"
+              className="p-3 pe-5 ps-5 mt-5 content"
               key={news._id}
               dangerouslySetInnerHTML={{ __html: news.content }}
             ></div>

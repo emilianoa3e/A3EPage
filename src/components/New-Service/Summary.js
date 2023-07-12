@@ -5,13 +5,9 @@ import {
   MdArrowCircleDown,
 } from "react-icons/md";
 import "../../assets/css/components/Summary.css";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Summary({ notice, service, image, changeState, data, see }) {
-  const navigate = useNavigate();
-  const go = () => {
-    navigate("/https://www.google.com");
-  };
   return (
     <>
       <a href="https://www.google.com" target="_blank" className="summaryLink">
