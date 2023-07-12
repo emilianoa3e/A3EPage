@@ -26,12 +26,12 @@ html {
 
 /* Estilo del pulgar de la barra de desplazamiento */
 ::-webkit-scrollbar-thumb {
-  background-color: #327960;
+  background-color: #00743b;
   border-radius: 4px;
 }
 
 /* Estilo del pulgar de la barra de desplazamiento al pasar el mouse sobre él */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #79e9c2;
+  background-color: #327960;
 
 }

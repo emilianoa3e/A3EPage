@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Items from "../components/news/Items";
-import Pagination from "../components/news/Pagination";
 import NewsCategories from "../components/news/NewsCategories";
 import NotRegisters from "../components/shared/NotRegisters";
 import Banner from "../components/shared/Banner";
 import { getNews } from "../utils/getNews";
 import Loader from "../components/shared/Loader";
 import "../assets/css/pages/News.css";
+import "../assets/css/components/EditorContent.css"
 
 function News() {
   const [isLoading, setIsLoading] = useState(false);
   const itemsPerPage = 1;
   const [itemOffset, setItemOffset] = useState(0);
   const endOffset = itemOffset + itemsPerPage;
-
   const [filter, setFilter] = useState("Novedades");
   const [currentPage, setCurrentPage] = useState(1);
   const [newsList, setNewsList] = useState([
@@ -63,7 +62,7 @@ function News() {
   if (isLoading) {
     return <Loader />;
   }
-  console.log(currentNews);
+
   return (
     <>
       <div className="container-fluid p-0 m-0 notice ">
@@ -73,7 +72,6 @@ function News() {
           handleFilterChange={handleFilterChange}
           filter={filter}
         />
-
         {currentNews.length > 0 ? (
           <>
             {/* content */}           

@@ -1,0 +1,45 @@
+.summary {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.summary .text-summary {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  padding: 20px;
+  margin: 20px;
+  font-size: 24px;
+  color: white;
+}
+
+@media (max-width: 1000px) {
+  .summary .text-summary {
+    padding: 35px;
+    margin: 35px;
+    width: 90%;
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 750px) {
+  .summary .text-summary {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .summary .text-summary {
+    padding: 20px;
+    margin: 10px;
+    width: 95%;
+    font-size: 18px;
+  }
+}
+@media (max-width: 350px) {
+  .summary .text-summary {
+    font-size: 16px;
+  }
+}
