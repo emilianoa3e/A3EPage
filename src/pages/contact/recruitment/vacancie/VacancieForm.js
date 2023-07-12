@@ -20,8 +20,8 @@ function VacancieForm({
 }) {
   return (
     <>
-      <Row className="mb-3">
-        <Col className="col-8">
+      <Row className="mb-2">
+        <Col md={8} lg={8} className="mb-2">
           <FormBt.Group>
             <TextInput
               maxLength="50"
@@ -33,7 +33,7 @@ function VacancieForm({
             />
           </FormBt.Group>
         </Col>
-        <Col className="col-4">
+        <Col md={4} lg={4} className="mb-2">
           <FormBt.Group>
             <TextInput
               maxLength="10"
@@ -46,8 +46,8 @@ function VacancieForm({
           </FormBt.Group>
         </Col>
       </Row>
-      <Row className="mb-3">
-        <Col className="col-8">
+      <Row className="mb-2">
+        <Col md={8} lg={8} className="mb-2">
           <FormBt.Group>
             <TextInput
               maxLength="50"
@@ -59,7 +59,7 @@ function VacancieForm({
             />
           </FormBt.Group>
         </Col>
-        <Col className="col-4">
+        <Col md={4} lg={4} className="mb-2">
           <FormBt.Group>
             <TextInput
               max="100"
@@ -73,8 +73,8 @@ function VacancieForm({
           </FormBt.Group>
         </Col>
       </Row>
-      <Row className="mb-3">
-        <Col className="col-8">
+      <Row className="mb-2">
+        <Col md={8} lg={8} className="mb-2">
           <FormBt.Group>
             <TextInput
               maxLength="50"
@@ -86,7 +86,7 @@ function VacancieForm({
             />
           </FormBt.Group>
         </Col>
-        <Col className="col-4">
+        <Col md={4} lg={4} className="mb-2">
           <FormBt.Group>
             <SelectInput
               label="Educación"
@@ -106,8 +106,8 @@ function VacancieForm({
           </FormBt.Group>
         </Col>
       </Row>
-      <Row className="mb-3">
-        <Col className="col-8">
+      <Row className="mb-2">
+        <Col md={8} lg={8} className="mb-2">
           <FormBt.Group>
             <TextInput
               maxLength="50"
@@ -119,7 +119,7 @@ function VacancieForm({
             />
           </FormBt.Group>
         </Col>
-        <Col className="col-4">
+        <Col md={4} lg={4} className="mb-2">
           <FormBt.Group>
             <SelectInput
               label="¿Cómo se enteró?"
@@ -143,8 +143,8 @@ function VacancieForm({
           </FormBt.Group>
         </Col>
       </Row>
-      <Row className="mb-3">
-        <Col className="col-12">
+      <Row className="mb-2">
+        <Col>
           <FormBt.Group>
             <p>Curriculum vitae</p>
             <FileDropzone
