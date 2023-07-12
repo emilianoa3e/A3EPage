@@ -3,10 +3,10 @@ import Items from "../components/news/Items";
 import NewsCategories from "../components/news/NewsCategories";
 import NotRegisters from "../components/shared/NotRegisters";
 import Banner from "../components/shared/Banner";
-import { getNews } from "../utils/getNews";
 import Loader from "../components/shared/Loader";
-import "../assets/css/pages/News.css";
-import "../assets/css/components/EditorContent.css"
+import { getNews } from "../utils/getNews";
+import "../assets/css/components/EditorContent.css";
+import { Container } from "react-bootstrap";
 
 function News() {
   const [isLoading, setIsLoading] = useState(false);
@@ -27,11 +27,11 @@ function News() {
   useEffect(() => {
     const getData = async () => {
       setIsLoading(true);
-      try{
+      try {
         const data = await getNews();
         setNewsList(data.dataNew);
-      }catch(error){
-        console.log("Error getting news", error)
+      } catch (error) {
+        console.log("Error getting news", error);
       }
       setIsLoading(false);
     };
@@ -64,26 +64,26 @@ function News() {
   }
 
   return (
-    <>
-      <div className="container-fluid p-0 m-0 notice ">
-        <Banner from={"NOTICIAS"} />
-        <NewsCategories
-          newsList={newsList}
-          handleFilterChange={handleFilterChange}
-          filter={filter}
-        />
-        {currentNews.length > 0 ? (
-          <>
-            {/* content */}           
-            <Items currentNews={currentNews} pageCount={pageCount}
-              handlePageClick={handlePageClick} />
-            
-          </>
-        ) : (
-          <NotRegisters icon={true} text={true} />
-        )}
-      </div>
-    </>
+    <Container className="m-0 pt-0 p-0" fluid>
+      <Banner from={"NOTICIAS"} />
+      <NewsCategories
+        newsList={newsList}
+        handleFilterChange={handleFilterChange}
+        filter={filter}
+      />
+      {currentNews.length > 0 ? (
+        <>
+          {/* content */}
+          <Items
+            currentNews={currentNews}
+            pageCount={pageCount}
+            handlePageClick={handlePageClick}
+          />
+        </>
+      ) : (
+        <NotRegisters icon={true} text={true} />
+      )}
+    </Container>
   );
 }
 

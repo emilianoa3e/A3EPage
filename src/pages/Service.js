@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getService } from "../utils/getServices";
-import { Container} from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import imagen from "../assets/img/banner1.jpg";
 import Banner from "../components/shared/Banner";
 import Loader from "../components/shared/Loader";
-import imagen from "../assets/img/banner1.jpg";
-import SummaryButton from "../components/New-Service/SummaryButton";
 import Summary from "../components/New-Service/Summary";
-import Title from "../components/New-Service/Title";
-import Content from "../components/New-Service/Content";
+import '../assets/css/components/EditorContent.css'
 
 function Service() {
   const [isLoading, setIsLoading] = useState(false);
@@ -40,27 +38,33 @@ function Service() {
   }
 
   return (
-    <>
-      {service && (
-        <Container className="m-0 pt-0 p-0 service" fluid>
-          <Banner title={service.title} from={"SERVICIOS"} />
-          {/* Title */}
-          <Title title={service.title} subtitle={service.subtitle}/>
-          {/* resume */}
-          <SummaryButton service={true} />
-          <Summary
-            image={imagen}
-            see={see}
-            changeState={changeState}
-            data={service.summary}
-          />
-          {/* Service Content */}
-          {see && (
-            <Content content={service.content}/>
-          )}
-        </Container>
+    <Container className="m-0 pt-0 p-0" fluid>
+      <Banner title={service.title} from={"SERVICIOS"} />
+      {/* Title */}
+      <div className="p-2">
+        <h1
+          className="text-start ms-4 mt-5"
+          style={{ color: "#00743B", fontWeight: "bold" }}
+        >
+          {service.title}
+        </h1>
+        <h3 style={{ color: "#00743B"}} className="text-center mt-2 mb-4">{service.subtitle}</h3>
+      </div>
+      <Summary
+        service={true}
+        image={imagen}
+        see={see}
+        changeState={changeState}
+        data={service.summary}
+      />
+      {/* Content */}
+      {see && (
+        <div
+          className="p-3 mt-5 content"
+          dangerouslySetInnerHTML={{ __html: service.content }}
+        ></div>
       )}
-    </>
+    </Container>
   );
 }
 
