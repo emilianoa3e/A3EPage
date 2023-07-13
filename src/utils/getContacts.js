@@ -6,8 +6,7 @@ export const getAllContacts = async () => {
     const response = await axios.get(
       instance.defaults.baseURL + "/contact/getAll-contacts"
     );
-    console.log(response);
-    return response;
+    return response.data;
   } catch (error) {
     console.log("getAllContacts error", error);
   }

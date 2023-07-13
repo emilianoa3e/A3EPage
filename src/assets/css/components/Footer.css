@@ -1,27 +1,33 @@
 .footer {
-    height: 100%;
-    background-color: #00743b;
-
+  height: 100%;
+  background-color: #00743b;
 }
 
-.footer svg:hover{
-   transform: scale(1.2);
+.footer svg:hover {
+  transform: scale(1.2);
 }
 
-.footer a:hover{
-    transform: scale(1.1);
-    color: white;
+.footer a:hover {
+  transform: scale(1.1);
+  color: white;
 }
 
-.footer a{
-    text-decoration: none;
-    color: #fff;
+.footer a {
+  text-decoration: none;
+  color: #fff;
 }
-.footer p{
-    text-decoration: none;
-    color: #fff;
+.footer p {
+  text-decoration: none;
+  color: #fff;
 }
-.footer strong{
-    text-decoration: none;
-    color: #fff;
+.footer strong {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer .icons svg{
+    padding: 0;
+    margin: 0.5rem;
+    margin-bottom: 0;
+    cursor: pointer;
 }

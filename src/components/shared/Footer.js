@@ -1,31 +1,36 @@
 import React from "react";
-import { MdWhatsapp } from "react-icons/md";
+import { MdWhatsapp, MdEmail, MdLocalPhone, MdFacebook } from "react-icons/md";
+import { BsLinkedin } from "react-icons/bs";
 import { Container, Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import { getAllContacts } from "../../utils/getContacts";
 import { getServices } from "../../utils/getServices";
 import logo from "../../assets/img/Logo_Blanco.png";
 import "../../assets/css/components/Footer.css";
+import Colors from "../../utils/Colors";
 function Footer() {
   const [servicesList, setServiceList] = useState([]);
-
+  const [contactsList, setContactsList] = useState([]);
   useEffect(() => {
     const getData = async () => {
       try {
-        const data = await getServices();
-        setServiceList(data.services);
+        const services = await getServices();
+        setServiceList(services.services);
+        const contacts = await getAllContacts();
+        setContactsList(contacts.contacts);
       } catch (error) {
         console.log("Error getting services-footer");
       }
     };
     getData();
   }, []);
-
+console.log(contactsList)
   return (
-    <Container fluid className="footer" style={{cursor:'default'}}>
+    <Container fluid className="footer" style={{ cursor: "default" }}>
       <Row className="p-5">
         <Col>
           <div>
-            <strong style={{cursor:'default'}}>Sobre A3E INGENIEROS</strong>
+            <strong style={{ cursor: "default" }}>Sobre A3E INGENIEROS</strong>
             <div className="ps-3 mb-5 mt-1">
               <a
                 className="btn text-start"
@@ -60,8 +65,8 @@ function Footer() {
         </Col>
 
         <Col>
-          <div >
-            <strong style={{cursor:'default'}}>SERVICIOS</strong>
+          <div>
+            <strong style={{ cursor: "default" }}>SERVICIOS</strong>
             <div className="ps-3 mb-5">
               {/* añadir mapeo de servicios */}
               {!servicesList || servicesList.length !== 0 ? (
@@ -78,7 +83,7 @@ function Footer() {
                   ))}
                 </>
               ) : (
-                <p >No se encontraron registros</p>
+                <p>No se encontraron registros</p>
               )}
             </div>
           </div>
@@ -108,33 +113,21 @@ function Footer() {
             </div>
             {/* icons */}
             <div className="p-2 d-flex mt-5 justify-content-center icons">
-              <MdWhatsapp
-                className="p-1 me-3"
-                style={{
-                  backgroundColor: "white",
-                  color: "#00743b",
-                  borderRadius: "50%",
-                  fontSize: "35px",
-                }}
-              />
-              <MdWhatsapp
-                className="p-1 me-3"
-                style={{
-                  backgroundColor: "white",
-                  color: "#00743b",
-                  borderRadius: "50%",
-                  fontSize: "35px",
-                }}
-              />
-              <MdWhatsapp
-                className="p-1 "
-                style={{
-                  backgroundColor: "white",
-                  color: "#00743b",
-                  borderRadius: "50%",
-                  fontSize: "35px",
-                }}
-              />
+              {contactsList.map((contact) => (
+                <div key={contact._id}>
+                  {contact.type === "whatsapp" ? (
+                    <MdWhatsapp size={32} color={Colors.PalleteWhite} />
+                  ) : contact.type === "email" ? (
+                    <MdEmail size={35} color={Colors.PalleteWhite} />
+                  ) : contact.type === "phone" ? (
+                    <MdLocalPhone size={35} color={Colors.PalleteWhite} />
+                  ) : contact.type === "facebook" ? (
+                    <MdFacebook size={35} color={Colors.PalleteWhite} />
+                  ) : contact.type === "linkedin" ? (
+                    <BsLinkedin size={30} color={Colors.PalleteWhite} />
+                  ) : null}
+                </div>
+              ))}              
             </div>
           </div>
         </Col>

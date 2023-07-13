@@ -1,0 +1,16 @@
+export default {
+  PalleteGreenA3E: "#00743B",
+  PalletePrimary: "#004ea4",
+  PalletePrimaryLight: "#e9ebf7",
+  PalleteSecondary: "#dd65f5",
+  PalleteSuccess: "#3b8f13",
+  PalleteDanger: "#a60c07",
+  PalleteWarning: "#f5a623",
+  PalleteInfo: "#00a2ff",
+  PalleteGrey: "#9d9699",
+  PalleteWhite: "#fff",
+  PalleteBlack: "#000",
+  PalleteWhatsapp: "#25D366",
+  PalleteFacebook: "#4267B2",
+  PalleteLinkedin: "#0e76a8",
+};
