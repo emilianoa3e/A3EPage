@@ -12,10 +12,7 @@ import InfoContact from "../../../components/sale/InfoContact";
 import InstanceForm from "./intern/InternForm";
 import VacancieForm from "./vacancie/VacancieForm";
 import "../../../assets/css/components/contact/Recruitment.css";
-import Banner from "../../../components/shared/Banner";
 import { getAllContacts } from "../../../utils/getContacts";
-import { saveIntern, saveVacancie } from "../../../utils/formsFunctions";
-import { showConfirmDialog, showAcceptDialog } from "../../../plugins/alert";
 
 function Recruitment() {
   const [showForm, setShowForm] = useState("vacancie");
