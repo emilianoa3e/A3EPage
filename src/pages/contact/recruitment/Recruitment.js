@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Col, Row, Container } from "react-bootstrap";
 import { Form, Formik } from "formik";
@@ -10,6 +10,7 @@ import InstanceForm from "./intern/InternForm";
 import VacancieForm from "./vacancie/VacancieForm";
 import "../../../assets/css/components/contact/Recruitment.css";
 import Banner from "../../../components/shared/Banner";
+import { getAllContacts } from "../../../utils/getContacts";
 import { saveIntern, saveVacancie } from "../../../utils/formsFunctions";
 import { showConfirmDialog, showAcceptDialog } from "../../../plugins/alert";
 
@@ -19,6 +20,19 @@ function Recruitment() {
   const [tokenRecaptcha, setTokenRecaptcha] = useState("");
   const [captchaValidate, setCaptchaValidate] = useState(false);
   const captcha = useRef(null);
+  const [contactsList, setContactsList] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {        
+        const contacts = await getAllContacts();
+        setContactsList(contacts.contacts);
+      } catch (error) {
+        console.log("Error getting info footer");
+      }
+    };
+    getData();
+  }, []);
 
   const onChange = () => {
     if (captcha.current.getValue()) {
@@ -124,7 +138,7 @@ function Recruitment() {
               <MiniMap />
             </Row>
             <Row className="mt-3 ms-2 me-2">
-              <InfoContact />
+              <InfoContact contactList={contactsList}/>
             </Row>
           </Col>
           <Col md={8} lg={8}>

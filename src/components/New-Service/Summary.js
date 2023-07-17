@@ -5,12 +5,16 @@ import {
   MdArrowCircleDown,
 } from "react-icons/md";
 import "../../assets/css/components/Summary.css";
-import { useNavigate } from "react-router-dom";
 
 function Summary({ notice, service, image, changeState, data, see }) {
+  const go =()=>{
+    if(notice){
+      
+    }
+  }
   return (
     <>
-      <a href="https://www.google.com" target="_blank" className="summaryLink">
+      <a onClick={go} target="_blank" className="summaryLink">
         <div className="summaryButton d-flex justify-content-center">
           {!notice && service && (
             <>

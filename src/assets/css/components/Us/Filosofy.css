@@ -1,4 +1,50 @@
-/*Styles for animation cards init */
+.areasApplication {
+  width: 100%;
+  min-height: 200px;
+  height: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+.areasApplication .animatedDiv{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  
+}
+.areasApplication .containerAnimation{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.areasApplication .animatedImg{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.areasApplication .animatedText{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotateY(180deg);
+}
+
+.areasApplication .text{
+  padding: 10px;
+  text-align: center;
+}
+
+
+/* Styles for animation cards init */
 .filosofy .collage-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

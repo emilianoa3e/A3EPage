@@ -1,11 +1,38 @@
 import React, { useState, useEffect, useRef } from "react";
 import { MdCall, MdMessage, MdWhatsapp } from "react-icons/md";
-import "../../assets/css/components/ContactButton.css";
 import { animated, useSpring } from "@react-spring/web";
+import { getAllContacts } from "../../utils/getContacts";
+import "../../assets/css/components/ContactButton.css";
+
 
 function ContactButton() {
   const [active, setActive] = useState(false);
   const buttonRef = useRef(null);
+  const [contactsList, setContactsList] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      try {        
+        const contacts = await getAllContacts();
+        setContactsList(contacts.contacts);
+      } catch (error) {
+        console.log("Error getting info footer");
+      }
+    };
+    getData();
+  }, []);
+
+  let whatsapp;
+  let phone;
+  contactsList.forEach(element => {
+    if(element.type==="whatsapp"){
+       whatsapp = element.contact
+    }
+    if(element.type==="phone"){
+       phone = element.contact
+    }
+    
+  });
+  
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -37,7 +64,8 @@ function ContactButton() {
         <div>
           <animated.a
             className="wppButton"
-            href="https://api.whatsapp.com/send?phone=123456789"
+            // title={`+52 1 ${whatsapp?whatsapp:`(777) 260 4715`} `}
+            href={`https://api.whatsapp.com/send?phone=${whatsapp?whatsapp:`5217772604715`}`}
             target="_blank"
             rel="noopener noreferrer"
             style={buttonAnimation}
@@ -46,7 +74,7 @@ function ContactButton() {
           </animated.a>
           <animated.a
             className="telButton"
-            href="tel:123456789"
+            href={`tel:${phone ? phone:`7773617946`}`}
             style={buttonAnimation}
           >
             <MdCall />

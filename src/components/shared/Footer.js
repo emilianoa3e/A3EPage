@@ -19,12 +19,12 @@ function Footer() {
         const contacts = await getAllContacts();
         setContactsList(contacts.contacts);
       } catch (error) {
-        console.log("Error getting services-footer");
+        console.log("Error getting info footer");
       }
     };
     getData();
   }, []);
-console.log(contactsList)
+  console.log(contactsList);
   return (
     <Container fluid className="footer" style={{ cursor: "default" }}>
       <Row className="p-5">
@@ -116,18 +116,31 @@ console.log(contactsList)
               {contactsList.map((contact) => (
                 <div key={contact._id}>
                   {contact.type === "whatsapp" ? (
-                    <MdWhatsapp size={32} color={Colors.PalleteWhite} />
+                    <a
+                      target="_blank"
+                      href={`https://api.whatsapp.com/send?phone=${contact.contact}`}
+                    >
+                      <MdWhatsapp size={32} color={Colors.PalleteWhite} />
+                    </a>
                   ) : contact.type === "email" ? (
-                    <MdEmail size={35} color={Colors.PalleteWhite} />
+                    <a target="_blank" href={`mailto:${contact.contact}`}>
+                      <MdEmail size={35} color={Colors.PalleteWhite} />
+                    </a>
                   ) : contact.type === "phone" ? (
-                    <MdLocalPhone size={35} color={Colors.PalleteWhite} />
+                    <a target="_blank" href={`tel:${contact.contact}`}>
+                      <MdLocalPhone size={35} color={Colors.PalleteWhite} />
+                    </a>
                   ) : contact.type === "facebook" ? (
-                    <MdFacebook size={35} color={Colors.PalleteWhite} />
+                    <a target="_blank" href={`${contact.contact}`}>
+                      <MdFacebook size={35} color={Colors.PalleteWhite} />
+                    </a>
                   ) : contact.type === "linkedin" ? (
-                    <BsLinkedin size={30} color={Colors.PalleteWhite} />
+                    <a target="_blank" href={`${contact.contact}`}>
+                      <BsLinkedin size={30} color={Colors.PalleteWhite} />
+                    </a>
                   ) : null}
                 </div>
-              ))}              
+              ))}
             </div>
           </div>
         </Col>

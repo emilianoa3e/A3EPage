@@ -98,6 +98,18 @@ function CustomNavbar() {
                 Recursos Humanos
               </DropdownItem>
             </NavDropdown>
+            <NavDropdown
+              title={"INNOVACIÓN"}
+              id="contact"
+              className={`${isActive("contact") ? "active" : ""}`}
+            >
+              <DropdownItem onClick={() => navigate("/contact/sale")}>
+                SISMEDIA-RT
+              </DropdownItem>
+              <DropdownItem onClick={() => navigate("/contact/recruitment")}>
+                Monitor i3
+              </DropdownItem>
+            </NavDropdown>
           </Nav>
         </NavbarBt.Collapse>
       </Container>

@@ -1,8 +1,55 @@
-import React from "react";
+import React, {useState} from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import CustomTitle from "../shared/CustomTitle";
-import image from '../../assets/img/cinco-tres.jpg'
-import '../../assets/css/components/Us/Filosofy.css'
+import { animated, useSpring } from "@react-spring/web";
+import "../../assets/css/components/Us/Filosofy.css";
+import image from "../../assets/img/Minería.jpg"
+const RotatingText = ({ values, imageUrl }) => {
+  const [hovered, setHovered] = useState(false);
+
+  const { opacity, transform } = useSpring({
+    opacity: hovered ? 0 : 1,
+    transform: `rotateY(${hovered ? 180 : 0}deg)`,
+    config: { mass: 10, tension: 500, friction: 100 },
+  });
+
+  return (
+    <div
+    className="areasApplication"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <animated.div
+      className={"animatedDiv"}
+        style={{
+          transform,
+        }}
+      >
+        <div
+        className="containerAnimation"
+        >
+          <animated.img
+          className={"animatedImg"}
+            src={image}
+            alt="Image"
+            style={{
+              opacity,
+            }}
+          />
+          <animated.div
+          className={"animatedText"}
+            style={{
+              opacity: opacity.to(o => 1 - o),
+            }}
+          >
+            <p className="text">{values}</p>
+          </animated.div>
+        </div>
+      </animated.div>
+    </div>
+  );
+};
+
 function Filosofy() {
   const ethicsValues = [
     {
@@ -86,24 +133,40 @@ function Filosofy() {
     },
   ];
   return (
-    <Container className="filosofy mb-4" fluid>
+    <Container className="mg-4 p-0 m-0" fluid>
       <CustomTitle title={"FILOSOFÍA"} subtitle={"VALORES"} />
-      <Row className="collage-row ps-1">
-        {ethicsValues.map((values, index) => (
-          <Col key={index} className="collage-col p-0 m-0">
-            <div className="image-container">
-              <div className="front">
-                <Image src={image} alt="Image" fluid />
-                <div className="area">{values.name}</div>
-              </div>
-              <div className="back h-100">
-                <p className="text " >{values.description}</p>
-              </div>
-            </div>
+      <Row className="collage-row p-0 m-0">
+        {ethicsValues.map((value, index) => (
+          <Col
+            key={index}
+            md={6}
+            lg={2}
+            xs={6}
+            className="justify-content-center mb-2"
+          >
+            <RotatingText values={value.description} imageUrl={value.img} />
           </Col>
         ))}
       </Row>
     </Container>
+    // <Container className="filosofy mb-4" fluid>
+    //   <CustomTitle title={"FILOSOFÍA"} subtitle={"VALORES"} />
+    //   <Row className="collage-row ps-1">
+    //     {ethicsValues.map((values, index) => (
+    //       <Col key={index} className=" p-0 m-0" lg>
+    //         <div className="image-container">
+    //           <div className="front">
+    //             <Image src={image} alt="Image" fluid />
+    //             <div className="area">{values.name}</div>
+    //           </div>
+    //           <div className="back h-100">
+    //             <p className="text " >{values.description}</p>
+    //           </div>
+    //         </div>
+    //       </Col>
+    //     ))}
+    //   </Row>
+    // </Container>
   );
 }
 
