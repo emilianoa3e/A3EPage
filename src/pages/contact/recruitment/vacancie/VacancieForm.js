@@ -1,14 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Row, Form as FormBt } from "react-bootstrap";
-import {
-  MdPerson,
-  MdPhone,
-  MdMailOutline,
-  MdWarehouse,
-  MdNaturePeople,
-} from "react-icons/md";
+import { MdPerson, MdPhone, MdMailOutline, MdWarehouse } from "react-icons/md";
 import { TextInput } from "../../../../components/shared/TextInput";
 import { SelectInput } from "../../../../components/shared/SelectInput";
+import { getAllPositions } from "../../../../utils/getPositions";
 import FileDropzone from "../../../../components/vacancie/FileDropzone";
 
 function VacancieForm({
@@ -18,6 +13,26 @@ function VacancieForm({
   uploadedFile,
   setUploadedFile,
 }) {
+  const [optionsList, setOptionsList] = useState([]);
+
+  const getPositions = async () => {
+    const data = await getAllPositions();
+    setOptionsList(data.positions);
+  };
+
+  useEffect(() => {
+    getPositions();
+  }, []);
+
+  const positionsActive = optionsList.filter(
+    (position) => position.status === false
+  );
+
+  const optionsPositions = positionsActive.map((position) => ({
+    value: position.name,
+    label: position.name,
+  }));
+
   return (
     <>
       <Row className="mb-2">
@@ -109,12 +124,11 @@ function VacancieForm({
       <Row className="mb-2">
         <Col md={8} lg={8} className="mb-2">
           <FormBt.Group>
-            <TextInput
-              maxLength="50"
+            <SelectInput
               label="Posición de interes"
               name="position"
-              icon={MdNaturePeople}
-              placeholder="Ingrese la posición de interes"
+              defaultText="Seleccione una posición..."
+              options={optionsPositions}
               isInvalid={!!errors.position && touched.position}
             />
           </FormBt.Group>

@@ -8,6 +8,7 @@ import { getServices } from "../../utils/getServices";
 import logo from "../../assets/img/Logo_Blanco.png";
 import "../../assets/css/components/Footer.css";
 import Colors from "../../utils/Colors";
+
 function Footer() {
   const [servicesList, setServiceList] = useState([]);
   const [contactsList, setContactsList] = useState([]);
@@ -25,6 +26,7 @@ function Footer() {
     getData();
   }, []);
   console.log(contactsList);
+
   return (
     <Container fluid className="footer" style={{ cursor: "default" }}>
       <Row className="p-5">
