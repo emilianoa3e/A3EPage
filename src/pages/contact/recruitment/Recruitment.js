@@ -2,16 +2,16 @@ import React, { useRef, useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Col, Row, Container } from "react-bootstrap";
 import { Form, Formik } from "formik";
+import { saveIntern, saveVacancie } from "../../../utils/formsFunctions";
+import { showConfirmDialog, showAcceptDialog } from "../../../plugins/alert";
 import * as Yup from "yup";
+import Banner from "../../../components/shared/Banner";
 import MiniMap from "../../../components/shared/MiniMap";
 import CustomButton from "../../../components/shared/CustomButton";
 import InfoContact from "../../../components/sale/InfoContact";
 import InstanceForm from "./intern/InternForm";
 import VacancieForm from "./vacancie/VacancieForm";
 import "../../../assets/css/components/contact/Recruitment.css";
-import Banner from "../../../components/shared/Banner";
-import { saveIntern, saveVacancie } from "../../../utils/formsFunctions";
-import { showConfirmDialog, showAcceptDialog } from "../../../plugins/alert";
 
 function Recruitment() {
   const [showForm, setShowForm] = useState("vacancie");
