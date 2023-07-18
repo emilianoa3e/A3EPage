@@ -133,11 +133,11 @@ function Footer() {
                       <MdLocalPhone size={35} color={Colors.PalleteWhite} />
                     </a>
                   ) : contact.type === "facebook" ? (
-                    <a target="_blank" href={`${contact.contact}`}>
+                    <a target="_blank" href={`https://www.facebook.com/${contact.contact}`}>
                       <MdFacebook size={35} color={Colors.PalleteWhite} />
                     </a>
                   ) : contact.type === "linkedin" ? (
-                    <a target="_blank" href={`${contact.contact}`}>
+                    <a target="_blank" href={`https://www.linkedin.com/${contact.contact}`}>
                       <BsLinkedin size={30} color={Colors.PalleteWhite} />
                     </a>
                   ) : null}

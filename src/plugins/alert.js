@@ -74,3 +74,14 @@ export const showSimpleAlert = (title, text, icon) => {
     confirmButtonText: "Ok",
   });
 };
+
+export const showTimerAlert = (title, text, icon, timer, timerProgressBar) => {
+  Swal.fire({
+    title,
+    text,
+    icon,
+    confirmButtonText: "Ok",
+    timer: timer,
+    timerProgressBar: timerProgressBar,
+  });
+};

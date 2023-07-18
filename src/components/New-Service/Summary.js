@@ -6,13 +6,13 @@ import {
 } from "react-icons/md";
 import "../../assets/css/components/Summary.css";
 import ModalBoletin from "./ModalBoletin";
-import pdf from '../../assets/archives/service_pdf.pdf'
+import pdf from "../../assets/archives/service_pdf.pdf";
 
 function Summary({ notice, service, image, changeState, data, see }) {
   const [show, setShow] = useState(false);
-  
+
   const handleChange = () => setShow(!show);
-  
+
   const go = () => {
     if (notice) {
       handleChange();
@@ -25,7 +25,7 @@ function Summary({ notice, service, image, changeState, data, see }) {
   return (
     <>
       <ModalBoletin handleChange={handleChange} show={show} />
-      
+
       <a onClick={go} target="_blank" className="summaryLink">
         <div className="summaryButton d-flex justify-content-center">
           {!notice && service && (

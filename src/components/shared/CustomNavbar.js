@@ -11,6 +11,7 @@ import logo from "../../assets/img/Logo_Blanco.png";
 import "../../assets/css/components/Navbar.css";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import { getServices } from "../../utils/getServices";
+import { showSimpleAlert, showTimerAlert } from "../../plugins/alert";
 
 function CustomNavbar() {
   const navigate = useNavigate();
@@ -103,10 +104,21 @@ function CustomNavbar() {
               id="innovacion"
               className={`${isActive("innovacion") ? "active" : ""}`}
             >
-              <DropdownItem onClick={() => navigate("/contact/sale")}>
+              <DropdownItem
+                onClick={() => window.open("https://a3e-sismedia.mx/", "_blank")}
+              >
                 SISMEDIA-RT
               </DropdownItem>
-              <DropdownItem onClick={() => navigate("/contact/recruitment")}>
+              <DropdownItem
+                onClick={() =>
+                  showTimerAlert(
+                    "¡Proximamente!",
+                    "Monitor i3 es una tecnología de innovación para monitoreo de medidores SISMEDIA-RT ❤️",
+                    null, 3000, true
+                  )
+                }
+                style={{fontStyle:'italic', color:'gray'}}
+              >
                 Monitor i3
               </DropdownItem>
             </NavDropdown>
