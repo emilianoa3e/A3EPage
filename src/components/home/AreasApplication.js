@@ -89,7 +89,7 @@ function AreasApplication() {
       <CustomTitle title={"ÁREAS DE APLICACIÓN"} subtitle={"APLICACIÓN"}/>
       <Row className="p-0 m-0" >
         {applications.map((area, index) => (
-          <Col key={index} md={6} lg={3} xs={12} className="justify-content-center">
+          <Col key={index} md={6} lg={3} xs={12} className="justify-content-center mb-2">
             <RotatingText areas={area.text} imageUrl={area.img} />
           </Col>
         ))}

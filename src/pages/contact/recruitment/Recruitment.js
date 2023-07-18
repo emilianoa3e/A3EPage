@@ -24,7 +24,7 @@ function Recruitment() {
 
   useEffect(() => {
     const getData = async () => {
-      try {        
+      try {
         const contacts = await getAllContacts();
         setContactsList(contacts.contacts);
       } catch (error) {
@@ -133,14 +133,6 @@ function Recruitment() {
       </Container>
       <Container className="mt-4">
         <Row>
-          <Col md={4} lg={4}>
-            <Row>
-              <MiniMap />
-            </Row>
-            <Row className="mt-3 ms-2 me-2">
-              <InfoContact contactList={contactsList}/>
-            </Row>
-          </Col>
           <Col md={8} lg={8}>
             <Row className="mb-3">
               <Col className="text-center">
@@ -273,6 +265,14 @@ function Recruitment() {
                 )}
               </Formik>
             )}
+          </Col>
+          <Col md={4} lg={4}>
+            <Row>
+              <MiniMap />
+            </Row>
+            <Row className="mt-3 ms-2 me-2">
+              <InfoContact contactList={contactsList} />
+            </Row>
           </Col>
         </Row>
       </Container>

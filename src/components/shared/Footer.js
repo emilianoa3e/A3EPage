@@ -8,6 +8,7 @@ import { getServices } from "../../utils/getServices";
 import logo from "../../assets/img/Logo_Blanco.png";
 import "../../assets/css/components/Footer.css";
 import Colors from "../../utils/Colors";
+import pdf from "../../assets/archives/service_pdf.pdf"
 
 function Footer() {
   const [servicesList, setServiceList] = useState([]);
@@ -25,7 +26,6 @@ function Footer() {
     };
     getData();
   }, []);
-  console.log(contactsList);
 
   return (
     <Container fluid className="footer" style={{ cursor: "default" }}>
@@ -52,7 +52,7 @@ function Footer() {
                 MONITOR i3
               </a>
             </div>
-            <a target="_blank" href="https://htmlcolorcodes.com/es/">
+            <a target="_blank" href={pdf} className="btn">
               AVISO DE PRIVACIDAD
             </a>
 

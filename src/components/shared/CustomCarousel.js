@@ -18,7 +18,7 @@ function CustomCarousel({ list, controls, indicators }) {
           <img
             className="d-block w-100"
             src={bannerDefault}
-            alt={"Not Found"}
+            alt={"Carousel Not Found"}
             style={{ objectFit: "cover" }}
           />
         </Carousel.Item>
@@ -38,7 +38,7 @@ function CustomCarousel({ list, controls, indicators }) {
           <img
             className="d-block w-100 "
             src={media.image}
-            alt={"Not Found"}
+            alt={" Not Found"}
             style={{ objectFit: "cover" }}
           />
           <Carousel.Caption className=" text-start w-100 h-50 " style={{position:'absolute', left:0}}>

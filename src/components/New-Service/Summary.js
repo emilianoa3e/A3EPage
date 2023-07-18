@@ -1,24 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, Button } from "react-bootstrap";
 import {
   MdOutlineNotificationsActive,
   MdArrowCircleDown,
 } from "react-icons/md";
 import "../../assets/css/components/Summary.css";
+import ModalBoletin from "./ModalBoletin";
+import pdf from '../../assets/archives/service_pdf.pdf'
 
 function Summary({ notice, service, image, changeState, data, see }) {
-  const go =()=>{
-    if(notice){
-      
+  const [show, setShow] = useState(false);
+  
+  const handleChange = () => setShow(!show);
+  
+  const go = () => {
+    if (notice) {
+      handleChange();
     }
-  }
+
+    if (service) {
+      window.open(pdf, "_blank");
+    }
+  };
   return (
     <>
+      <ModalBoletin handleChange={handleChange} show={show} />
+      
       <a onClick={go} target="_blank" className="summaryLink">
         <div className="summaryButton d-flex justify-content-center">
           {!notice && service && (
             <>
-              <p style={{paddingTop:'8px'}}>
+              <p style={{ paddingTop: "8px" }}>
                 Ver <strong className="pe-1">PDF</strong>
                 <MdArrowCircleDown className="pe-1" />
               </p>
@@ -26,7 +38,7 @@ function Summary({ notice, service, image, changeState, data, see }) {
           )}
           {notice && !service && (
             <>
-              <p style={{paddingTop:'8px'}}>
+              <p style={{ paddingTop: "8px" }}>
                 Suscríbete al <strong className="pe-1">boletín</strong>
                 <MdOutlineNotificationsActive className="pe-1" />
               </p>

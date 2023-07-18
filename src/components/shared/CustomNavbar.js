@@ -100,8 +100,8 @@ function CustomNavbar() {
             </NavDropdown>
             <NavDropdown
               title={"INNOVACIÓN"}
-              id="contact"
-              className={`${isActive("contact") ? "active" : ""}`}
+              id="innovacion"
+              className={`${isActive("innovacion") ? "active" : ""}`}
             >
               <DropdownItem onClick={() => navigate("/contact/sale")}>
                 SISMEDIA-RT
