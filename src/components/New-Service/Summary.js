@@ -52,7 +52,8 @@ function Summary({ notice, service, image, changeState, data, see }) {
           style={{ width: "100%", height: "250px", objectFit: "cover" }}
         />
         <div className="text-summary ">
-          <p>{data}</p>
+          <p>{data}</p>0129
+          
           <Button
             className="btn btn-success"
             style={{ borderRadius: "0px 30px 30px 30px" }}
