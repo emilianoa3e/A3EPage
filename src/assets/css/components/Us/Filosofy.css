@@ -97,6 +97,9 @@
 }
 
 @media (max-width: 430px) {
+  .areasApplication {
+    min-height: 150px;
+  }
   .filosofy .collage-row {
     grid-gap: 14px !important;
   }

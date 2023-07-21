@@ -43,21 +43,21 @@ function Certifications() {
               className="d-block w-100"
               src={certification.image}
               alt={"Not Found"}
-              style={{ objectFit: "cover", minHeight:'250px' }}
+              style={{ objectFit: "cover", minHeight:'220px' }}
             />
             <Carousel.Caption style={{ top: 0, right: 0 }}>
               <div
                 className="contentCaption h-100"
                 style={{ position: "absolute", right: 0 }}
               >
-                <Row className="justify-content-center  w-100">
+                <Row className="justify-content-center ">
                   <Col className="col-12">
                     <h1>{certification.title}</h1>
                   </Col>
-                  <Col lg={12} md={12} xs={8}>
+                  <Col className="col-12">
                     <p>{certification.description}</p>
                   </Col>
-                  <Col lg={12} md={12} xs={4} className=" text-center ">
+                  <Col className="col-12 text-center ">
                     <a
                       href={certification.link}
                       className="linkButton"                      

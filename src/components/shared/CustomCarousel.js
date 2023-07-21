@@ -36,7 +36,7 @@ function CustomCarousel({ list, controls, indicators }) {
       {list.map((media) => (
         <Carousel.Item key={media._id}>
           <img
-            className="d-block w-100 "
+            className="d-block h-100"
             src={media.image}
             alt={" Not Found"}
             style={{ objectFit: "cover" }}

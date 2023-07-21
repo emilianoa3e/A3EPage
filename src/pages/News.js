@@ -15,25 +15,20 @@ function News() {
   const endOffset = itemOffset + itemsPerPage;
   const [filter, setFilter] = useState("Novedades");
   const [currentPage, setCurrentPage] = useState(1);
-  const [newsList, setNewsList] = useState([
-    {
-      _id: "",
-      title: "",
-      type: "",
-      content: "",
-    },
-  ]);
+  const [newsList, setNewsList] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
       setIsLoading(true);
       try {
         const data = await getNews();
-        setNewsList(data.dataNew);
+        setNewsList(data.news);
       } catch (error) {
         console.log("Error getting news", error);
+      }finally{
+        setIsLoading(false);
       }
-      setIsLoading(false);
+      
     };
     getData();
   }, []);
@@ -41,7 +36,6 @@ function News() {
   const handleFilterChange = (type) => {
     setFilter(type);
   };
-
   const filteredNewsList = newsList.filter((news) => {
     if (filter === "Novedades") {
       return news.type === filter;

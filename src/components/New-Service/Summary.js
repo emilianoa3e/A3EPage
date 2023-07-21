@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Image, Button } from "react-bootstrap";
+import { Image, Button, Row, Col } from "react-bootstrap";
 import {
   MdOutlineNotificationsActive,
   MdArrowCircleDown,
@@ -8,7 +8,7 @@ import "../../assets/css/components/Summary.css";
 import ModalBoletin from "./ModalBoletin";
 import pdf from "../../assets/archives/service_pdf.pdf";
 
-function Summary({ notice, service, image, changeState, data, see }) {
+function Summary({ notice, service, image, changeState, data, see }) {  
   const [show, setShow] = useState(false);
 
   const handleChange = () => setShow(!show);
@@ -49,20 +49,27 @@ function Summary({ notice, service, image, changeState, data, see }) {
       <div className="summary">
         <Image
           src={image}
-          style={{ width: "100%", height: "250px", objectFit: "cover" }}
+          style={{ width: "100%", height: "300px", objectFit: "cover" }}
         />
-        <div className="text-summary ">
-          <p>{data}</p>0129
-          
-          <Button
-            className="btn btn-success"
+        <div className="text-summary p-0">
+          <Row className="h-100 p-0 m-0">
+            <Col className="col-12">
+              <p>{data}</p>
+            </Col>            
+          </Row>
+        </div>
+      </div>
+      <Row className="justify-content-center m-2 mb-4">
+        <Col className="col-12 text-center">
+          <a
+            className="showButton"
             style={{ borderRadius: "0px 30px 30px 30px" }}
             onClick={changeState}
           >
             {see ? "Mostrar menos" : "Mostrar más"}
-          </Button>
-        </div>
-      </div>
+          </a>
+        </Col>
+      </Row>
     </>
   );
 }

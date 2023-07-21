@@ -139,7 +139,8 @@ function Filosofy() {
         {ethicsValues.map((value, index) => (
           <Col
             key={index}
-            md={6}
+            md={3}
+            sm={3}
             lg={2}
             xs={6}
             className="justify-content-center mb-2"
