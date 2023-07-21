@@ -17,23 +17,16 @@
     font-size: 1rem;
 }
 
-/* @media (max-width: 900px) {
-    .contentCaption{
-        margin: 10px 0px 0px 80px;
-    }
-    .contentCaption h1{
-        padding-top: 0px !important;
-        
-    }
+ @media (min-width: 1200px) {
     .contentCaption p{
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     
     .contentCaption a{
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }
-*/
+
 @media (max-width: 700px) {
     .contentCaption{
         margin: 20px 10px 20px 80px;
@@ -41,13 +34,31 @@
     }
     .contentCaption h1{
         padding-top: 0px !important;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
     .contentCaption p{
-        font-size: 0.5rem !important;
+        font-size: 0.7rem !important;
     }
     
     .contentCaption a{
-        font-size: 0.5rem;
+        font-size: 0.7rem;
+    }
+} 
+
+@media (max-width: 350px) {
+    .contentCaption{
+        margin: 15px 10px 15px 70px;
+        padding: 0;
+    }
+    .contentCaption h1{
+        padding-top: 0px !important;
+        font-size: 0.8rem;
+    }
+    .contentCaption p{
+        font-size: 0.6rem !important;
+    }
+    
+    .contentCaption a{
+        font-size: 0.6rem;
     }
 } 

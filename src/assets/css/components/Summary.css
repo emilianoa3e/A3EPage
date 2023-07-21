@@ -99,12 +99,17 @@
   .summary .text-summary {
     width: 90%;
   }
-
 }
 
 @media (max-width: 320px) {
   .summary .text-summary {
     width: 95%;
   }
-
+  .summaryButton p {
+    font-size: 0.8rem;
+  }
+  .summaryButton svg {
+    font-size: 1.7rem;
+    padding: 2px;
+  }
 }

@@ -28,14 +28,14 @@ function Footer() {
   }, []);
 
   return (
-    <Container fluid className="footer" style={{ cursor: "default" }}>
-      <Row className="p-5">
+    <Container fluid className="footer">
+      <Row className="p-2 pt-5 pb-5">
         <Col>
           <div>
             <strong style={{ cursor: "default" }}>Sobre A3E INGENIEROS</strong>
-            <div className="ps-3 mb-5 mt-1">
+            <div className="ps-2 mb-5 mt-1">
               <a
-                className="btn text-start"
+                className="btn text-start p-0"
                 href="https://a3e-sismedia.mx/"
                 target="_blank"
               >
@@ -43,6 +43,7 @@ function Footer() {
               </a>
               <br />
               <a
+              className="btn text-start p-0"
                 style={{
                   fontStyle: "italic",
                   color: "#EAEBEB",
@@ -52,7 +53,7 @@ function Footer() {
                 MONITOR i3
               </a>
             </div>
-            <a target="_blank" href={pdf} className="btn">
+            <a target="_blank" href={pdf} className="btn p-0">
               AVISO DE PRIVACIDAD
             </a>
 
@@ -69,14 +70,14 @@ function Footer() {
         <Col>
           <div>
             <strong style={{ cursor: "default" }}>SERVICIOS</strong>
-            <div className="ps-3 mb-5">
+            <div className="ps-2 mb-5">
               {/* añadir mapeo de servicios */}
               {!servicesList || servicesList.length !== 0 ? (
                 <>
                   {servicesList.map((service, index) => (
                     <div key={index} className="mt-1">
                       <a
-                        className="btn text-start"
+                        className="btn text-start p-0"
                         href={`/service/${service._id}`}
                       >
                         {service.title}{" "}
@@ -92,13 +93,13 @@ function Footer() {
         </Col>
 
         <Col>
-          <div style={{}}>
+          <div>
             <strong>CONTACTO</strong>
             <br />
             <a
               href={"/contact/recruitment"}
               target="_blank"
-              className="carousel-btn btn"
+              className="btn"
               style={{
                 backgroundColor: "white",
                 color: "#00743B",
@@ -110,8 +111,8 @@ function Footer() {
               Trabaja con nosotros
             </a>
             {/* logo */}
-            <div className="d-flex justify-content-center mt-1">
-              <img src={logo} height={100} />
+            <div className="d-flex mt-5 justify-content-center mt-1">
+              <img src={logo} height={150}/>
             </div>
             {/* icons */}
             <div className="p-2 d-flex mt-5 justify-content-center icons">

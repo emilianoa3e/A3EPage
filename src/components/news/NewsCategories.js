@@ -20,14 +20,14 @@ const types = [
 //Categories for News
 function NewsCategories({ handleFilterChange, filter }) {
   return (
-    <Row className="noticeCategories justify-content-center m-4">
+    <Row className="noticeCategories justify-content-center mt-4 w-100">
       {types.map((type) => (
         <Col
           key={type._id}
           xs={6}
           md={3}
           lg={3}
-          className={`mt-1 justify-content-center text-center  p-3 ${
+          className={`pt-3 pb-3 ms-1 me-1 justify-content-center text-center ${
             filter === type.type ? "selected" : "noSelected"
           }`}
           onClick={() => handleFilterChange(`${type.type}`)}

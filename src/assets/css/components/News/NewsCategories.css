@@ -1,12 +1,13 @@
 /* Estilos para resaltar el Col seleccionado */
 .noticeCategories .selected {
-    background-color: #00743B;
-    color: #ffffff;
-    cursor: pointer;
-  }
+  background-color: #00743b;
+  color: #ffffff;
+  cursor: pointer;
+}
 
 .noticeCategories .noSelected {
-    background-color: #ffffff;
-    border-inline-end-style: solid;
-    cursor: pointer;
+  background-color: #ffffff;
+  border-color: #00743b;
+  border-top: solid 1px #00743b;
+  cursor: pointer;
 }

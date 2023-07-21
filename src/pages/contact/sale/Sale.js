@@ -77,14 +77,6 @@ function Sale() {
       </Container>
       <Container className="mt-4">
         <Row>
-          <Col md={4} lg={4}>
-            <Row>
-              <MiniMap />
-            </Row>
-            <Row className="mt-3 ms-2 me-2">
-              <InfoContact />
-            </Row>
-          </Col>
           <Col className="mt-5" md={8} lg={8}>
             <Formik
               initialValues={{
@@ -134,6 +126,14 @@ function Sale() {
                 </Form>
               )}
             </Formik>
+          </Col>
+          <Col md={4} lg={4}>
+            <Row>
+              <MiniMap />
+            </Row>
+            <Row className="mt-3 ms-2 me-2">
+              <InfoContact />
+            </Row>
           </Col>
         </Row>
       </Container>

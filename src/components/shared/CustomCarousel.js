@@ -1,13 +1,12 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
+import { Row, Col } from "react-bootstrap";
 import "../../assets/css/components/Carousel.css";
 import bannerDefault from "../../assets/img/NOSOTROS.jpg";
 
 function CustomCarousel({ list, controls, indicators }) {
-
-
   //Default Carousel
-  if (!list || list.lenght===0) {
+  if (!list || list.lenght === 0) {
     return (
       <Carousel
         slide
@@ -16,7 +15,7 @@ function CustomCarousel({ list, controls, indicators }) {
       >
         <Carousel.Item>
           <img
-            className="d-block w-100"
+            className="d-block"
             src={bannerDefault}
             alt={"Carousel Not Found"}
             style={{ objectFit: "cover" }}
@@ -31,34 +30,30 @@ function CustomCarousel({ list, controls, indicators }) {
       controls={controls}
       indicators={indicators}
       style={{ margin: 0, padding: 0 }}
-      className="carousel "
+      className="carousel"
     >
       {list.map((media) => (
         <Carousel.Item key={media._id}>
           <img
-            className="d-block h-100"
+            className="d-block carousel-image"
             src={media.image}
             alt={" Not Found"}
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover"}}
           />
-          <Carousel.Caption className=" text-start w-100 h-50 " style={{position:'absolute', left:0}}>
-            {/* <a
-              href={media.link}
-              target="_blank"
-              className="carousel-btn btn"
-              style={{
-                position:'relative',
-                top:10,
-                left:50,
-                backgroundColor: "#00743B",
-                color: "white",
-                padding:'0.6% 4% 0.6% 4%',
-                borderRadius: "0px 20px 20px 20px",
-              }}
-            >
-              VER MÁS
-            </a> */}
-          </Carousel.Caption>
+          <>
+            {media.link && (
+              <Carousel.Caption
+                className=" text-start w-100 h-50 "
+                style={{ position: "absolute", left: 0 }}
+              >
+                <Row className="w-100 h-100 p-0 m-0 align-items-center justify-content-left">
+                  <Col className="text-center ">
+                    <a className="carousel-btn">Ver más</a>
+                  </Col>
+                </Row>
+              </Carousel.Caption>
+            )}
+          </>
         </Carousel.Item>
       ))}
     </Carousel>

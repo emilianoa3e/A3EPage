@@ -15,7 +15,7 @@ const RotatingText = ({ values, imageUrl }) => {
 
   return (
     <div
-    className="areasApplication"
+    className="filosofy"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -133,7 +133,7 @@ function Filosofy() {
     },
   ];
   return (
-    <Container className="mg-4 p-0 m-0" fluid>
+    <Container className="mb-4 p-0 m-0" fluid>
       <CustomTitle title={"FILOSOFÍA"} subtitle={"VALORES"} />
       <Row className="collage-row p-0 m-0">
         {ethicsValues.map((value, index) => (
@@ -150,24 +150,6 @@ function Filosofy() {
         ))}
       </Row>
     </Container>
-    // <Container className="filosofy mb-4" fluid>
-    //   <CustomTitle title={"FILOSOFÍA"} subtitle={"VALORES"} />
-    //   <Row className="collage-row ps-1">
-    //     {ethicsValues.map((values, index) => (
-    //       <Col key={index} className=" p-0 m-0" lg>
-    //         <div className="image-container">
-    //           <div className="front">
-    //             <Image src={image} alt="Image" fluid />
-    //             <div className="area">{values.name}</div>
-    //           </div>
-    //           <div className="back h-100">
-    //             <p className="text " >{values.description}</p>
-    //           </div>
-    //         </div>
-    //       </Col>
-    //     ))}
-    //   </Row>
-    // </Container>
   );
 }
 

@@ -1,71 +1,13 @@
-@media (min-width: 1400px) {
-    .carousel h3 {
-        font-size: 20px !important;
-    }
-    
-    .carousel p{
-        font-size: 18px !important;
-    }
-    .carousel a {
-        font-size: 25px !important;
-    }
-
+.carousel .carousel-btn{
+    background-color: #00743b;
+    text-decoration: none ;
+    border-radius: 0px 30px 30px 30px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
-@media (max-width: 1000px) {
-    .carousel h3 {
-        font-size: 18px !important;
-    }
-    
-    .carousel p{
-        font-size: 16px !important;
-    }
-    .carousel a {
-        font-size: 20px !important;
-    }
-
+.carousel .carousel-image{
+    height: calc(100vh - 50px);
 }
-
-@media (max-width: 550px) {
-    .carousel h3 {
-        font-size: 16px !important;
-    }
-    
-    .carousel p{
-        font-size: 15px !important;
-    }
-    .carousel a {
-        font-size: 10px !important;
-    }
-
-}
-
-@media (max-width: 400px) {
-    .carousel h3 {
-        font-size: 15px !important;
-    }
-    
-    .carousel p{
-        font-size: 12px !important;
-    }
-    .carousel a {
-
-        font-size: 10px !important;
-    }
-}
-
-
-@media (max-width: 300px) {
-    .carousel h3 {
-        font-size: 11px !important;
-    }
-    
-    .carousel p{
-        font-size: 9px !important;
-    }
-    .carousel a {
-
-        font-size: 8px !important;
-    }
-}
-

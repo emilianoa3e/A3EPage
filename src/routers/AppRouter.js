@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useEffect} from "react";
+import { useLocation } from "react-router-dom";
 import { BrowserRouter, Route, Navigate, Routes } from "react-router-dom";
 import Layout from "../components/shared/Layout";
 import Home from "../pages/Home";
@@ -11,8 +12,9 @@ import Us from "../pages/Us";
 function AppRouter() {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
       <Layout>
-        <Routes>
+        <Routes>          
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/about" element={<Us />} />
           <Route exact path="/service/:id" element={<Services />} />
@@ -25,6 +27,16 @@ function AppRouter() {
       </Layout>
     </BrowserRouter>
   );
+}
+
+function ScrollToTop() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return null;
 }
 
 export default AppRouter;

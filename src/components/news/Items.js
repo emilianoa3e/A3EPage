@@ -51,7 +51,7 @@ function Items({ currentNews, pageCount, handlePageClick }) {
               <>
 
                 <div
-                  className="p-3 pe-5 ps-5 mt-5 content"
+                  className="p-3 pe-3 ps-3 mt-5 content"
                   dangerouslySetInnerHTML={{ __html: news.content }}
                 ></div>
                 <Col className="col-12 text-center">

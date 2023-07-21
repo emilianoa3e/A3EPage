@@ -1,7 +1,7 @@
 .polity .imgContainer img{
     flex-shrink: 0;
     object-fit: cover;
-    max-height: 310px;
+    max-height: 300px;
     width: 100%;
     border-radius: 0px 30px 0px 0px;
 }

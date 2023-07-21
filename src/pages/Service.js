@@ -74,7 +74,7 @@ function Service() {
       {see && (
         <>
           <div
-            className="p-3 pe-5 ps-5 mt-5 content"
+            className="p-3 pe-3 ps-3 mt-5content"
             dangerouslySetInnerHTML={{ __html: service.content }}
           ></div>
           <Col className="col-12 text-center">
