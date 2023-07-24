@@ -18,20 +18,26 @@ function Items({ currentNews, pageCount, handlePageClick }) {
     }
     setSee(!see);
   };
-  
+
   return (
     <>
       {currentNews.map((news, index) => (
-        <div key={index} className={"container-fluid p-0 mb-3"}  ref={targetSectionRef}>
+        <div
+          key={index}
+          className={"container-fluid p-0 mb-3"}
+          ref={targetSectionRef}
+        >
           <>
             {/* Title */}
             <div className="p-2">
               <h1
-                className="text-start ms-4 mt-4"
+                className="text-start ms-4 mt-4 "
                 style={{ color: "#00743B", fontWeight: "bold" }}
               >
                 {news.title}
+                <p className="text-end me-5" style={{fontSize:'initial', fontStyle:'italic', color:'gray'}}>{`${news.author} | ${news.date}`}</p>
               </h1>
+              
             </div>
             <Summary
               image={imagen}
@@ -49,7 +55,6 @@ function Items({ currentNews, pageCount, handlePageClick }) {
             {/* Content */}
             {see && (
               <>
-
                 <div
                   className="p-3 pe-3 ps-3 mt-5 content"
                   dangerouslySetInnerHTML={{ __html: news.content }}

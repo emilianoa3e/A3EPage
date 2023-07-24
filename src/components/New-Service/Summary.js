@@ -8,7 +8,7 @@ import "../../assets/css/components/Summary.css";
 import ModalBoletin from "./ModalBoletin";
 import pdf from "../../assets/archives/service_pdf.pdf";
 
-function Summary({ notice, service, image, changeState, data, see }) {  
+function Summary({ notice, service, image, changeState, data, see }) {
   const [show, setShow] = useState(false);
 
   const handleChange = () => setShow(!show);
@@ -26,26 +26,25 @@ function Summary({ notice, service, image, changeState, data, see }) {
     <>
       <ModalBoletin handleChange={handleChange} show={show} />
 
-      <a onClick={go} target="_blank" className="summaryLink">
-        <div className="summaryButton d-flex justify-content-center">
-          {!notice && service && (
-            <>
-              <p style={{ paddingTop: "8px" }}>
-                Ver <strong className="pe-1">PDF</strong>
-                <MdArrowCircleDown className="pe-1" />
-              </p>
-            </>
-          )}
-          {notice && !service && (
-            <>
-              <p style={{ paddingTop: "8px" }}>
-                Suscríbete al <strong className="pe-1">boletín</strong>
-                <MdOutlineNotificationsActive className="pe-1" />
-              </p>
-            </>
-          )}
-        </div>
-      </a>
+      <div className="summaryButton d-flex justify-content-center ">
+        {!notice && service && (
+          <a onClick={go} target="_blank" className="summaryLink">
+            <p style={{ paddingTop: "8px" }}>
+              Ver <strong className="pe-1">PDF</strong>
+              <MdArrowCircleDown className="pe-1" />
+            </p>
+          </a>
+        )}
+        {notice && !service && (
+          <a onClick={go} target="_blank" className="summaryLink">
+            <p style={{ paddingTop: "8px" }}>
+              Suscríbete al <strong className="pe-1">boletín</strong>
+              <MdOutlineNotificationsActive className="pe-1" />
+            </p>
+          </a>
+        )}
+      </div>
+
       <div className="summary">
         <Image
           src={image}
@@ -55,7 +54,7 @@ function Summary({ notice, service, image, changeState, data, see }) {
           <Row className="h-100 p-0 m-0">
             <Col className="col-12">
               <p>{data}</p>
-            </Col>            
+            </Col>
           </Row>
         </div>
       </div>
