@@ -28,11 +28,15 @@ function Recruitment() {
         const contacts = await getAllContacts();
         setContactsList(contacts.contacts);
       } catch (error) {
-        console.log("Error getting info footer");
+        console.log("Error getting contacts at recruitment");
       }
     };
     getData();
   }, []);
+
+  const filteredContactsList = contactsList && contactsList.length > 0
+  ? contactsList.filter((contact) => contact.destiny === "reclutamiento")
+  : [];
 
   const onChange = () => {
     if (captcha.current.getValue()) {
@@ -271,7 +275,7 @@ function Recruitment() {
               <MiniMap />
             </Row>
             <Row className="mt-3 ms-2 me-2">
-              <InfoContact contactList={contactsList} />
+              <InfoContact contactList={filteredContactsList} />
             </Row>
           </Col>
         </Row>

@@ -27,6 +27,10 @@ function Footer() {
     getData();
   }, []);
 
+  const filteredContactsList = contactsList && contactsList.length > 0
+  ? contactsList.filter((contact) => contact.destiny === "general")
+  : [];
+
   const openPdf = ()=>{
     window.open(pdf, "_blank");
   }
@@ -121,7 +125,7 @@ function Footer() {
             </div>
             {/* icons */}
             <div className="p-2 d-flex mt-5 justify-content-center icons">
-              {contactsList.map((contact) => (
+              {filteredContactsList.map((contact) => (
                 <div key={contact._id}>
                   {contact.type === "whatsapp" ? (
                     <a

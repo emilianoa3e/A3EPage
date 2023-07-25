@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Col, Row, Container } from "react-bootstrap";
 import { Form, Formik } from "formik";
@@ -10,11 +10,29 @@ import CustomButton from "../../../components/shared/CustomButton";
 import InfoContact from "../../../components/sale/InfoContact";
 import Banner from "../../../components/shared/Banner";
 import { saveSale } from "../../../utils/formsFunctions";
+import { getAllContacts } from "../../../utils/getContacts";
 
 function Sale() {
   const [captchaValidate, setCaptchaValidate] = useState(false);
   const [tokenRecaptcha, setTokenRecaptcha] = useState("");
   const captcha = useRef(null);
+  const [contactsList, setContactsList] = useState([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const contacts = await getAllContacts();
+        setContactsList(contacts.contacts);
+      } catch (error) {
+        console.log("Error getting contacts at recruitment");
+      }
+    };
+    getData();
+  }, []);
+
+  const filteredContactsList = contactsList && contactsList.length > 0
+  ? contactsList.filter((contact) => contact.destiny === "ventas")
+  : [];
 
   const onChange = () => {
     if (captcha.current.getValue()) {
@@ -133,7 +151,7 @@ function Sale() {
               <MiniMap />
             </Row>
             <Row className="mt-3 ms-2 me-2">
-              <InfoContact />
+              <InfoContact contactList={filteredContactsList}/>
             </Row>
           </Col>
         </Row>

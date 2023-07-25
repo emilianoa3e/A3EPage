@@ -21,9 +21,13 @@ function ContactButton() {
     getData();
   }, []);
 
+  
+  const filteredContactsList = contactsList && contactsList.length > 0
+  ? contactsList.filter((contact) => contact.destiny === "general")
+  : [];
   let whatsapp;
   let phone;
-  contactsList.forEach(element => {
+  filteredContactsList.forEach(element => {
     if(element.type==="whatsapp"){
        whatsapp = element.contact
     }
@@ -32,7 +36,7 @@ function ContactButton() {
     }
     
   });
-  
+  console.log(whatsapp, phone);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -63,9 +67,8 @@ function ContactButton() {
       {active && (
         <div>
           <animated.a
-            className="wppButton"
-            // title={`+52 1 ${whatsapp?whatsapp:`(777) 260 4715`} `}
-            href={`https://api.whatsapp.com/send?phone=${whatsapp?whatsapp:`5217772604715`}`}
+            className="wppButton"            
+            href={`https://wa.me/${whatsapp?whatsapp:`5217772604715`}`}
             target="_blank"
             rel="noopener noreferrer"
             style={buttonAnimation}

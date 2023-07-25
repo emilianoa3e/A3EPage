@@ -10,9 +10,25 @@ import {
 import "./InfoContact.css";
 
 function InfoContact({ contactList }) {
+  let phone;
+  let email;
+  let whatsapp;
+
+  contactList.forEach((contact) => {
+    if (contact.type === "phone") {
+      phone = contact.contact;
+    }
+    if (contact.type === "email") {
+      email = contact.contact;
+    }
+    if (contact.type === "whatsapp") {
+      whatsapp = contact.contact;
+    }
+  });
+
   return (
-    <Container fluid className="container-card p-4">
-      <Col>
+    <Container fluid className="container-card p-2">
+      <Col className="m-3">
         <Row style={{ alignItems: "center" }}>
           <Col className="col-1">
             <MdLocationOn size={30} />
@@ -28,7 +44,7 @@ function InfoContact({ contactList }) {
             <MdLocalPhone size={30} />
           </Col>
           <Col>
-            <p className="pt-3 ms-3">TEL: +52 1 (777) 123 4567</p>
+            <p className="pt-3 ms-3">{`+52 ${phone}`}</p>
           </Col>
         </Row>
         <Row style={{ alignItems: "center" }}>
@@ -36,7 +52,7 @@ function InfoContact({ contactList }) {
             <MdWhatsapp size={30} />
           </Col>
           <Col>
-            <p className="pt-3 ms-3">+52 1 (777) 123 4567</p>
+            <p className="pt-3 ms-3">{`+52 ${whatsapp}`}</p>
           </Col>
         </Row>
         <Row style={{ alignItems: "center" }}>
@@ -44,7 +60,7 @@ function InfoContact({ contactList }) {
             <MdEmail size={30} />
           </Col>
           <Col>
-            <p className="pt-3 ms-3">ejemplo@gmail.com</p>
+            <p className="pt-3 ms-3">{email}</p>
           </Col>
         </Row>
       </Col>
