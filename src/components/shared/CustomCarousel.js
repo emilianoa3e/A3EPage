@@ -3,27 +3,25 @@ import Carousel from "react-bootstrap/Carousel";
 import { Row, Col } from "react-bootstrap";
 import "../../assets/css/components/Carousel.css";
 import bannerDefault from "../../assets/img/NOSOTROS.jpg";
+import ErrorComponent from "./ErrorComponent";
 
 function CustomCarousel({ list, controls, indicators }) {
   //Default Carousel
-  if (!list || list.lenght === 0) {
+  if (list.length === 0) {
     return (
-      <Carousel
-        slide
-        controls={false}
-        style={{ margin: 0, padding: 0, overflow: "hidden" }}
-      >
+      <Carousel>
         <Carousel.Item>
-          <img
-            className="d-block"
-            src={bannerDefault}
-            alt={"Carousel Not Found"}
-            style={{ objectFit: "cover" }}
-          />
-        </Carousel.Item>
+        <img
+          className="d-block carousel-image"
+          src={bannerDefault}
+          alt={"DEfault Not Found"}
+          style={{ objectFit: "cover" }}
+        />
+      </Carousel.Item>
       </Carousel>
     );
   }
+
 
   return (
     <Carousel
@@ -38,7 +36,7 @@ function CustomCarousel({ list, controls, indicators }) {
             className="d-block carousel-image"
             src={media.image}
             alt={" Not Found"}
-            style={{ objectFit: "cover"}}
+            style={{ objectFit: "cover" }}
           />
           <>
             {media.link && (

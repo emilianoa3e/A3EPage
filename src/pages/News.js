@@ -7,6 +7,7 @@ import Loader from "../components/shared/Loader";
 import { getNews } from "../utils/getNews";
 import "../assets/css/components/EditorContent.css";
 import { Container } from "react-bootstrap";
+import ErrorComponent from "../components/shared/ErrorComponent";
 
 function News() {
   const [isLoading, setIsLoading] = useState(false);
@@ -25,10 +26,9 @@ function News() {
         setNewsList(data.news);
       } catch (error) {
         console.log("Error getting news", error);
-      }finally{
+      } finally {
         setIsLoading(false);
       }
-      
     };
     getData();
   }, []);
@@ -65,17 +65,23 @@ function News() {
         handleFilterChange={handleFilterChange}
         filter={filter}
       />
-      {currentNews.length > 0 ? (
+      {newsList.length !== 0 ? (
         <>
-          {/* content */}
-          <Items
-            currentNews={currentNews}
-            pageCount={pageCount}
-            handlePageClick={handlePageClick}
-          />
+          {currentNews.length > 0 ? (
+            <>
+              {/* content */}
+              <Items
+                currentNews={currentNews}
+                pageCount={pageCount}
+                handlePageClick={handlePageClick}
+              />
+            </>
+          ) : (
+            <NotRegisters icon={true} text={true} />
+          )}
         </>
       ) : (
-        <NotRegisters icon={true} text={true} />
+        <ErrorComponent />
       )}
     </Container>
   );

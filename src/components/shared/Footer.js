@@ -27,6 +27,10 @@ function Footer() {
     getData();
   }, []);
 
+  const openPdf = ()=>{
+    window.open(pdf, "_blank");
+  }
+
   return (
     <Container fluid className="footer">
       <Row className="p-2 pt-5 pb-5">
@@ -43,6 +47,7 @@ function Footer() {
               </a>
               <br />
               <a
+              onClick={openPdf}
               className="btn text-start p-0"
                 style={{
                   fontStyle: "italic",

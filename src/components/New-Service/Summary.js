@@ -7,6 +7,7 @@ import {
 import "../../assets/css/components/Summary.css";
 import ModalBoletin from "./ModalBoletin";
 import pdf from "../../assets/archives/service_pdf.pdf";
+import { showTimerAlert } from "../../plugins/alert";
 
 function Summary({ notice, service, image, changeState, data, see }) {
   const [show, setShow] = useState(false);
@@ -15,7 +16,13 @@ function Summary({ notice, service, image, changeState, data, see }) {
 
   const go = () => {
     if (notice) {
-      handleChange();
+      //lo comentado es para funcionamiento de boletín (inhabilitado hasta nuevo aviso)
+      // handleChange();
+      showTimerAlert(
+        "Proximamente Boletín A3E",
+        "Por el momento no se encuentra habilitado 😥",
+        null, 3000, true
+      );
     }
 
     if (service) {
@@ -24,7 +31,7 @@ function Summary({ notice, service, image, changeState, data, see }) {
   };
   return (
     <>
-      <ModalBoletin handleChange={handleChange} show={show} />
+      {/* <ModalBoletin handleChange={handleChange} show={show} /> */}
 
       <div className="summaryButton d-flex justify-content-center ">
         {!notice && service && (

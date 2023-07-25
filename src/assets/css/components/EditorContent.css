@@ -36,12 +36,12 @@
 }
 
 .content p {
-  font-size: 22px;
+  font-size: 20px;
 }
 
 @media screen and (max-width: 1500px) {
   .content p {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
@@ -79,6 +79,6 @@
   }
 
   .content p {
-    font-size: 16px;
+    font-size: 14px;
   }
 }

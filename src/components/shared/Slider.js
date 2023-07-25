@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
+import NotReGisters from '../shared/NotRegisters'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -39,7 +40,7 @@ const SliderComponent = ({ images }) => {
       },
     ],
   };
-  if (images.length === 0) return <></>;
+  if (images.length === 0) return <NotReGisters icon={true} text={true}/>;
 
   if (images.length === 1) {
     return (

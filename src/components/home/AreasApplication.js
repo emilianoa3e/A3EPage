@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import "../../assets/css/components/Home/AreasApplication.css"
+import "../../assets/css/components/Home/AreasApplication.css";
 import mineria from "../../assets/img/Minería.jpg";
 import refineria from "../../assets/img/Refinería.jpg";
 import industria from "../../assets/img/Industria.jpg";
@@ -8,7 +8,7 @@ import comercial from "../../assets/img/Comercial.jpg";
 import CustomTitle from "../shared/CustomTitle";
 import { animated, useSpring } from "@react-spring/web";
 
-const RotatingText = ({ areas, imageUrl }) => {
+const RotatingText = ({ area, text, imageUrl }) => {
   const [hovered, setHovered] = useState(false);
 
   const { opacity, transform } = useSpring({
@@ -19,21 +19,19 @@ const RotatingText = ({ areas, imageUrl }) => {
 
   return (
     <div
-    className="areasApplication"
+      className="areasApplication"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       <animated.div
-      className={"animatedDiv"}
+        className={"animatedDiv"}
         style={{
           transform,
         }}
       >
-        <div
-        className="containerAnimation"
-        >
+        <div className="containerAnimation">
           <animated.img
-          className={"animatedImg"}
+            className={"animatedImg"}
             src={imageUrl}
             alt="Image"
             style={{
@@ -41,19 +39,26 @@ const RotatingText = ({ areas, imageUrl }) => {
             }}
           />
           <animated.div
-          className={"animatedText"}
+            className="areas-label"
             style={{
-              opacity: opacity.to(o => 1 - o),
+              opacity: opacity.to((o) => o - 0.2 ),
             }}
           >
-            <p className="text">{areas}</p>
+            {area}
+          </animated.div>
+          <animated.div
+            className={"animatedText"}
+            style={{
+              opacity: opacity.to((o) => 1 - o),
+            }}
+          >
+            <p className="text">{text}</p>
           </animated.div>
         </div>
       </animated.div>
     </div>
   );
 };
-
 
 function AreasApplication() {
   const applications = [
@@ -82,20 +87,28 @@ function AreasApplication() {
       img: comercial,
     },
   ];
-  
 
   return (
     <Container className="mg-4 p-0 m-0" fluid>
-      <CustomTitle title={"ÁREAS DE APLICACIÓN"} subtitle={"APLICACIÓN"}/>
-      <Row className="p-0 m-0" >
+      <CustomTitle title={"ÁREAS DE APLICACIÓN"} subtitle={"APLICACIÓN"} />
+      <Row className="p-0 m-0">
         {applications.map((area, index) => (
-          <Col key={index} md={6} lg={3} xs={12} className="justify-content-center mb-2">
-            <RotatingText areas={area.text} imageUrl={area.img} />
+          <Col
+            key={index}
+            md={6}
+            lg={3}
+            xs={6}
+            className="justify-content-center mb-2"
+          >
+            <RotatingText
+              area={area.area}
+              text={area.text}
+              imageUrl={area.img}
+            />
           </Col>
         ))}
       </Row>
     </Container>
-    
   );
 }
 

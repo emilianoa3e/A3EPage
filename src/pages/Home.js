@@ -10,16 +10,7 @@ import AreasApplication from "../components/home/AreasApplication";
 
 function Home() {
   const [isLoading, setIsLoading] = useState(false);
-  const [bannersList, setBannersList] = useState([
-    {
-      _id: "",
-      title: "",
-      description: "",
-      image: "",
-      link: "",
-      status: false,
-    },
-  ]);
+  const [bannersList, setBannersList] = useState([]);
   const [clientsList, setClientsList] = useState([]);
 
   const getData = async () => {
@@ -31,36 +22,11 @@ function Home() {
       setClientsList(clients.clients);
     } catch (error) {
       console.log(error);
+      setClientsList(null)
     } finally {
       setIsLoading(false);
     }
   };
-
-  // const getData = async () => {
-  //   setIsLoading(true);
-
-  //   try {
-  //     const bannersPromise = getBanners();
-  //     const clientsPromise = getAllClients();
-
-  //     const [bannersResponse, clientsResponse] = await Promise.all([
-  //       bannersPromise,
-  //       clientsPromise,
-  //     ]);
-
-  //     if (bannersResponse.success) {
-  //       setBannersList(bannersResponse.banners);
-  //     }
-
-  //     if (clientsResponse.success) {
-  //       setClientsList(clientsResponse.clients);
-  //     }
-  //   } catch (error) {
-  //     console.error("Error en alguna de las peticiones:", error);
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
 
   useEffect(() => {
     getData();

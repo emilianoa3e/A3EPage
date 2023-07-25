@@ -7,12 +7,13 @@ import Banner from "../components/shared/Banner";
 import Loader from "../components/shared/Loader";
 import Summary from "../components/New-Service/Summary";
 import "../assets/css/components/EditorContent.css";
+import ErrorComponent from "../components/shared/ErrorComponent";
 
 function Service() {
   const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
   const targetSectionRef = useRef(null);
-  const [service, setService] = useState([]);
+  const [service, setService] = useState();
   const [see, setSee] = useState(false);
 
   //scroll to section
@@ -50,43 +51,49 @@ function Service() {
 
   return (
     <Container className="m-0 p-0 pt-0 mb-4" fluid>
-      <Banner title={service.title} from={"SERVICIOS"} />
-      {/* Title */}
-      <div className="p-2"  ref={targetSectionRef}>
-        <h1         
-          className="text-start ms-4 mt-5"
-          style={{ color: "#00743B", fontWeight: "bold" }}
-        >
-          {service.title}
-        </h1>
-        <h3 style={{ color: "#00743B" }} className="text-center mt-2 mb-4">
-          {service.subtitle}
-        </h3>
-      </div>
-      <Summary
-        service={true}
-        image={imagen}
-        see={see}
-        changeState={changeState}
-        data={service.summary}
-      />
-      {/* Content */}
-      {see && (
+      <Banner from={"SERVICIOS"} />
+      {service ? (
         <>
-          <div
-            className="p-3 pe-3 ps-3 mt-5content"
-            dangerouslySetInnerHTML={{ __html: service.content }}
-          ></div>
-          <Col className="col-12 text-center">
-            <a
-              className="showButton"
-              style={{ borderRadius: "0px 30px 30px 30px" }}
-              onClick={changeState}
+          {/* Title */}
+          <div className="p-2" ref={targetSectionRef}>
+            <h1
+              className="text-start ms-4 mt-5"
+              style={{ color: "#00743B", fontWeight: "bold" }}
             >
-              {see ? "Mostrar menos" : "Mostrar más"}
-            </a>
-          </Col>
+              {service.title}
+            </h1>
+            <h3 style={{ color: "#00743B" }} className="text-center mt-2 mb-4">
+              {service.subtitle}
+            </h3>
+          </div>
+          <Summary
+            service={true}
+            image={imagen}
+            see={see}
+            changeState={changeState}
+            data={service.summary}
+          />
+          {/* Content */}
+          {see && (
+            <>
+              <div
+                className="p-3 pe-3 ps-3 mt-5 content"
+                dangerouslySetInnerHTML={{ __html: service.content }}
+              ></div>
+              <Col className="col-12 text-center">
+                <a
+                  className="showButton"
+                  style={{ borderRadius: "0px 30px 30px 30px" }}
+                  onClick={changeState}
+                >
+                  {see ? "Mostrar menos" : "Mostrar más"}
+                </a>
+              </Col>
+            </>
+          )}
         </>
+      ) : (
+        <ErrorComponent />
       )}
     </Container>
   );

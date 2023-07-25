@@ -28,6 +28,7 @@ function Sale() {
     }
   };
 
+  console.log(tokenRecaptcha);
   const objectSchema = Yup.object().shape({
     fullName: Yup.string()
       .matches(
