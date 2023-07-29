@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import logo from "../../assets/img/Logo_Verde_V1.png";
-import platino from "../../assets/img/DistintivoPlatino.png"
-import enlace from "../../assets/img/logo_Enlace.png"
+import logo from "../../assets/img/logos/Logo_Verde.png";
+import platino from "../../assets/img/general/DistintivoPlatino.png"
+import enlace from "../../assets/img/general/logo_Enlace.png"
 import "../../assets/css/components/Home/InfoResume.css";
 function InfoResume() {
   return (

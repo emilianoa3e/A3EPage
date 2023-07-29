@@ -133,7 +133,7 @@ function Recruitment() {
   return (
     <>
       <Container fluid className="m-0 p-0">
-        <Banner from={"VENTAS"} />
+        <Banner from={"RECLUTAMIENTO"} />
       </Container>
       <Container className="mt-4">
         <Row>

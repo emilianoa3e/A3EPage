@@ -1,10 +1,10 @@
 import React from "react";
-import bannerDefault from "../../assets/img/NOSOTROS.jpg";
-import bannerService from "../../assets/img/SERVICIOS.jpg";
-import bannerNews from '../../assets/img/NOTICIAS.jpg'
-import bannerContactVentas from '../../assets/img/CONTACTO_Ventas.jpg'
-import bannerContactReclut from '../../assets/img/CONTACTO_Reclutamiento.jpg'
-import bannerUs from "../../assets/img/NOSOTROS.jpg";
+import bannerDefault from "../../assets/img/default/NOSOTROS.jpg";
+import bannerService from "../../assets/img/default/SERVICIOS.jpg";
+import bannerNews from '../../assets/img/default/NOTICIAS.jpg'
+import bannerContactVentas from '../../assets/img/default/CONTACTO_Ventas.jpg'
+import bannerContactReclut from '../../assets/img/default/CONTACTO_Reclutamiento.jpg'
+import bannerUs from "../../assets/img/default/NOSOTROS.jpg";
 import {Carousel} from "react-bootstrap";
 import "../../assets/css/components/Banner.css";
 

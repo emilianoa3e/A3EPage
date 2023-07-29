@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Image, Button, Row, Col } from "react-bootstrap";
+import { Image, Row, Col } from "react-bootstrap";
 import {
   MdOutlineNotificationsActive,
   MdArrowCircleDown,
@@ -21,7 +21,9 @@ function Summary({ notice, service, image, changeState, data, see }) {
       showTimerAlert(
         "Proximamente Boletín A3E",
         "Por el momento no se encuentra habilitado 😥",
-        null, 3000, true
+        null,
+        3000,
+        true
       );
     }
 
@@ -55,10 +57,10 @@ function Summary({ notice, service, image, changeState, data, see }) {
       <div className="summary">
         <Image
           src={image}
-          style={{ width: "100%", height: "300px", objectFit: "cover" }}
+          style={{ width: "100%", height: "350px", objectFit: "cover", objectPosition:'0% 0%' }}
         />
-        <div className="text-summary p-0">
-          <Row className="h-100 p-0 m-0">
+        <div className="text-summary p-0 ">
+          <Row className="h-100 p-0 m-0 ">
             <Col className="col-12">
               <p>{data}</p>
             </Col>

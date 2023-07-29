@@ -31,7 +31,7 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  min-height: 300px;
+  min-height: 400px;
 }
 
 .summaryButton {
@@ -61,18 +61,27 @@
   height: 80%;
   position: absolute;
   top: 0;
-  right: 0;
-  width: 60%;
+  left: 0;
+  width: 55%;
   margin-top: 35px;
   font-size: 1.1rem;
-  color: white;
+  color: #00743b;
+  font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 120px;
+}
+
+@media (min-width: 1400px) {
+  .summary .text-summary {
+    font-size: 1.4rem;    
+    margin-top: 160px;
+  }
 }
 
 @media (min-width: 1000px) {
   .summary .text-summary {
-    font-size: 1.4rem;
+    font-size: 1.4rem;    
   }
 }
 
@@ -89,6 +98,7 @@
 @media (max-width: 500px) {
   .summary .text-summary {
     width: 80%;
+    margin-top: 80px;
   }
   .summaryButton {
     width: 60%;

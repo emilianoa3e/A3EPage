@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import Pagination from "./Pagination";
 import Summary from "../New-Service/Summary";
-import imagen from "../../assets/img/banner1.jpg";
+import imagen from "../../assets/img/default/Sec_NOTICIAS_Curso-02-B.jpg";
 import { Button, Col, Row } from "react-bootstrap";
 
 function Items({ currentNews, pageCount, handlePageClick }) {

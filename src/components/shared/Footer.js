@@ -5,7 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { getAllContacts } from "../../utils/getContacts";
 import { getServices } from "../../utils/getServices";
-import logo from "../../assets/img/Logo_Blanco.png";
+import logo from "../../assets/img/logos/Logo_Blanco.png";
 import "../../assets/css/components/Footer.css";
 import Colors from "../../utils/Colors";
 import pdf from "../../assets/archives/service_pdf.pdf"

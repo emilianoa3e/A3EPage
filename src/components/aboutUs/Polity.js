@@ -1,5 +1,5 @@
 import React from "react";
-import imagen from "../../assets/img/banner1.jpg";
+import imagen from "../../assets/img/general/Politica_Calidad.jpg";
 import '../../assets/css/components/Us/Polity.css'
 import { Row, Col, Container } from "react-bootstrap";
 function Polity() {

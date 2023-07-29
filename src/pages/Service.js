@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { getService } from "../utils/getServices";
 import { Container, Col } from "react-bootstrap";
-import imagen from "../assets/img/banner1.jpg";
+import image from "../assets/img/default/Secundario_SERVICIOS.jpg";
 import Banner from "../components/shared/Banner";
 import Loader from "../components/shared/Loader";
 import Summary from "../components/New-Service/Summary";
@@ -68,7 +68,7 @@ function Service() {
           </div>
           <Summary
             service={true}
-            image={imagen}
+            image={image}
             see={see}
             changeState={changeState}
             data={service.summary}

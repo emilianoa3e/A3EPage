@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col} from "react-bootstrap";
 import CustomTitle from "../shared/CustomTitle";
 import { animated, useSpring } from "@react-spring/web";
 import "../../assets/css/components/Us/Filosofy.css";
-import image from "../../assets/img/Minería.jpg"
+import image from "../../assets/img/areas/Minería.jpg"
 const RotatingText = ({ values, imageUrl }) => {
   const [hovered, setHovered] = useState(false);
 

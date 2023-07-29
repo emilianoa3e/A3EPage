@@ -2,8 +2,7 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Row, Col } from "react-bootstrap";
 import "../../assets/css/components/Carousel.css";
-import bannerDefault from "../../assets/img/NOSOTROS.jpg";
-import ErrorComponent from "./ErrorComponent";
+import bannerDefault from "../../assets/img/default/ERROR_01.jpg";
 
 function CustomCarousel({ list, controls, indicators }) {
   //Default Carousel
