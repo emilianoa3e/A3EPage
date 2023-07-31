@@ -4,14 +4,13 @@ import { animated, useSpring } from "@react-spring/web";
 import { getAllContacts } from "../../utils/getContacts";
 import "../../assets/css/components/ContactButton.css";
 
-
 function ContactButton() {
   const [active, setActive] = useState(false);
   const buttonRef = useRef(null);
   const [contactsList, setContactsList] = useState([]);
   useEffect(() => {
     const getData = async () => {
-      try {        
+      try {
         const contacts = await getAllContacts();
         setContactsList(contacts.contacts);
       } catch (error) {
@@ -21,22 +20,24 @@ function ContactButton() {
     getData();
   }, []);
 
-  
-  const filteredContactsList = contactsList && contactsList.length > 0
-  ? contactsList.filter((contact) => contact.destiny === "general")
-  : [];
-  let whatsapp;
-  let phone;
-  filteredContactsList.forEach(element => {
-    if(element.type==="whatsapp"){
-       whatsapp = element.contact
+  const filteredContactsList =
+    contactsList && contactsList.length > 0
+      ? contactsList.filter((contact) => contact.destiny === "general")
+      : [];
+
+  let whatsapp = "https://wa.me/5217770000000";
+  let phone = "tel:5217770000000";
+
+  filteredContactsList.forEach((element) => {
+    if (element.type === "whatsapp") {
+      const cleanContact = element.contact.trim();
+      whatsapp = `https://wa.me/${cleanContact}`;
     }
-    if(element.type==="phone"){
-       phone = element.contact
+    if (element.type === "phone") {
+      const cleanContact = element.contact.trim();
+      phone = `tel:${cleanContact}`;
     }
-    
   });
-  console.log(whatsapp, phone);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -45,16 +46,17 @@ function ContactButton() {
       }
     };
 
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
 
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
   const toggleBotones = () => {
     setActive(!active);
   };
+
   const buttonAnimation = useSpring({
     opacity: active ? 1 : 0,
     transform: active
@@ -62,13 +64,14 @@ function ContactButton() {
       : "translateY(200px) rotate(0deg)",
     config: { tension: 300, friction: 20 },
   });
+
   return (
     <div className="floatContainer">
       {active && (
         <div>
           <animated.a
-            className="wppButton"            
-            href={`https://wa.me/${whatsapp?whatsapp:`5217772604715`}`}
+            className="wppButton"
+            href={whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             style={buttonAnimation}
@@ -77,7 +80,7 @@ function ContactButton() {
           </animated.a>
           <animated.a
             className="telButton"
-            href={`tel:${phone ? phone:`7773617946`}`}
+            href={phone}
             style={buttonAnimation}
           >
             <MdCall />
@@ -85,7 +88,8 @@ function ContactButton() {
         </div>
       )}
       <a
-        onClick={toggleBotones} ref={buttonRef}
+        onClick={toggleBotones}
+        ref={buttonRef}
         className={active ? "active" : "contactButton"}
       >
         <MdMessage />

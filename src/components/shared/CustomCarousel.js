@@ -8,19 +8,18 @@ function CustomCarousel({ list, controls, indicators }) {
   //Default Carousel
   if (list.length === 0) {
     return (
-      <Carousel>
+      <Carousel controls={false} indicators={false}>
         <Carousel.Item>
-        <img
-          className="d-block carousel-image "
-          src={bannerDefault}
-          alt={"DEfault Not Found"}
-          style={{ objectFit: "cover" }}
-        />
-      </Carousel.Item>
+          <img
+            className="d-block carousel-image "
+            src={bannerDefault}
+            alt={"DEfault Not Found"}
+            style={{ objectFit: "cover" }}
+          />
+        </Carousel.Item>
       </Carousel>
     );
   }
-
 
   return (
     <Carousel
@@ -45,7 +44,13 @@ function CustomCarousel({ list, controls, indicators }) {
               >
                 <Row className="w-100 h-100 p-0 m-0 align-items-center justify-content-left">
                   <Col className="text-center ">
-                    <a className="carousel-btn">Ver más</a>
+                    <a
+                      href={media.link}
+                      target="_blank"
+                      className="carousel-btn"
+                    >
+                      Ver más
+                    </a>
                   </Col>
                 </Row>
               </Carousel.Caption>

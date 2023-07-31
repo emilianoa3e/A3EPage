@@ -7,7 +7,7 @@ import {
   MdFacebook,
   MdLocationOn,
 } from "react-icons/md";
-import "./InfoContact.css";
+import "../../assets/css/components/contact/InfoContact.css";
 
 function InfoContact({ contactList }) {
   let phone;
@@ -27,7 +27,7 @@ function InfoContact({ contactList }) {
   });
 
   return (
-    <Container fluid className="container-card p-2">
+    <Container fluid className="container-card p-1 mb-4">
       <Col className="m-3">
         <Row style={{ alignItems: "center" }}>
           <Col className="col-1">

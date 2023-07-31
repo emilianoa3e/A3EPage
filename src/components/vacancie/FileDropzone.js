@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { MdOutlineDocumentScanner } from "react-icons/md";
 import CustomButton from "../shared/CustomButton";
-import "./FileDropzone.css";
+import "../../assets/css/components/contact/FileDropzone.css";
 
 const FileDropzone = ({ uploadedFile, setUploadedFile }) => {
   const onDrop = useCallback((acceptedFiles) => {
