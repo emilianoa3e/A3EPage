@@ -11,7 +11,7 @@ import logo from "../../assets/img/logos/Logo_Blanco.png";
 import "../../assets/css/components/Navbar.css";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import { getServices } from "../../utils/getServices";
-import { showSimpleAlert, showTimerAlert } from "../../plugins/alert";
+import {  showTimerAlert } from "../../plugins/alert";
 
 function CustomNavbar() {
   const navigate = useNavigate();
@@ -114,7 +114,7 @@ function CustomNavbar() {
                   showTimerAlert(
                     "¡Proximamente!",
                     "Monitor i3 es una tecnología de innovación para monitoreo de medidores SISMEDIA-RT ❤️",
-                    null, 3000, true
+                    null, 5000, true
                   )
                 }
                 style={{fontStyle:'italic', color:'gray'}}

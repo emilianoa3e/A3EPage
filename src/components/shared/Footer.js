@@ -8,7 +8,8 @@ import { getServices } from "../../utils/getServices";
 import logo from "../../assets/img/logos/Logo_Blanco.png";
 import "../../assets/css/components/Footer.css";
 import Colors from "../../utils/Colors";
-import pdf from "../../assets/archives/service_pdf.pdf"
+import pdf from "../../assets/archives/service_pdf.pdf";
+import { showTimerAlert } from "../../plugins/alert";
 
 function Footer() {
   const [servicesList, setServiceList] = useState([]);
@@ -27,13 +28,55 @@ function Footer() {
     getData();
   }, []);
 
-  const filteredContactsList = contactsList && contactsList.length > 0
-  ? contactsList.filter((contact) => contact.destiny === "general")
-  : [];
+  const filteredContactsList =
+    contactsList && contactsList.length > 0
+      ? contactsList.filter((contact) => contact.destiny === "general")
+      : [];
 
-  const openPdf = ()=>{
+  let whatsapp = "https://wa.me/5217770000000";
+  let phone = "tel:5217770000000";
+  let email = "mailto:ventas@a3e.com.mx";
+  let facebook;
+  let linkedin;
+
+  filteredContactsList.forEach((element) => {
+    if (element.type === "whatsapp") {
+      const cleanContact = element.contact.trim();
+      whatsapp = `https://wa.me/${cleanContact}`;
+    }
+    if (element.type === "phone") {
+      const cleanContact = element.contact.trim();
+      phone = `tel:${cleanContact}`;
+    }
+    if (element.type === "facebook") {
+      const cleanContact = element.contact.trim();
+      facebook = `https://www.facebook.com/${cleanContact}`;
+    }
+
+    if (element.type === "email") {
+      const cleanContact = element.contact.trim();
+      email = `mailto:${cleanContact}`;
+    }
+
+    if (element.type === "linkedin") {
+      const cleanContact = element.contact.trim();
+      linkedin = `https://www.linkedin.com/in/${cleanContact}`;
+    }
+  });
+
+  const openPdf = () => {
     window.open(pdf, "_blank");
-  }
+  };
+
+  const openAlert = () => {
+    showTimerAlert(
+      "¡Proximamente!",
+      "Monitor i3 es una tecnología de innovación para monitoreo de medidores SISMEDIA-RT ❤️",
+      null,
+      5000,
+      true
+    );
+  };
 
   return (
     <Container fluid className="footer">
@@ -51,8 +94,8 @@ function Footer() {
               </a>
               <br />
               <a
-              onClick={openPdf}
-              className="btn text-start p-0"
+                onClick={openAlert}
+                className="btn text-start p-0"
                 style={{
                   fontStyle: "italic",
                   color: "#EAEBEB",
@@ -62,7 +105,7 @@ function Footer() {
                 MONITOR i3
               </a>
             </div>
-            <a target="_blank" href={pdf} className="btn p-0">
+            <a target="_blank" onClick={openPdf} className="btn p-0">
               AVISO DE PRIVACIDAD
             </a>
 
@@ -121,33 +164,36 @@ function Footer() {
             </a>
             {/* logo */}
             <div className="d-flex mt-5 justify-content-center mt-1">
-              <img src={logo} height={150}/>
+              <img src={logo} height={150} />
             </div>
             {/* icons */}
             <div className="p-2 d-flex mt-5 justify-content-center icons">
               {filteredContactsList.map((contact) => (
                 <div key={contact._id}>
                   {contact.type === "whatsapp" ? (
-                    <a
-                      target="_blank"
-                      href={`https://api.whatsapp.com/send?phone=${contact.contact}`}
-                    >
+                    <a target="_blank" href={whatsapp}>
                       <MdWhatsapp size={32} color={Colors.PalleteWhite} />
                     </a>
                   ) : contact.type === "email" ? (
-                    <a target="_blank" href={`mailto:${contact.contact}`}>
+                    <a target="_blank" href={email}>
                       <MdEmail size={35} color={Colors.PalleteWhite} />
                     </a>
                   ) : contact.type === "phone" ? (
-                    <a target="_blank" href={`tel:${contact.contact}`}>
+                    <a target="_blank" href={phone}>
                       <MdLocalPhone size={35} color={Colors.PalleteWhite} />
                     </a>
                   ) : contact.type === "facebook" ? (
-                    <a target="_blank" href={`https://www.facebook.com/${contact.contact}`}>
+                    <a
+                      target="_blank"
+                      href={`https://www.facebook.com/${contact.contact}`}
+                    >
                       <MdFacebook size={35} color={Colors.PalleteWhite} />
                     </a>
                   ) : contact.type === "linkedin" ? (
-                    <a target="_blank" href={`https://www.linkedin.com/${contact.contact}`}>
+                    <a
+                      target="_blank"
+                      href={`https://www.linkedin.com/${contact.contact}`}
+                    >
                       <BsLinkedin size={30} color={Colors.PalleteWhite} />
                     </a>
                   ) : null}
