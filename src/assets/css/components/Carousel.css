@@ -2,12 +2,33 @@
     background-color: #00743b;
     text-decoration: none ;
     border-radius: 0px 30px 30px 30px;
-    padding: 10px;
-    color: white;
-    font-weight: bold;
+    padding: 10px 30px;
+    color: white;    
     font-size: 1.5rem;
 }
 
 .carousel .carousel-image{
-    height: calc(100% - 200px);
+    height: calc(100% - 300px);
+}
+
+@media (max-width:900px) {
+    .carousel .carousel-image{
+        height: 800px;
+    }
+}
+
+@media (max-width:450px) {
+    .carousel .carousel-image{
+        height: 450px;
+    }
+
+    .carousel .carousel-btn{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:400px) {
+    .carousel .carousel-image{
+        height: 350px;
+    }
 }

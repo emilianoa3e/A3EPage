@@ -44,7 +44,7 @@ function InfoContact({ contactList }) {
             <MdLocalPhone size={30} />
           </Col>
           <Col>
-            <p className="pt-3 ms-3">{`+52 ${phone}`}</p>
+            <p className="pt-3 ms-3">{phone?`+52 ${phone}` : 'No se encontró registro'}</p>
           </Col>
         </Row>
         <Row style={{ alignItems: "center" }}>
@@ -52,7 +52,7 @@ function InfoContact({ contactList }) {
             <MdWhatsapp size={30} />
           </Col>
           <Col>
-            <p className="pt-3 ms-3">{`+52 ${whatsapp}`}</p>
+            <p className="pt-3 ms-3">{whatsapp? `+52 ${whatsapp}`:'No se encontró registro'}</p>
           </Col>
         </Row>
         <Row style={{ alignItems: "center" }}>
@@ -60,7 +60,7 @@ function InfoContact({ contactList }) {
             <MdEmail size={30} />
           </Col>
           <Col>
-            <p className="pt-3 ms-3">{email}</p>
+            <p className="pt-3 ms-3">{email?email:'No se encontró registro'}</p>
           </Col>
         </Row>
       </Col>

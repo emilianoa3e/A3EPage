@@ -1,16 +1,16 @@
 import React, { useRef, useState, useEffect } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
 import { Col, Row, Container } from "react-bootstrap";
 import { Form, Formik } from "formik";
 import { showConfirmDialog, showAcceptDialog } from "../../../plugins/alert";
+import { saveSale } from "../../../utils/formsFunctions";
+import { getAllContacts } from "../../../utils/getContacts";
 import * as Yup from "yup";
+import ReCAPTCHA from "react-google-recaptcha";
 import MiniMap from "../../../components/shared/MiniMap";
 import SaleForm from "./SaleForm";
 import CustomButton from "../../../components/shared/CustomButton";
 import InfoContact from "../../../components/sale/InfoContact";
 import Banner from "../../../components/shared/Banner";
-import { saveSale } from "../../../utils/formsFunctions";
-import { getAllContacts } from "../../../utils/getContacts";
 
 function Sale() {
   const [captchaValidate, setCaptchaValidate] = useState(false);
@@ -30,9 +30,10 @@ function Sale() {
     getData();
   }, []);
 
-  const filteredContactsList = contactsList && contactsList.length > 0
-  ? contactsList.filter((contact) => contact.destiny === "ventas")
-  : [];
+  const filteredContactsList =
+    contactsList && contactsList.length > 0
+      ? contactsList.filter((contact) => contact.destiny === "ventas")
+      : [];
 
   const onChange = () => {
     if (captcha.current.getValue()) {
@@ -46,7 +47,6 @@ function Sale() {
     }
   };
 
-  console.log(tokenRecaptcha);
   const objectSchema = Yup.object().shape({
     fullName: Yup.string()
       .matches(
@@ -151,7 +151,7 @@ function Sale() {
               <MiniMap />
             </Row>
             <Row className="mt-3 ms-2 me-2">
-              <InfoContact contactList={filteredContactsList}/>
+              <InfoContact contactList={filteredContactsList} />
             </Row>
           </Col>
         </Row>

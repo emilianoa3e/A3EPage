@@ -57,12 +57,12 @@ function Summary({ notice, service, image, changeState, data, see }) {
       <div className="summary">
         <Image
           src={image}
-          style={{ width: "100%", height: "350px", objectFit: "cover", objectPosition:'0% 0%' }}
+          style={{ width: "100%",  objectFit: "cover", objectPosition:'0% 0%' }}
         />
         <div className="text-summary p-0 ">
           <Row className="h-100 p-0 m-0 ">
             <Col className="col-12">
-              <p>{data}</p>
+             <div dangerouslySetInnerHTML={{ __html: data }}></div>
             </Col>
           </Row>
         </div>

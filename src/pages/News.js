@@ -8,8 +8,11 @@ import { getNews } from "../utils/getNews";
 import "../assets/css/components/EditorContent.css";
 import { Container } from "react-bootstrap";
 import ErrorComponent from "../components/shared/ErrorComponent";
-
+import novedades from '../assets/img/default/Sec_NOTICIAS_Curso-01-B.jpg'
+import cursos from '../assets/img/default/Sec_NOTICIAS_Curso-02-B.jpg'
+import convocatorias from '../assets/img/default/Sec_NOTICIAS_Curso-02-B.jpg'
 function News() {
+  let image;
   const [isLoading, setIsLoading] = useState(false);
   const itemsPerPage = 1;
   const [itemOffset, setItemOffset] = useState(0);
@@ -38,11 +41,18 @@ function News() {
   };
   const filteredNewsList = newsList.filter((news) => {
     if (filter === "Novedades") {
+      image = novedades
       return news.type === filter;
-    } else {
+    } else if(filter === "Cursos") {
+      image = cursos
+      return news.type === filter;
+    }else if(filter === "Convocatorias") {
+      image = convocatorias
       return news.type === filter;
     }
   });
+
+  console.log(image);
 
   const currentNews = filteredNewsList.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(filteredNewsList.length / itemsPerPage);
@@ -71,6 +81,7 @@ function News() {
             <>
               {/* content */}
               <Items
+              image={image}
                 currentNews={currentNews}
                 pageCount={pageCount}
                 handlePageClick={handlePageClick}

@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import A3ELogo from "../assets/img/logos/A3E_svg.svg"
 
 export const showConfirmDialog = (
   title,
@@ -32,15 +33,16 @@ export const showAcceptDialog = (
   confirmCallback
 ) => {
   Swal.fire({
-    title: `<a href="${link}" target="_blank">${title}</a>`,
+    title: `<a href="${link}" target="_blank" style="color: #00743B;">${title}</a>`,
     input: "checkbox",
     inputValue: 0,
     inputPlaceholder: placeholder,
-    confirmButtonColor: "#002e60",
+    confirmButtonColor: "#00743B",
     confirmButtonText: confirmButtonText,
     inputValidator: (result) => {
       return !result && notConfirmCheckboxText;
     },
+    backdrop: `rgba(0, 180, 91, 0.2) url(${A3ELogo}) no-repeat right`
   }).then((result) => {
     if (result.isConfirmed) {
       confirmCallback();

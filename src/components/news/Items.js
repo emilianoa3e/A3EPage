@@ -1,10 +1,9 @@
 import React, { useState, useRef } from "react";
 import Pagination from "./Pagination";
 import Summary from "../New-Service/Summary";
-import imagen from "../../assets/img/default/Sec_NOTICIAS_Curso-02-B.jpg";
 import { Button, Col, Row } from "react-bootstrap";
 
-function Items({ currentNews, pageCount, handlePageClick }) {
+function Items({ image,currentNews, pageCount, handlePageClick }) {
   const [see, setSee] = useState(false);
   const targetSectionRef = useRef(null);
 
@@ -40,7 +39,7 @@ function Items({ currentNews, pageCount, handlePageClick }) {
               
             </div>
             <Summary
-              image={imagen}
+              image={image}
               notice={true}
               changeState={changeState}
               data={news.summary}

@@ -41,16 +41,14 @@ function Banner({ from, title}) {
       controls={false}
       indicators={false}
       className="banner"
-      style={{ margin: 0, padding: 0, overflow: "hidden"}}
+      style={{ margin: 0, padding: 0}}
     >
       <Carousel.Item>
-        <div className="banner-overlay">
           <img
-            className="d-block w-100"
+            className="banner-overlay d-block"
             src={banner ? banner : bannerDefault}
             alt={"Not Found"}
           />
-        </div>
       </Carousel.Item>
     </Carousel>
   );

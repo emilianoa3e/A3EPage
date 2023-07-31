@@ -31,7 +31,13 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  min-height: 400px;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .summary img{
+    height: 350px;
+  }
 }
 
 .summaryButton {
@@ -64,9 +70,6 @@
   left: 0;
   width: 55%;
   margin-top: 35px;
-  font-size: 1.1rem;
-  color: #00743b;
-  font-weight: bold;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-top: 120px;

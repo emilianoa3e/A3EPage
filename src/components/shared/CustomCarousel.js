@@ -11,7 +11,7 @@ function CustomCarousel({ list, controls, indicators }) {
       <Carousel>
         <Carousel.Item>
         <img
-          className="d-block carousel-image"
+          className="d-block carousel-image "
           src={bannerDefault}
           alt={"DEfault Not Found"}
           style={{ objectFit: "cover" }}

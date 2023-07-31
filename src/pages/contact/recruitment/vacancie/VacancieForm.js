@@ -16,8 +16,13 @@ function VacancieForm({
   const [optionsList, setOptionsList] = useState([]);
 
   const getPositions = async () => {
-    const data = await getAllPositions();
-    setOptionsList(data.positions);
+    try{
+      const data = await getAllPositions();
+      setOptionsList(data.positions);
+    }catch(error){
+      console.log(error);
+    }
+   
   };
 
   useEffect(() => {
