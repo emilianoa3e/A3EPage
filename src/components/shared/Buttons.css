@@ -1,0 +1,47 @@
+.test1 {
+    background-color: #00743b;
+    text-decoration: none;
+    border: 2px solid #00743b;
+    border-radius: 30px;
+    padding: 10px 30px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.test2 {
+    background-color: #00743b;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 10px 30px;
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.test3 {
+    background: linear-gradient(135deg, #00743b, #00401a);
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 10px 30px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.test4 {
+    background-color: #00743b;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 10px 30px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.test5 {
+    background-color: #00743b;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 10px 30px;
+    color: white;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
+}

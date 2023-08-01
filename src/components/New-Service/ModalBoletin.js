@@ -44,21 +44,21 @@ function ModalBoletin({ show, handleChange }) {
         "El nombre no puede contener caracteres especiales"
       )
       .required("El nombre es requerido"),
-      lastname: yup
+    lastname: yup
       .string()
       .matches(
         /^[a-zA-Z áéíóúÁÉÍÓÚüïüëöñÑ@]+$/,
         "El apellido no puede contener caracteres especiales"
       )
       .required("El apellido paterno es requerido"),
-      surname: yup
+    surname: yup
       .string()
       .matches(
         /^[a-zA-Z áéíóúÁÉÍÓÚüïüëöñÑ@]+$/,
         "El apellido no puede contener caracteres especiales"
       )
       .required("El apellido materno es requerido"),
-    profession: yup
+    position: yup
       .string()
       .matches(
         /^[a-zA-Z áéíóúÁÉÍÓÚüïüëöñÑ@]+$/,
@@ -71,6 +71,7 @@ function ModalBoletin({ show, handleChange }) {
       .email("Ingrese un correo válido")
       .required("El correo es requerido"),
   });
+
   return (
     <Modal
       show={show}
@@ -90,7 +91,7 @@ function ModalBoletin({ show, handleChange }) {
             name: "",
             lastname: "",
             surname: "",
-            profession: "",
+            position: "",
             company: "",
             companyEmail: "",
           }}
@@ -112,7 +113,7 @@ function ModalBoletin({ show, handleChange }) {
                     />
                   </FormBt.Group>
                 </Col>
-                <Col >
+                <Col>
                   <FormBt.Group className="mb-3">
                     <TextInput
                       maxLength="60"
@@ -124,7 +125,7 @@ function ModalBoletin({ show, handleChange }) {
                     />
                   </FormBt.Group>
                 </Col>
-                <Col >
+                <Col>
                   <FormBt.Group className="mb-3">
                     <TextInput
                       maxLength="60"
@@ -143,10 +144,10 @@ function ModalBoletin({ show, handleChange }) {
                     <TextInput
                       maxLength="60"
                       label="Profesión"
-                      name="profession"
+                      name="position"
                       icon={MdWorkOutline}
                       placeholder="Profesión"
-                      isInvalid={!!errors.profession && touched.profession}
+                      isInvalid={!!errors.position && touched.position}
                     />
                   </FormBt.Group>
                 </Col>

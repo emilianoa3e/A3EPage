@@ -1,9 +1,11 @@
 import React, { useState, useRef } from "react";
 import Pagination from "./Pagination";
 import Summary from "../New-Service/Summary";
-import { Button, Col, Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
+import { Button } from "@mui/material";
+import Colors from "../../utils/Colors";
 
-function Items({ image,currentNews, pageCount, handlePageClick }) {
+function Items({ image, currentNews, pageCount, handlePageClick }) {
   const [see, setSee] = useState(false);
   const targetSectionRef = useRef(null);
 
@@ -24,19 +26,25 @@ function Items({ image,currentNews, pageCount, handlePageClick }) {
         <div
           key={index}
           className={"container-fluid p-0 mb-3"}
-          ref={targetSectionRef}
+          
         >
           <>
             {/* Title */}
-            <div className="p-2">
+            <div className="p-2" ref={targetSectionRef}>
               <h1
                 className="text-start ms-4 mt-4 "
                 style={{ color: "#00743B", fontWeight: "bold" }}
               >
                 {news.title}
-                <p className="text-end me-5" style={{fontSize:'initial', fontStyle:'italic', color:'gray'}}>{`${news.author} | ${news.date}`}</p>
+                <p
+                  className="text-end me-5"
+                  style={{
+                    fontSize: "initial",
+                    fontStyle: "italic",
+                    color: "gray",
+                  }}
+                >{`${news.author} | ${news.date}`}</p>
               </h1>
-              
             </div>
             <Summary
               image={image}
@@ -44,6 +52,7 @@ function Items({ image,currentNews, pageCount, handlePageClick }) {
               changeState={changeState}
               data={news.summary}
               see={see}
+              
             />
             <div className="mt-4">
               <Pagination
@@ -59,13 +68,17 @@ function Items({ image,currentNews, pageCount, handlePageClick }) {
                   dangerouslySetInnerHTML={{ __html: news.content }}
                 ></div>
                 <Col className="col-12 text-center">
-                  <a
-                    className="showButton"
-                    style={{ borderRadius: "0px 30px 30px 30px" }}
+                  <Button
+                    variant={see ? "contained" : "outlined"}
+                    color={see ? "primary" : "success"}
+                    sx={{ borderRadius: "30px", padding: "5px 30px" }}
+                    style={
+                      see ? { backgroundColor: Colors.PalleteGreenA3E } : {}
+                    }
                     onClick={changeState}
                   >
-                    {see ? "Mostrar menos" : "Mostrar más"}
-                  </a>
+                    {see ? "Ver menos" : "Ver más"}
+                  </Button>
                 </Col>
               </>
             )}

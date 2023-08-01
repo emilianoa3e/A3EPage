@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import A3ELogo from "../assets/img/logos/A3E_svg.svg"
+import A3ELogo from "../assets/img/logos/A3E_svg.svg";
 
 export const showConfirmDialog = (
   title,
@@ -42,7 +42,7 @@ export const showAcceptDialog = (
     inputValidator: (result) => {
       return !result && notConfirmCheckboxText;
     },
-    backdrop: `rgba(0, 180, 91, 0.2) url(${A3ELogo}) no-repeat right`
+    backdrop: `rgba(0, 180, 91, 0.2) url(${A3ELogo}) no-repeat right`,
   }).then((result) => {
     if (result.isConfirmed) {
       confirmCallback();
@@ -83,6 +83,7 @@ export const showTimerAlert = (title, text, icon, timer, timerProgressBar) => {
     text,
     icon,
     confirmButtonText: "Ok",
+    confirmButtonColor: "#00743b",
     timer: timer,
     timerProgressBar: timerProgressBar,
   });
