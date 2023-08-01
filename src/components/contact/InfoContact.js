@@ -4,7 +4,6 @@ import {
   MdWhatsapp,
   MdEmail,
   MdLocalPhone,
-  MdFacebook,
   MdLocationOn,
 } from "react-icons/md";
 import "../../assets/css/components/contact/InfoContact.css";

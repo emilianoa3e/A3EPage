@@ -9,7 +9,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import MiniMap from "../../../components/shared/MiniMap";
 import SaleForm from "./SaleForm";
 import CustomButton from "../../../components/shared/CustomButton";
-import InfoContact from "../../../components/sale/InfoContact";
+import InfoContact from "../../../components/contact/InfoContact";
 import Banner from "../../../components/shared/Banner";
 
 function Sale() {
@@ -95,7 +95,7 @@ function Sale() {
         <Banner from={"VENTAS"} />
       </Container>
       <Container className="mt-4">
-        <Row>
+        <Row >
           <Col className="mt-5" md={8} lg={8}>
             <Formik
               initialValues={{

@@ -8,7 +8,7 @@ import * as Yup from "yup";
 import Banner from "../../../components/shared/Banner";
 import MiniMap from "../../../components/shared/MiniMap";
 import CustomButton from "../../../components/shared/CustomButton";
-import InfoContact from "../../../components/sale/InfoContact";
+import InfoContact from "../../../components/contact/InfoContact";
 import InstanceForm from "./intern/InternForm";
 import VacancieForm from "./vacancie/VacancieForm";
 import "../../../assets/css/components/contact/Recruitment.css";
@@ -136,8 +136,8 @@ function Recruitment() {
         <Banner from={"RECLUTAMIENTO"} />
       </Container>
       <Container className="mt-4">
-        <Row>
-          <Col md={8} lg={8}>
+        <Row >
+          <Col md={8} lg={8} >
             <Row className="mb-3">
               <Col className="text-center">
                 <a
