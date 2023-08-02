@@ -7,7 +7,6 @@ import Loader from "../components/shared/Loader";
 import InfoResume from "../components/home/InfoResume";
 import Clients from "../components/home/Clients";
 import AreasApplication from "../components/home/AreasApplication";
-import Buttons from "../components/shared/Buttons";
 
 function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -57,7 +56,6 @@ function Home() {
       <InfoResume />
       <AreasApplication />
       <Clients clientsList={clientsList} />
-      <Buttons/>
     </>
   );
 }

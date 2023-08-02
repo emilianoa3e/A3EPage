@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CustomTitle from "../shared/CustomTitle";
-function VisionMision({ mision, vision }) {
+function VisionMision() {
   return (
     <Container fluid className="mt-5">
       <Row>

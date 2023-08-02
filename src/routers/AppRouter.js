@@ -8,7 +8,6 @@ import News from "../pages/News";
 import Sale from "../pages/contact/sale/Sale";
 import Recruitment from "../pages/contact/recruitment/Recruitment";
 import Us from "../pages/Us";
-import Validate from "../pages/Validate";
 
 function AppRouter() {
   return (
@@ -22,8 +21,7 @@ function AppRouter() {
           <Route exact path="/news" element={<News />} />
           <Route exact path="/contact" element={<Home />} />
           <Route exact path="/contact/sale" element={<Sale />} />
-          <Route exact path="/contact/recruitment" element={<Recruitment />} />
-          <Route exact path="/subscription/validate-email/:token" element={<Validate />} />
+          <Route exact path="/contact/recruitment" element={<Recruitment />} />         
           <Route exact path="/*" element={<Navigate to="/home" />} />
         </Routes>
       </Layout>
