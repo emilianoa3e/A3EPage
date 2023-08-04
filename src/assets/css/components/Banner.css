@@ -2,7 +2,7 @@
 .banner .banner-overlay {
   object-fit: cover;
   object-position: 4% 0%;
-  height: calc(100% - 300px);
+  width: 100%;
 }
 
 @media (max-width:900px) {

@@ -8,6 +8,8 @@ import "../../assets/css/components/Summary.css";
 import ModalBoletin from "./ModalBoletin";
 import pdf from "../../assets/archives/service_pdf.pdf";
 import { showTimerAlert } from "../../plugins/alert";
+import Colors from "../../utils/Colors";
+import { Button } from "@mui/material";
 
 function Summary({ notice, service, image, changeState, data, see }) {
   const [show, setShow] = useState(false);
@@ -57,25 +59,27 @@ function Summary({ notice, service, image, changeState, data, see }) {
       <div className="summary">
         <Image
           src={image}
-          style={{ width: "100%",  objectFit: "cover", objectPosition:'0% 0%' }}
+          style={{ width: "100%", objectFit: "cover", objectPosition: "0% 0%" }}
         />
         <div className="text-summary p-0 ">
           <Row className="h-100 p-0 m-0 ">
             <Col className="col-12">
-             <div dangerouslySetInnerHTML={{ __html: data }}></div>
+              <div dangerouslySetInnerHTML={{ __html: data }}></div>
             </Col>
           </Row>
         </div>
       </div>
       <Row className="justify-content-center m-2 mb-4">
         <Col className="col-12 text-center">
-          <a
-            className="showButton"
-            style={{ borderRadius: "0px 30px 30px 30px" }}
+          <Button
+            variant={see ? "contained" : "outlined"}
+            color={see ? "primary" : "success"}
+            sx={{ borderRadius: "30px", padding: "5px 30px" }}
+            style={see ? { backgroundColor: Colors.PalleteGreenA3E } : {}}
             onClick={changeState}
           >
-            {see ? "Mostrar menos" : "Mostrar más"}
-          </a>
+            {see ? "Ver menos" : "Ver más"}
+          </Button>
         </Col>
       </Row>
     </>
