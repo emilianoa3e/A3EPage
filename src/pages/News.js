@@ -52,8 +52,6 @@ function News() {
     }
   });
 
-  console.log(image);
-
   const currentNews = filteredNewsList.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(filteredNewsList.length / itemsPerPage);
 
@@ -75,7 +73,7 @@ function News() {
         handleFilterChange={handleFilterChange}
         filter={filter}
       />
-      {newsList.length !== 0 ? (
+      {newsList.length > 0 ? (
         <>
           {currentNews.length > 0 ? (
             <>

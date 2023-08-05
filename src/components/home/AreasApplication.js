@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "../../assets/css/components/Home/AreasApplication.css";
-import mineria from "../../assets/img/areas/Minería.jpg";
-import refineria from "../../assets/img/areas/Refinería.jpg";
-import industria from "../../assets/img/areas/Industria.jpg";
-import comercial from "../../assets/img/areas/Comercial.jpg";
+
+import mineria from "../../assets/img/areas/CA_MINERIA.jpg";
+import refineria from "../../assets/img/areas/CA_REFINERIA.jpg";
+import industria from "../../assets/img/areas/CA_INDUSTRIA.jpg";
+import comercial from "../../assets/img/areas/CA_COMERCIAL.jpg";
 import CustomTitle from "../shared/CustomTitle";
 import { animated, useSpring } from "@react-spring/web";
 

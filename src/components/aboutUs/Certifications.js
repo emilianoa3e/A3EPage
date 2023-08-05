@@ -63,7 +63,7 @@ function Certifications() {
                             <p>{certification.description}</p>
                           </Col>
                           <Col className="col-12 text-center ">
-                            <a href={certification.link} className="linkButton">
+                            <a href={certification.link} target="_blank" className="linkButton">
                               Ver más
                             </a>
                           </Col>

@@ -3,7 +3,20 @@ import { Container, Row, Col} from "react-bootstrap";
 import CustomTitle from "../shared/CustomTitle";
 import { animated, useSpring } from "@react-spring/web";
 import "../../assets/css/components/Us/Filosofy.css";
-import image from "../../assets/img/areas/Minería.jpg"
+
+import empatia from "../../assets/img/values/Empatia.jpg";
+import equidad from "../../assets/img/values/Equidad.jpg";
+import equipo from "../../assets/img/values/Equipo.jpg";
+import generosidad from "../../assets/img/values/Generosidad.jpg";
+import honestidad from "../../assets/img/values/Honestidad.jpg";
+import humildad from "../../assets/img/values/Humildad.jpg";
+import integridad from "../../assets/img/values/Integridad.jpg";
+import legalidad from "../../assets/img/values/Legalidad.jpg";
+import pasion from "../../assets/img/values/Pasion.jpg";
+import respeto from "../../assets/img/values/Respeto.jpg";
+import responsabilidad from "../../assets/img/values/Responsabilidad.jpg";
+import servicio from "../../assets/img/values/Servicio.jpg";
+
 
 const RotatingText = ({ values, imageUrl }) => {
   const [hovered, setHovered] = useState(false);
@@ -31,7 +44,7 @@ const RotatingText = ({ values, imageUrl }) => {
         >
           <animated.img
           className={"animatedImg"}
-            src={image}
+            src={imageUrl}
             alt="Image"
             style={{
               opacity,
@@ -54,85 +67,79 @@ const RotatingText = ({ values, imageUrl }) => {
 function Filosofy() {
   const ethicsValues = [
     {
-      _id: 1,
-      name: "Respeto",
-      description: "Tratar a los demás con cortesía, consideración y dignidad.",
-      img: "",
+      "id": 1,
+      "name": "Empatia",
+      "description": "Capacidad de ponerse en el lugar del otro y comprender sus sentimientos y emociones.",
+      "img": empatia
     },
     {
-      _id: 2,
-      name: "Honestidad",
-      description:
-        "Ser veraz y transparente en todas las acciones y comunicaciones.",
-      img: "",
+      "id": 2,
+      "name": "Equidad",
+      "description": "Tratar a todas las personas con justicia e imparcialidad, sin discriminar ni favorecer a nadie.",
+      "img": equidad
     },
     {
-      _id: 3,
-      name: "Responsabilidad",
-      description:
-        "Asumir las consecuencias de tus actos y cumplir tus compromisos.",
-      img: "",
+      "id": 3,
+      "name": "Equipo",
+      "description": "Trabajar en colaboración y armonía con otros para alcanzar un objetivo común.",
+      "img": equipo
     },
     {
-      _id: 4,
-      name: "Justicia",
-      description:
-        "Tratar a todas las personas de manera equitativa y imparcial.",
-      img: "",
+      "id": 4,
+      "name": "Generosidad",
+      "description": "Dar y compartir sin esperar nada a cambio, ayudando a los demás desinteresadamente.",
+      "img": generosidad
     },
     {
-      _id: 5,
-      name: "Solidaridad",
-      description: "Apoyar y ayudar a los demás en momentos de necesidad.",
-      img: "",
+      "id": 5,
+      "name": "Honestidad",
+      "description": "Ser veraz y sincero en todas las acciones y comunicaciones.",
+      "img": honestidad
     },
     {
-      _id: 6,
-      name: "Tolerancia",
-      description:
-        "Respetar las diferencias y aceptar las opiniones y creencias de los demás.",
-      img: "",
+      "id": 6,
+      "name": "Humildad",
+      "description": "Reconocer las propias limitaciones y errores, sin vanagloriarse de los logros.",
+      "img": humildad
     },
     {
-      _id: 7,
-      name: "Empatía",
-      description: "Comprender y compartir los sentimientos de los demás.",
-      img: "",
+      "id": 7,
+      "name": "Integridad",
+      "description": "Actuar con coherencia entre lo que se piensa, se dice y se hace.",
+      "img": integridad
     },
     {
-      _id: 8,
-      name: "Integridad",
-      description:
-        "Actuar de acuerdo con tus principios y valores, incluso en situaciones difíciles.",
-      img: "",
+      "id": 8,
+      "name": "Legalidad",
+      "description": "Acatar y respetar las leyes y normativas vigentes.",
+      "img": legalidad
     },
     {
-      _id: 9,
-      name: "Sostenibilidad",
-      description:
-        "Promover el cuidado del medio ambiente y el uso responsable de los recursos.",
-      img: "",
+      "id": 9,
+      "name": "Pasion",
+      "description": "Sentir una profunda dedicación y entusiasmo por lo que se hace.",
+      "img": pasion
     },
     {
-      _id: 10,
-      name: "Paz",
-      description: "Buscar la armonía y la resolución pacífica de conflictos.",
-      img: "",
+      "id": 10,
+      "name": "Respeto",
+      "description": "Tratar a todas las personas con consideración, cortesía y valorar sus derechos y opiniones.",
+      "img": respeto
     },
     {
-      _id: 11,
-      name: "Gratitud",
-      description:
-        "Agradecer y reconocer lo que recibimos de los demás y del entorno.",
-      img: "",
+      "id": 11,
+      "name": "Responsabilidad",
+      "description": "Cumplir con los deberes y asumir las consecuencias de las propias acciones.",
+      "img": responsabilidad
     },
     {
-      _id: 12,
-      name: "Generosidad",
-      description: "Compartir tiempo, recursos y conocimientos con los demás.",
-      img: "",
-    },
-  ];
+      "id": 12,
+      "name": "Servicio",
+      "description": "Brindar apoyo y ayuda a los demás, contribuyendo al bienestar de la comunidad.",
+      "img": servicio
+    }
+  ]
+  
   return (
     <Container className="mb-4 p-0 m-0" fluid>
       <CustomTitle title={"FILOSOFÍA"} subtitle={"VALORES"} />
@@ -140,11 +147,11 @@ function Filosofy() {
         {ethicsValues.map((value, index) => (
           <Col
             key={index}
-            md={3}
-            sm={3}
-            lg={2}
             xs={6}
-            className="justify-content-center mb-2"
+            sm={4}
+            lg={3}
+            xl={2}
+            className="justify-content-center mb-2 "
           >
             <RotatingText values={value.description} imageUrl={value.img} />
           </Col>

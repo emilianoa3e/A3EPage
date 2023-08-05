@@ -1,6 +1,6 @@
 import axios from "axios";
 import instance from "./axios";
-import { showLoadingAlert, showSimpleAlert } from "../plugins/alert";
+import { showSimpleAlert } from "../plugins/alert";
 
 export const saveBoletin = async (values, tokenRecaptcha) => {
   console.log(values, tokenRecaptcha);
