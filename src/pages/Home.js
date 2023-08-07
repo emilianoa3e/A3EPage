@@ -22,6 +22,7 @@ function Home() {
       setClientsList(clients.clients);
     } catch (error) {
       console.log(error);
+      setBannersList(null);
       setClientsList(null)
     } finally {
       setIsLoading(false);
@@ -32,7 +33,7 @@ function Home() {
     getData();
   }, []);
 
-  let filteredBannersList;
+  let filteredBannersList = null ;
   try {
     filteredBannersList = bannersList.filter(
       (banner) => banner.status === false

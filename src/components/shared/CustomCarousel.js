@@ -2,22 +2,37 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Row, Col } from "react-bootstrap";
 import "../../assets/css/components/Carousel.css";
-import bannerDefault from "../../assets/img/default/ERROR_01.jpg";
-
+import bannerError from "../../assets/img/default/ERROR_01.jpg";
+import bannerDefault from "../../assets/img/default/Secundario_SERVICIOS.jpg";
 function CustomCarousel({ list, controls, indicators }) {
-  //Default Carousel
-  if (list.length === 0) {
+  //Error
+  if (!list) {
     return (
       <Carousel controls={false} indicators={false}>
         <Carousel.Item>
           <img
             className="d-block carousel-image "
-            src={bannerDefault}
+            src={bannerError}
             alt={"DEfault Not Found"}
             style={{ objectFit: "cover" }}
           />
         </Carousel.Item>
       </Carousel>
+    );
+  }
+
+  if (list.length === 0) {
+    return (
+        <Carousel controls={false} indicators={false}>
+          <Carousel.Item>
+            <img
+                className="d-block carousel-image "
+                src={bannerDefault}
+                alt={"DEfault Not Found"}
+                style={{ objectFit: "cover" }}
+            />
+          </Carousel.Item>
+        </Carousel>
     );
   }
 
