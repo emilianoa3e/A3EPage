@@ -28,6 +28,7 @@ function Sale() {
       }
     };
     getData();
+    document.title = "A3E Ventas";
   }, []);
 
   const filteredContactsList =

@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import { Container, Row, Col} from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import CustomTitle from "../shared/CustomTitle";
 import { animated, useSpring } from "@react-spring/web";
 import "../../assets/css/components/Us/Filosofy.css";
@@ -17,43 +17,41 @@ import respeto from "../../assets/img/values/Respeto.jpg";
 import responsabilidad from "../../assets/img/values/Responsabilidad.jpg";
 import servicio from "../../assets/img/values/Servicio.jpg";
 
-
 const RotatingText = ({ values, imageUrl }) => {
   const [hovered, setHovered] = useState(false);
 
   const { opacity, transform } = useSpring({
     opacity: hovered ? 0 : 1,
     transform: `rotateY(${hovered ? 180 : 0}deg)`,
-    config: { mass: 10, tension: 500, friction: 100 },
+    config: { mass: 10, tension: 900, friction: 100 },
   });
 
   return (
     <div
-    className="filosofy"
+      className="filosofy"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       <animated.div
-      className={"animatedDiv"}
+        className={"animatedDiv"}
         style={{
-          transform,
+          ...transform,
         }}
       >
-        <div
-        className="containerAnimation"
-        >
+        <div className="containerAnimation">
           <animated.img
-          className={"animatedImg"}
+            className={"animatedImg"}
             src={imageUrl}
             alt="Image"
             style={{
-              opacity,
+              opacity: opacity.to((o) => o - 0),
             }}
           />
           <animated.div
-          className={"animatedText"}
+            className={"animatedText"}
             style={{
-              opacity: opacity.to(o => 1 - o),
+              ...transform,
+              opacity: opacity.to((o) => (hovered ? 1 : 0)),
             }}
           >
             <p className="text">{values}</p>
@@ -67,79 +65,93 @@ const RotatingText = ({ values, imageUrl }) => {
 function Filosofy() {
   const ethicsValues = [
     {
-      "id": 1,
-      "name": "Empatia",
-      "description": "Capacidad de ponerse en el lugar del otro y comprender sus sentimientos y emociones.",
-      "img": empatia
+      id: 1,
+      name: "Servicio",
+      description:
+        "Priorizamos la satisfacción del cliente, brindando soluciones eléctricas de calidad y atención personalizada.",
+      img: servicio,
     },
     {
-      "id": 2,
-      "name": "Equidad",
-      "description": "Tratar a todas las personas con justicia e imparcialidad, sin discriminar ni favorecer a nadie.",
-      "img": equidad
+      id: 2,
+      name: "Honestidad",
+      description:
+        "Actuamos con transparencia e integridad, manteniendo la confianza en todas nuestras interacciones.",
+      img: honestidad,
     },
     {
-      "id": 3,
-      "name": "Equipo",
-      "description": "Trabajar en colaboración y armonía con otros para alcanzar un objetivo común.",
-      "img": equipo
+      id: 7,
+      name: "Respeto",
+      description:
+        "Valoramos y honramos la diversidad, tratando a todos con cortesía y consideración.",
+      img: respeto,
     },
     {
-      "id": 4,
-      "name": "Generosidad",
-      "description": "Dar y compartir sin esperar nada a cambio, ayudando a los demás desinteresadamente.",
-      "img": generosidad
+      id: 8,
+      name: "Responsabilidad",
+      description:
+        "Asumimos el compromiso de cumplir con nuestros deberes y obligaciones de manera puntual y efectiva.",
+      img: responsabilidad,
     },
     {
-      "id": 5,
-      "name": "Honestidad",
-      "description": "Ser veraz y sincero en todas las acciones y comunicaciones.",
-      "img": honestidad
+      id: 3,
+      name: "Trabajo en equipo",
+      description:
+        "Fomentamos la colaboración entre nuestros miembros para abordar desafíos y lograr objetivos conjuntos.",
+      img: equipo,
     },
     {
-      "id": 6,
-      "name": "Humildad",
-      "description": "Reconocer las propias limitaciones y errores, sin vanagloriarse de los logros.",
-      "img": humildad
+      id: 5,
+      name: "Equidad",
+      description:
+        "Garantizamos un trato justo e imparcial hacia nuestros empleados y clientes, promoviendo la igualdad de oportunidades.",
+      img: equidad,
     },
     {
-      "id": 7,
-      "name": "Integridad",
-      "description": "Actuar con coherencia entre lo que se piensa, se dice y se hace.",
-      "img": integridad
+      id: 4,
+      name: "Legalidad",
+      description:
+        "Cumplimos con las leyes y regulaciones aplicables en todas nuestras operaciones y proyectos.",
+      img: legalidad,
     },
     {
-      "id": 8,
-      "name": "Legalidad",
-      "description": "Acatar y respetar las leyes y normativas vigentes.",
-      "img": legalidad
+      id: 6,
+      name: "Humildad",
+      description:
+        "Reconocemos nuestras fortalezas y debilidades, buscando siempre aprender y mejorar en nuestra labor.",
+      img: humildad,
     },
     {
-      "id": 9,
-      "name": "Pasion",
-      "description": "Sentir una profunda dedicación y entusiasmo por lo que se hace.",
-      "img": pasion
+      id: 9,
+      name: "Empatia",
+      description:
+        "Comprendemos las necesidades y perspectivas de los demás, mostrando comprensión y apoyo.",
+      img: empatia,
     },
     {
-      "id": 10,
-      "name": "Respeto",
-      "description": "Tratar a todas las personas con consideración, cortesía y valorar sus derechos y opiniones.",
-      "img": respeto
+      id: 10,
+      name: "Integridad",
+      description:
+        "Actuamos de manera ética y coherente con sus principios, manteniendo altos estándares morales.",
+      img: integridad,
     },
     {
-      "id": 11,
-      "name": "Responsabilidad",
-      "description": "Cumplir con los deberes y asumir las consecuencias de las propias acciones.",
-      "img": responsabilidad
+      id: 11,
+      name: "Pasion",
+      description:
+        "Demostramos entusiasmo y dedicación en nuestro trabajo, buscando la excelencia en cada proyecto.",
+      img: pasion,
     },
     {
-      "id": 12,
-      "name": "Servicio",
-      "description": "Brindar apoyo y ayuda a los demás, contribuyendo al bienestar de la comunidad.",
-      "img": servicio
-    }
-  ]
+      id: 12,
+      name: "Generosidad",
+      description:
+        "Compartimos nuestros conocimientos y recursos para contribuir positivamente a la comunidad y el entorno de desarrollo.",
+      img: generosidad,
+    },
+  ];
   
+  
+
   return (
     <Container className="mb-4 p-0 m-0" fluid>
       <CustomTitle title={"FILOSOFÍA"} subtitle={"VALORES"} />

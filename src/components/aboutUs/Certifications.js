@@ -48,27 +48,39 @@ function Certifications() {
                       className="d-block w-100"
                       src={certification.image}
                       alt={"Not Found"}
-                      style={{ objectFit: "cover", minHeight: "220px" }}
+                      style={{
+                        objectFit: "cover",
+                        minHeight: "200px",
+                        objectPosition: "0px 0px",
+                      }}
                     />
-                    <Carousel.Caption style={{ top: 0, right: 0 }}>
+                    <Carousel.Caption style={{ position: "absolute", height:'100%', top:0, right:0 }}>
                       <div
-                        className="contentCaption h-100"
-                        style={{ position: "absolute", right: 0 }}
-                      >
-                        <Row className="justify-content-center ">
-                          <Col className="col-12">
+                        dangerouslySetInnerHTML={{
+                          __html: certification.description,
+                        }}
+                      className="desc"                        
+                      ></div>
+                      {/* <Row className="justify-content-center ">
+                          <Col className="col-10">
                             <h1>{certification.title}</h1>
                           </Col>
-                          <Col className="col-12">
-                            <p>{certification.description}</p>
-                          </Col>
-                          <Col className="col-12 text-center ">
-                            <a href={certification.link} target="_blank" className="linkButton">
+                          <Col
+                            className="col-10 text-certification"
+                            dangerouslySetInnerHTML={{
+                              __html: certification.description,
+                            }}
+                          ></Col>
+                          <Col className="col-10 text-center">
+                            <a
+                              href={certification.link}
+                              target="_blank"
+                              className="linkButton"
+                            >
                               Ver más
                             </a>
                           </Col>
-                        </Row>
-                      </div>
+                        </Row> */}
                     </Carousel.Caption>
                   </Carousel.Item>
                 ))}

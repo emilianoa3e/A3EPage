@@ -33,7 +33,9 @@ function News() {
         setIsLoading(false);
       }
     };
+    
     getData();
+    document.title = "A3E Noticias";
   }, []);
 
   const handleFilterChange = (type) => {

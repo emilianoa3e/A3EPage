@@ -32,6 +32,7 @@ function Recruitment() {
       }
     };
     getData();
+    document.title = "A3E Reclutamiento";
   }, []);
 
   const filteredContactsList = contactsList && contactsList.length > 0

@@ -35,7 +35,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotateY(180deg);
 }
 
 .filosofy .text{
@@ -66,10 +65,18 @@
   .filosofy {
     min-height: 150px;
   }
+  .filosofy .text{
+    padding: 0px;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 350px) {
   .filosofy {
     min-height: 120px;
+  }
+  .filosofy .text{
+    padding: 0px;
+    font-size: 0.7rem;
   }
 }

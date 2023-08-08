@@ -23,7 +23,7 @@ function Home() {
     } catch (error) {
       console.log(error);
       setBannersList(null);
-      setClientsList(null)
+      setClientsList(null);
     } finally {
       setIsLoading(false);
     }
@@ -31,9 +31,10 @@ function Home() {
 
   useEffect(() => {
     getData();
+    document.title = "A3E Inicio";
   }, []);
 
-  let filteredBannersList = null ;
+  let filteredBannersList = null;
   try {
     filteredBannersList = bannersList.filter(
       (banner) => banner.status === false

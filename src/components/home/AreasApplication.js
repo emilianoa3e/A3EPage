@@ -36,7 +36,7 @@ const RotatingText = ({ area, text, imageUrl }) => {
                 src={imageUrl}
                 alt="Image"
                 style={{
-                  opacity: opacity.to((o) => o - 0.2),
+                  opacity: opacity.to((o) => o - 0),
                 }}
             />
             <animated.div
@@ -115,25 +115,25 @@ function AreasApplication() {
   const applications = [
     {
       _id: 1,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation.",
-      area: "MINERIA",
+      text: "Optimizamos sistemas eléctricos, controlando la carga en tiempo real de maquinaria pesada, reduciendo costos y emisiones en operaciones exigentes.",
+      area: "MINERÍA",
       img: mineria,
     },
     {
       _id: 2,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation.",
+      text: "Diseñamos sistemas de automatización, control y eficiencia energética, mejorando la producción y reduciendo gastos operativos.",
       area: "INDUSTRIA",
       img: industria,
     },
     {
       _id: 3,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation.",
-      area: "REFINERIA",
+      text: "Garantizamos el suministro energético seguro y eficiente de equipos críticos, minimizando riesgos y optimizando la energía para procesos químicos complejos.",
+      area: "REFINERÍA",
       img: refineria,
     },
     {
       _id: 4,
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation.",
+      text: "Desarrollamos sistemas eléctricos eficientes para dar soluciones de distribución de energía y sistemas de iluminación, logrando brindar comodidad en edificios y comercios.",
       area: "COMERCIAL",
       img: comercial,
     },

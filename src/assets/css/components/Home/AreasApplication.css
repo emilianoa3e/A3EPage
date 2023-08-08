@@ -6,18 +6,11 @@
   cursor: pointer;
 }
 
-/* @media(max-width:900) {
-  .areasApplication{
-    padding-left: 10px ;
-    max-width: 335px;
-  }
-} */
-
 .areasApplication .areas-label{
   position: absolute;
   color: white;
   background-color: #00743b;
-  padding: 10px 35px;
+  padding: 1% 12%;
   border-radius: 20px;
   opacity: 0.8;
 }
@@ -55,6 +48,13 @@
 }
 
 .areasApplication .text{
-  padding: 10px;
+  padding: 5px;
   text-align: center;
+}
+
+@media(max-width:500px) {
+  .areasApplication .text{
+    padding: 0px;
+    font-size: 0.9rem;
+  }
 }
