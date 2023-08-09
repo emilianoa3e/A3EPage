@@ -45,33 +45,26 @@ function Certifications() {
                 {filteredList.map((certification) => (
                   <Carousel.Item key={certification._id}>
                     <img
-                      className="d-block w-100"
+                      className="d-block w-100 image-info"
                       src={certification.image}
                       alt={"Not Found"}
-                      style={{
-                        objectFit: "cover",
-                        minHeight: "200px",
-                        objectPosition: "0px 0px",
+                      style={{                      
+                        minHeight: "215px",                      
                       }}
                     />
-                    <Carousel.Caption style={{ position: "absolute", height:'100%', top:0, right:0 }}>
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: certification.description,
-                        }}
-                      className="desc"                        
-                      ></div>
-                      {/* <Row className="justify-content-center ">
-                          <Col className="col-10">
-                            <h1>{certification.title}</h1>
+                    <Carousel.Caption className="h-100" style={{position:'absolute', right:0}}>
+                      <div className="container-info">
+                        <Row className="justify-content-center w-100 m-0 p-0">
+                          <Col className="col-12">
+                            <h2>{certification.title}</h2>
                           </Col>
                           <Col
-                            className="col-10 text-certification"
+                            className="col-12 text-certification"
                             dangerouslySetInnerHTML={{
                               __html: certification.description,
                             }}
                           ></Col>
-                          <Col className="col-10 text-center">
+                          <Col className="col-12 text-center">
                             <a
                               href={certification.link}
                               target="_blank"
@@ -80,7 +73,8 @@ function Certifications() {
                               Ver más
                             </a>
                           </Col>
-                        </Row> */}
+                        </Row>
+                      </div>
                     </Carousel.Caption>
                   </Carousel.Item>
                 ))}

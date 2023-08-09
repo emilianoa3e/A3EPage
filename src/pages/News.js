@@ -8,10 +8,12 @@ import { getNews } from "../utils/getNews";
 import "../assets/css/components/EditorContent.css";
 import { Container } from "react-bootstrap";
 import ErrorComponent from "../components/shared/ErrorComponent";
-import novedades from '../assets/img/default/Sec_NOTICIAS_Curso-01-B.jpg'
-import cursos from '../assets/img/default/Sec_NOTICIAS_Curso-02-B.jpg'
-import convocatorias from '../assets/img/default/Sec_NOTICIAS_Curso-02-B.jpg'
+import novedades from '../assets/img/default/Sec_NOTICIAS_Nov_01.jpg'
+import cursos_1 from '../assets/img/default/Sec_NOTICIAS_Curso-01-B.jpg'
+import cursos_2 from '../assets/img/default/Sec_NOTICIAS_Curso-02-B.jpg'
+import convocatorias from '../assets/img/default/Sec_NOTICIAS_Conv-01-B.jpg'
 function News() {
+  const images = [cursos_1, cursos_2];
   let image;
   const [isLoading, setIsLoading] = useState(false);
   const itemsPerPage = 1;
@@ -41,12 +43,18 @@ function News() {
   const handleFilterChange = (type) => {
     setFilter(type);
   };
+
+  const getRandomImage = () => {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    return images[randomIndex];
+  };
+
   const filteredNewsList = newsList.filter((news) => {
     if (filter === "Novedades") {
-      image = novedades
+     image = novedades;
       return news.type === filter;
     } else if(filter === "Cursos") {
-      image = cursos
+     image = getRandomImage();
       return news.type === filter;
     }else if(filter === "Convocatorias") {
       image = convocatorias

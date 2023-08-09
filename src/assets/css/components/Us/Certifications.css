@@ -1,70 +1,78 @@
-/* se considera en un rango >1000 y <1400 */
-.contentCaption{
-    text-align: center;
-    margin: 30px 0px 30px 60px;
-    padding: 0;
-}
-.contentCaption h1{
-    padding-top: 30px;
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.desc{
-    position: absolute;
-    height: 100%;
-    top: 20;
-    right: 10;
-    word-wrap: break-word;
-    background-color: aqua;
-}
-
-.contentCaption a{
+.container-info{
+    margin-top: 5%;
+    padding: 15px;
+    padding-left: 25%;
     font-size: 1rem;
 }
+.image-info{
+    object-fit: cover;
+    object-position: 0px 0px;
+}
 
- @media (min-width: 1200px) {
-    .contentCaption p{
-        font-size: 1.5rem;
+@media (min-width:1200px) {
+    .container-info{
+        padding: 30px;
+        padding-left: 20%;
+        font-size: 2rem;
     }
-    
-    .contentCaption a{
-        font-size: 1.5rem;
+    .container-info h2{
+        font-size: 3rem;
     }
 }
 
-@media (max-width: 700px) {
-    .contentCaption{
-        margin: 20px 10px 20px 80px;
-        padding: 0;
+@media (max-width:1199px) {
+    .container-info{
+        padding: 30px;
+        padding-left: 20%;
+        font-size: 1.5rem;
     }
-    .contentCaption h1{
-        padding-top: 0px !important;
-        font-size: 0.9rem;
+    .container-info h2{
+        font-size: 2rem;
     }
-    .contentCaption p{
-        font-size: 0.7rem !important;
-    }
-    
-    .contentCaption a{
-        font-size: 0.7rem;
-    }
-} 
+}
 
-@media (max-width: 350px) {
-    .contentCaption{
-        margin: 15px 10px 15px 70px;
-        padding: 0;
+@media (max-width:800px) {
+    .container-info{
+        padding: 30px;
+        padding-left: 20%;
+        font-size: 1rem;
     }
-    .contentCaption h1{
-        padding-top: 0px !important;
+    .container-info h2{
+        font-size: 2rem;
+    }
+}
+
+@media (max-width:650px) {
+    .container-info{
+        padding: 1px;
+        padding-left: 20%;
         font-size: 0.8rem;
     }
-    .contentCaption p{
-        font-size: 0.6rem !important;
+    .container-info h2{
+        font-size: 1rem;
+    }
+
+    .image-info{
+        object-position: 0px 0px;
     }
     
-    .contentCaption a{
-        font-size: 0.6rem;
+}
+
+@media (max-width:415px) {
+
+    .image-info{
+        object-position: -30px 0px;
     }
-} 
+}
+
+
+@media (max-width:330px) {
+    .container-info{
+        padding: 5px;
+        padding-left: 22%;
+        font-size: 0.7rem;
+    }
+    .container-info h2{
+        font-size: 0.9rem;
+    }
+}
