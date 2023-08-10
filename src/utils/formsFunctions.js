@@ -33,7 +33,7 @@ export const saveSale = async (values, tokenRecaptcha) => {
     if (error.response.data.msg === "Your request is already registered") {
       showSimpleAlert(
         "Tu solicitud ya está registrada",
-        "Pronto nos pondremos en contacto contigo, gracias por tu interés.",
+        "El correo electrónico y/o empresa ya fueron registrados. Pronto nos pondremos en contacto contigo, gracias por tu interés.",
         "info"
       );
     } else {

@@ -98,7 +98,7 @@ function Recruitment() {
   const handleSubmit = (values, tokenRecaptcha, resetForm, uploadedFile) => {
     showAcceptDialog(
       "Aviso de privacidad",
-      "https://youtu.be/mN6-S7gCOkY",
+      "https://res.cloudinary.com/a3e-media/image/upload/v1691689222/pdfs/proteccion_datos_ygxo2n.pdf",
       "He leído y acepto el aviso de privacidad",
       "Continuar",
       "Debe aceptar el aviso de privacidad para continuar",

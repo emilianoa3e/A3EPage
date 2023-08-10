@@ -11,7 +11,7 @@ import {
 import { TextInput } from "../../../components/shared/TextInput";
 import { SelectInput } from "../../../components/shared/SelectInput";
 
-function SaleForm({ errors, values, touched }) {
+function SaleForm({ errors, values, touched, list }) {
   return (
     <>
       <Row className="mb-2">
@@ -59,11 +59,7 @@ function SaleForm({ errors, values, touched }) {
               label="Tipo de servicio"
               name="typeService"
               defaultText="Seleccione un tipo..."
-              options={[
-                { value: "1", label: "Servicio 1" },
-                { value: "2", label: "Servicio 2" },
-                { value: "3", label: "Servicio 3" },
-              ]}
+              options={list}
               isInvalid={!!errors.typeService && touched.typeService}
             />
           </FormBt.Group>

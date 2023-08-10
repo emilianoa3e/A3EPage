@@ -8,7 +8,6 @@ import { getServices } from "../../utils/getServices";
 import logo from "../../assets/img/logos/Logo_Blanco.png";
 import "../../assets/css/components/Footer.css";
 import Colors from "../../utils/Colors";
-import pdf from "../../assets/archives/service_pdf.pdf";
 import { showTimerAlert } from "../../plugins/alert";
 
 function Footer() {
@@ -64,10 +63,6 @@ function Footer() {
     }
   });
 
-  const openPdf = () => {
-    window.open(pdf, "_blank");
-  };
-
   const openAlert = () => {
     showTimerAlert(
       "¡Proximamente!",
@@ -105,8 +100,12 @@ function Footer() {
                 MONITOR i3
               </a>
             </div>
-            <a target="_blank" onClick={openPdf} className="btn p-0">
-              AVISO DE PRIVACIDAD
+            <a
+              target="_blank"
+              href="https://res.cloudinary.com/a3e-media/image/upload/v1691689222/pdfs/proteccion_datos_ygxo2n.pdf"
+              className="btn p-0"
+            >
+              Proteccion de Datos
             </a>
 
             <p className="mt-3">

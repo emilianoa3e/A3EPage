@@ -3,7 +3,7 @@ import { Form } from "react-bootstrap";
 
 export const SelectInput = ({ label, options, defaultText, ...props }) => {
   const [field, meta] = useField(props);
-
+  console.log(options);
   return (
     <>
       <Form.Label htmlFor={props.id || props.name}>{label}</Form.Label>

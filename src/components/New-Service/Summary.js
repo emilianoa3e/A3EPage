@@ -6,7 +6,6 @@ import {
 } from "react-icons/md";
 import "../../assets/css/components/Summary.css";
 import ModalBoletin from "./ModalBoletin";
-import pdf from "../../assets/archives/service_pdf.pdf";
 import { showTimerAlert } from "../../plugins/alert";
 import Colors from "../../utils/Colors";
 import { Button } from "@mui/material";
@@ -28,10 +27,6 @@ function Summary({ notice, service, image, changeState, data, see }) {
         true
       );
     }
-
-    if (service) {
-      window.open(pdf, "_blank");
-    }
   };
   return (
     <>
@@ -39,9 +34,13 @@ function Summary({ notice, service, image, changeState, data, see }) {
 
       <div className="summaryButton d-flex justify-content-center ">
         {!notice && service && (
-          <a onClick={go} target="_blank" className="summaryLink">
+          <a
+            href="https://res.cloudinary.com/a3e-media/image/upload/v1691689223/pdfs/CV_A3E_Original_sli2re.pdf"
+            target="_blank"
+            className="summaryLink"
+          >
             <p style={{ paddingTop: "8px" }}>
-              Ver <strong className="pe-1">PDF</strong>
+              <strong className="pe-1">CV Empresarial</strong>
               <MdArrowCircleDown className="pe-1" />
             </p>
           </a>
@@ -58,7 +57,7 @@ function Summary({ notice, service, image, changeState, data, see }) {
 
       <div className="summary">
         <Image
-        className="image-summary"
+          className="image-summary"
           src={image}
           style={{ objectFit: "cover", objectPosition: "0% 0%" }}
         />

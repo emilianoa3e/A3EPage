@@ -11,18 +11,35 @@ import SaleForm from "./SaleForm";
 import CustomButton from "../../../components/shared/CustomButton";
 import InfoContact from "../../../components/contact/InfoContact";
 import Banner from "../../../components/shared/Banner";
+import { getServices } from "../../../utils/getServices";
 
 function Sale() {
   const [captchaValidate, setCaptchaValidate] = useState(false);
   const [tokenRecaptcha, setTokenRecaptcha] = useState("");
   const captcha = useRef(null);
   const [contactsList, setContactsList] = useState([]);
-
+  const [servicesList, setServicesList] = useState([]);
+  const [selectList, setSelectList] = useState([
+    {
+      value: "",
+      label: ""
+    }
+  ])
   useEffect(() => {
     const getData = async () => {
       try {
+        const services = await getServices();
         const contacts = await getAllContacts();
         setContactsList(contacts.contacts);
+        setServicesList(services.services);
+        const newSelectList = services.services.map(service => {
+          return {
+            value: service.title, 
+            label: service.title 
+          };
+        });
+  
+        setSelectList(newSelectList);
       } catch (error) {
         console.log("Error getting contacts at recruitment");
       }
@@ -67,7 +84,7 @@ function Sale() {
   const handleSubmit = (values, tokenRecaptcha, resetForm) => {
     showAcceptDialog(
       "Aviso de privacidad",
-      "https://youtu.be/mN6-S7gCOkY",
+      "https://res.cloudinary.com/a3e-media/image/upload/v1691689222/pdfs/proteccion_datos_ygxo2n.pdf",
       "He leído y acepto el aviso de privacidad",
       "Continuar",
       "Debe aceptar el aviso de privacidad para continuar",
@@ -96,7 +113,7 @@ function Sale() {
         <Banner from={"VENTAS"} />
       </Container>
       <Container className="mt-4">
-        <Row >
+        <Row>
           <Col className="mt-5" md={8} lg={8}>
             <Formik
               initialValues={{
@@ -121,6 +138,7 @@ function Sale() {
                         errors={errors}
                         values={values}
                         touched={touched}
+                        list={selectList}
                       />
                     </Col>
                   </Row>
