@@ -21,7 +21,7 @@ const SliderComponent = ({ images }) => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -37,6 +37,7 @@ const SliderComponent = ({ images }) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: false,
         },
       },
     ],

@@ -2,30 +2,14 @@ import React from "react";
 import { MdWhatsapp, MdEmail, MdLocalPhone, MdFacebook } from "react-icons/md";
 import { BsLinkedin } from "react-icons/bs";
 import { Container, Row, Col } from "react-bootstrap";
-import { useEffect, useState } from "react";
+import { useEffect, useState, lazy } from "react";
 import { getAllContacts } from "../../utils/getContacts";
 import { getServices } from "../../utils/getServices";
 import logo from "../../assets/img/logos/Logo_Blanco.png";
 import "../../assets/css/components/Footer.css";
 import Colors from "../../utils/Colors";
-import { showTimerAlert } from "../../plugins/alert";
-
-function Footer() {
-  const [servicesList, setServiceList] = useState([]);
-  const [contactsList, setContactsList] = useState([]);
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const services = await getServices();
-        setServiceList(services.services);
-        const contacts = await getAllContacts();
-        setContactsList(contacts.contacts);
-      } catch (error) {
-        console.log("Error getting info footer");
-      }
-    };
-    getData();
-  }, []);
+const { showTimerAlert } = lazy(()=>import("../../plugins/alert"));
+function Footer({contactsList, servicesList}) {
 
   const filteredContactsList =
     contactsList && contactsList.length > 0
@@ -163,7 +147,7 @@ function Footer() {
             </a>
             {/* logo */}
             <div className="d-flex mt-5 justify-content-center mt-1">
-              <img src={logo} height={150} />
+              <img src={logo} height={150} loading="lazy"/>
             </div>
             {/* icons */}
             <div className="p-2 d-flex mt-5 justify-content-center icons">
