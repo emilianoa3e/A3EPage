@@ -2,12 +2,16 @@ import React, {lazy, Suspense, useEffect} from "react";
 import {useLocation} from "react-router-dom";
 import {BrowserRouter, Route, Navigate, Routes} from "react-router-dom";
 import Layout from "../components/shared/Layout";
-const Home = lazy(()=> import('../pages/Home'));
-const Us = lazy(()=> import('../pages/Us'));
-const Services = lazy(()=> import('../pages/Service'));
-const News = lazy(()=> import('../pages/News'))
-const Sale = lazy(()=> import('../pages/contact/sale/Sale'))
-const Recruitment = lazy(()=> import('../pages/contact/recruitment/Recruitment'))
+import Home from "../pages/Home";
+import Us from "../pages/Us";
+import News from "../pages/News";
+import Sale from "../pages/contact/sale/Sale";
+import Recruitment from "../pages/contact/recruitment/Recruitment";
+
+function Services() {
+    return null;
+}
+
 function AppRouter() {
     return (
         <Suspense>
