@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useState, useEffect } from "react";
+import React, { lazy, useState, useEffect } from "react";
 import Loader from "./Loader";
 import { Container } from "react-bootstrap";
 import { getServices } from "../../utils/getServices";
@@ -9,6 +9,7 @@ const UpButton = lazy(() => import("./UpButton"));
 const CustomNavbar = lazy(() => import("./CustomNavbar"));
 
 function Layout({ children }) {
+    console.log(children)
   const [servicesList, setServiceList] = useState([]);
   const [contactsList, setContactsList] = useState([]);
   useEffect(() => {

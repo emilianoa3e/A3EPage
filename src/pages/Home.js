@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import CustomCarousel from "../components/shared/CustomCarousel";
 import { useEffect, useState } from "react";
 import { getBanners } from "../utils/getBanners";

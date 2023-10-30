@@ -10,6 +10,7 @@ import Recruitment from "../pages/contact/recruitment/Recruitment";
 import Us from "../pages/Us";
 
 function AppRouter() {
+  console.log('main')
   return (
     <BrowserRouter>
     <ScrollToTop/>
