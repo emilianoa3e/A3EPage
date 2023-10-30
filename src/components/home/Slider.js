@@ -1,8 +1,9 @@
-import React from "react";
+import React, {lazy} from "react";
 import Slider from "react-slick";
-import NotReGisters from '../shared/NotRegisters'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+const NotReGisters = lazy(()=> import('../shared/NotRegisters'));
+
 
 const SliderComponent = ({ images }) => {
   const settings = {
@@ -20,7 +21,7 @@ const SliderComponent = ({ images }) => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -36,6 +37,7 @@ const SliderComponent = ({ images }) => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: false,
         },
       },
     ],

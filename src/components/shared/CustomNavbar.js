@@ -13,23 +13,9 @@ import DropdownItem from "react-bootstrap/esm/DropdownItem";
 import { getServices } from "../../utils/getServices";
 import {  showTimerAlert } from "../../plugins/alert";
 
-function CustomNavbar() {
+function CustomNavbar({servicesList}) {
   const navigate = useNavigate();
   const location = useLocation();
-
-  const [servicesList, setServiceList] = useState([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const data = await getServices();
-        setServiceList(data.services);
-      } catch (error) {
-        console.log("error getting services");
-      }
-    };
-    getData();
-  }, []);
 
   const pathParts = location.pathname.split("/");
   const rutaExtraida = pathParts[1];

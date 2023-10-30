@@ -4,22 +4,10 @@ import { animated, useSpring } from "@react-spring/web";
 import { getAllContacts } from "../../utils/getContacts";
 import "../../assets/css/components/ContactButton.css";
 
-function ContactButton() {
+function ContactButton({contactsList}) {
   const [active, setActive] = useState(false);
   const buttonRef = useRef(null);
-  const [contactsList, setContactsList] = useState([]);
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const contacts = await getAllContacts();
-        setContactsList(contacts.contacts);
-      } catch (error) {
-        console.log("Error getting info footer");
-      }
-    };
-    getData();
-  }, []);
-
+  
   const filteredContactsList =
     contactsList && contactsList.length > 0
       ? contactsList.filter((contact) => contact.destiny === "general")
