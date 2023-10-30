@@ -11,6 +11,7 @@ function CustomCarousel({ list, controls, indicators }) {
       <Carousel controls={false} indicators={false}>
         <Carousel.Item>
           <img
+            loading="lazy"
             className="d-block carousel-image "
             src={bannerError}
             alt={"DEfault Not Found"}
@@ -23,16 +24,17 @@ function CustomCarousel({ list, controls, indicators }) {
 
   if (list.length === 0) {
     return (
-        <Carousel controls={false} indicators={false}>
-          <Carousel.Item>
-            <img
-                className="d-block carousel-image "
-                src={bannerDefault}
-                alt={"DEfault Not Found"}
-                style={{ objectFit: "cover" }}
-            />
-          </Carousel.Item>
-        </Carousel>
+      <Carousel controls={false} indicators={false}>
+        <Carousel.Item>
+          <img
+            loading="lazy"
+            className="d-block carousel-image "
+            src={bannerDefault}
+            alt={"DEfault Not Found"}
+            style={{ objectFit: "cover" }}
+          />
+        </Carousel.Item>
+      </Carousel>
     );
   }
 
@@ -46,6 +48,7 @@ function CustomCarousel({ list, controls, indicators }) {
       {list.map((media) => (
         <Carousel.Item key={media._id}>
           <img
+            loading="lazy"
             className="d-block carousel-image"
             src={media.image}
             alt={" Not Found"}

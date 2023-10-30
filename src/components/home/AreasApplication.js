@@ -60,55 +60,6 @@ const RotatingText = ({ area, text, imageUrl }) => {
         </animated.div>
       </div>
   );
-  /*
-    const { opacity, transform } = useSpring({
-    opacity: hovered ? 0 : 1,
-    transform: `rotateY(${hovered ? 180 : 0}deg)`,
-    config: { mass: 10, tension: 500, friction: 100 },
-  });
-
-  return (
-    <div
-      className="areasApplication"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <animated.div
-        className={"animatedDiv"}
-        style={{
-          transform,
-        }}
-      >
-        <div className="containerAnimation">
-          <animated.img
-            className={"animatedImg"}
-            src={imageUrl}
-            alt="Image"
-            style={{
-              opacity,
-            }}
-          />
-          <animated.div
-            className="areas-label"
-            style={{
-              opacity: opacity.to((o) => o - 0.2 ),
-            }}
-          >
-            {area}
-          </animated.div>
-          <animated.div
-            className={"animatedText"}
-            style={{
-              opacity: opacity.to((o) => 1 - o),
-            }}
-          >
-            <p className="text">{text}</p>
-          </animated.div>
-        </div>
-      </animated.div>
-    </div>
-  );
-  * */
 };
 
 function AreasApplication() {
