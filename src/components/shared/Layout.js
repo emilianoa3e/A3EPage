@@ -1,9 +1,8 @@
 import React, { lazy, useState, useEffect } from "react";
-import Loader from "./Loader";
 import { Container } from "react-bootstrap";
 import { getServices } from "../../utils/getServices";
 import { getAllContacts } from "../../utils/getContacts";
-const ContactButton = lazy(() => import("./ContactButton"));
+import ContactButton from "./ContactButton";
 const Footer = lazy(() => import("./Footer"));
 const UpButton = lazy(() => import("./UpButton"));
 const CustomNavbar = lazy(() => import("./CustomNavbar"));

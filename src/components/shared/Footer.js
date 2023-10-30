@@ -3,8 +3,6 @@ import { MdWhatsapp, MdEmail, MdLocalPhone, MdFacebook } from "react-icons/md";
 import { BsLinkedin } from "react-icons/bs";
 import { Container, Row, Col } from "react-bootstrap";
 import { useEffect, useState, lazy } from "react";
-import { getAllContacts } from "../../utils/getContacts";
-import { getServices } from "../../utils/getServices";
 import logo from "../../assets/img/logos/Logo_Blanco.png";
 import "../../assets/css/components/Footer.css";
 import Colors from "../../utils/Colors";
