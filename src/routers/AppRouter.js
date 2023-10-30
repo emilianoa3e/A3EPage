@@ -3,11 +3,12 @@ import { useLocation } from "react-router-dom";
 import { BrowserRouter, Route, Navigate, Routes } from "react-router-dom";
 import Layout from "../components/shared/Layout";
 import Home from "../pages/Home";
-import Us from "../pages/Us";
+import Services from "../pages/Service";
 import News from "../pages/News";
 import Sale from "../pages/contact/sale/Sale";
 import Recruitment from "../pages/contact/recruitment/Recruitment";
-import Services from "../pages/Service"
+import Us from "../pages/Us";
+
 function AppRouter() {
   return (
     <BrowserRouter>
@@ -29,13 +30,13 @@ function AppRouter() {
 }
 
 function ScrollToTop() {
-    const location = useLocation();
+  const location = useLocation();
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
-    return null;
+  return null;
 }
 
 export default AppRouter;

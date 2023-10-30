@@ -1,10 +1,10 @@
-import React from "react";
+import React, {lazy} from "react";
 import { Col, Row, Container } from "react-bootstrap";
-import SliderComponent from "../home/Slider";
+
 import "../../assets/css/pages/Clients.css";
 import CustomTitle from "../shared/CustomTitle";
-import ErrorComponent from "../shared/ErrorComponent";
-
+const ErrorComponent = lazy(()=> import("../shared/ErrorComponent"));
+const SliderComponent = lazy(()=> import("../home/Slider"));
 function Clients({ clientsList }) {
   return (
     <>
