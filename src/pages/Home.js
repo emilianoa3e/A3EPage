@@ -15,23 +15,24 @@ function Home() {
   const [bannersList, setBannersList] = useState([]);
   const [clientsList, setClientsList] = useState([]);
 
-  const getData = async () => {
-    setIsLoading(true);
-    try {
-      const banners = await getBanners();
-      const clients = await getAllClients();
-      setBannersList(banners.banners);
-      setClientsList(clients.clients);
-    } catch (error) {
-      console.log(error);
-      setBannersList(null);
-      setClientsList(null);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+
 
   useEffect(() => {
+    const getData = async () => {
+      try {
+        setIsLoading(true);
+        const banners = await getBanners();
+        const clients = await getAllClients();
+        setBannersList(banners.banners);
+        setClientsList(clients.clients);
+      } catch (error) {
+        console.log(error);
+        setBannersList(null);
+        setClientsList(null);
+      } finally {
+        setIsLoading(false);
+      }
+    };
     getData();
     document.title = "A3E Inicio";
   }, []);
