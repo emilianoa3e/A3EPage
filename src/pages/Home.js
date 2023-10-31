@@ -10,6 +10,7 @@ import AreasApplication from "../components/home/AreasApplication";
 import Loader from "../components/shared/Loader";
 
 function Home() {
+  console.log('homw')
   const [isLoading, setIsLoading] = useState(false);
   const [bannersList, setBannersList] = useState([]);
   const [clientsList, setClientsList] = useState([]);
