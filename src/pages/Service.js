@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
-import { useParams } from "react-router-dom";
-import { getService } from "../utils/getServices";
-import { Container, Col } from "react-bootstrap";
-import { Button } from "@mui/material";
+import React, {useEffect, useRef, useState} from "react";
+import {useParams} from "react-router-dom";
+import {getService} from "../utils/getServices";
+import {Col, Container} from "react-bootstrap";
+import {Button} from "@mui/material";
 import Colors from "../utils/Colors";
 
 import Banner from "../components/shared/Banner";
@@ -14,6 +14,7 @@ import ErrorComponent from "../components/shared/ErrorComponent";
 import image_1 from "../assets/img/default/Secundario_SERVICIOS.jpg";
 import image_2 from "../assets/img/default/Secundario_SERVICIOS_02.jpg";
 import image_3 from "../assets/img/default/Secundario_SERVICIOS_03.jpg";
+
 function Service() {
   const images = [image_1, image_2, image_3];
   const [isLoading, setIsLoading] = useState(false);

@@ -1,8 +1,8 @@
-import React from 'react'
-import { Row, Col } from 'react-bootstrap'
+import React, {useEffect, useRef, useState} from 'react'
+import {Col, Row} from 'react-bootstrap'
 import '../../assets/css/components/CustomTitle.css'
-import { useEffect, useState, useRef } from 'react';
-import { animated, useSpring } from '@react-spring/web';
+import {animated, useSpring} from '@react-spring/web';
+
 function CustomTitle({title, subtitle}) {
 
   const [isIntersecting, setIsIntersecting] = useState(false);

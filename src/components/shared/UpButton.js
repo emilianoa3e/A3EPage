@@ -1,8 +1,7 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "../../assets/css/components/upButton.css";
-import { MdKeyboardArrowUp } from "react-icons/md";
-import { useState, useEffect } from "react";
-import { animated, useSpring } from "@react-spring/web";
+import {MdKeyboardArrowUp} from "react-icons/md";
+import {animated, useSpring} from "@react-spring/web";
 
 function UpButton() {
   const [isVisible, setIsVisible] = useState(false);

@@ -1,8 +1,7 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import CustomCarousel from "../components/shared/CustomCarousel";
-import { useEffect, useState } from "react";
-import { getBanners } from "../utils/getBanners";
-import { getAllClients } from "../utils/getClients";
+import {getBanners} from "../utils/getBanners";
+import {getAllClients} from "../utils/getClients";
 
 import InfoResume from "../components/home/InfoResume";
 import Clients from "../components/home/Clients";
