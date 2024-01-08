@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import Items from "../components/news/Items";
 import NewsCategories from "../components/news/NewsCategories";
 import NotRegisters from "../components/shared/NotRegisters";
 import Banner from "../components/shared/Banner";
 import Loader from "../components/shared/Loader";
-import { getNews } from "../utils/getNews";
+import {getNews} from "../utils/getNews";
 import "../assets/css/components/EditorContent.css";
-import { Container } from "react-bootstrap";
-  
+import {Container} from "react-bootstrap";
+
 import novedades from '../assets/img/default/Sec_NOTICIAS_Nov_01.jpg'
 import cursos_1 from '../assets/img/default/Sec_NOTICIAS_Curso-01-B.jpg'
 import cursos_2 from '../assets/img/default/Sec_NOTICIAS_Curso-02-B.jpg'
 import convocatorias from '../assets/img/default/Sec_NOTICIAS_Conv-01-B.jpg'
-import { lazy } from "react";
-const ErrorComponent =lazy(()=>import("../components/shared/ErrorComponent"));
+import ErrorComponent from "../components/shared/ErrorComponent";
+
 function News() {
+  console.log('news')
   const images = [cursos_1, cursos_2];
   let image;
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +38,7 @@ function News() {
         setIsLoading(false);
       }
     };
-    
+
     getData();
     document.title = "A3E Noticias";
   }, []);

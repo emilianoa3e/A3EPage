@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import {
-  Container,
-  Nav,
-  Navbar as NavbarBt,
-  NavDropdown,
-} from "react-bootstrap";
-import { MdHome } from "react-icons/md";
+import React from "react";
+import {NavLink, useLocation, useNavigate} from "react-router-dom";
+import {Container, Nav, Navbar as NavbarBt, NavDropdown,} from "react-bootstrap";
+import {MdHome} from "react-icons/md";
 import logo from "../../assets/img/logos/Logo_Blanco.png";
 import "../../assets/css/components/Navbar.css";
 import DropdownItem from "react-bootstrap/esm/DropdownItem";
-import { getServices } from "../../utils/getServices";
-import {  showTimerAlert } from "../../plugins/alert";
+import {showTimerAlert} from "../../plugins/alert";
 
 function CustomNavbar({servicesList}) {
   const navigate = useNavigate();

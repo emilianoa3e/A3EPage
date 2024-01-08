@@ -1,7 +1,8 @@
 import React from 'react'
-import { MdCancel } from 'react-icons/md';
-import { Col, Row, Container } from 'react-bootstrap';
+import {MdCancel} from 'react-icons/md';
+import {Col, Container, Row} from 'react-bootstrap';
 import styles from '../../assets/css/components/NotRegister.module.css'
+
 function NotRegisters({ icon, text }) {
     return (
         <Container>

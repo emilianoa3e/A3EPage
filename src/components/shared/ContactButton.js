@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
-import { MdCall, MdMessage, MdWhatsapp } from "react-icons/md";
-import { animated, useSpring } from "@react-spring/web";
-import { getAllContacts } from "../../utils/getContacts";
+import React, {useEffect, useRef, useState} from "react";
+import {MdCall, MdMessage, MdWhatsapp} from "react-icons/md";
+import {animated, useSpring} from "@react-spring/web";
 import "../../assets/css/components/ContactButton.css";
 
 function ContactButton({contactsList}) {
