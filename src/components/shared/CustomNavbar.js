@@ -108,6 +108,9 @@ function CustomNavbar({servicesList}) {
                 Monitor i3
               </DropdownItem>
             </NavDropdown>
+            <NavLink to="http://192.168.1.86/osTicket/" className="nav-link" id="news">
+              <span className="nav-link-text">MESA DE AYUDA</span>
+            </NavLink>
           </Nav>
         </NavbarBt.Collapse>
       </Container>
