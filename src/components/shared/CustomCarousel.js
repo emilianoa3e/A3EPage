@@ -1,9 +1,10 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
-import { Row, Col } from "react-bootstrap";
+import {Col, Row} from "react-bootstrap";
 import "../../assets/css/components/Carousel.css";
 import bannerError from "../../assets/img/default/ERROR_01.jpg";
 import bannerDefault from "../../assets/img/default/Secundario_SERVICIOS.jpg";
+
 function CustomCarousel({ list, controls, indicators }) {
   //Error
   if (!list) {

@@ -1,6 +1,5 @@
-import React,{useEffect} from "react";
-import { useLocation } from "react-router-dom";
-import { BrowserRouter, Route, Navigate, Routes } from "react-router-dom";
+import React, {useEffect} from "react";
+import {BrowserRouter, Navigate, Route, Routes, useLocation} from "react-router-dom";
 import Layout from "../components/shared/Layout";
 import Home from "../pages/Home";
 import Services from "../pages/Service";

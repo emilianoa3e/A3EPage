@@ -1,12 +1,12 @@
 import React from "react";
-import { MdWhatsapp, MdEmail, MdLocalPhone, MdFacebook } from "react-icons/md";
-import { BsLinkedin } from "react-icons/bs";
-import { Container, Row, Col } from "react-bootstrap";
-import { useEffect, useState, lazy } from "react";
+import {MdEmail, MdFacebook, MdLocalPhone, MdWhatsapp} from "react-icons/md";
+import {BsLinkedin} from "react-icons/bs";
+import {Col, Container, Row} from "react-bootstrap";
 import logo from "../../assets/img/logos/Logo_Blanco.png";
 import "../../assets/css/components/Footer.css";
 import Colors from "../../utils/Colors";
-const { showTimerAlert } = lazy(()=>import("../../plugins/alert"));
+import {showTimerAlert} from "../../plugins/alert";
+
 function Footer({contactsList, servicesList}) {
 
   const filteredContactsList =

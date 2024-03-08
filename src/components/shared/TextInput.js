@@ -1,6 +1,6 @@
 import React from "react";
-import { ErrorMessage, useField } from "formik";
-import { Form } from "react-bootstrap";
+import {ErrorMessage, useField} from "formik";
+import {Form} from "react-bootstrap";
 
 import styles from "../../assets/css/components/TextInput.module.css"
 
